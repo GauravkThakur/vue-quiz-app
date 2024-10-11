@@ -1,0 +1,207 @@
+[
+  {
+    "question": "What is the primary purpose of the `setup` function in Vue 3?",
+    "options": [
+      "To define component methods",
+      "To define component data",
+      "To set up the component's reactive state and lifecycle hooks",
+      "To register global components"
+    ],
+    "correctAnswer": "To set up the component's reactive state and lifecycle hooks"
+  },
+  {
+    "question": "Which hook is used to perform actions when a component is mounted in Vue 3?",
+    "options": ["onCreated", "onMounted", "onUpdated", "onUnmounted"],
+    "correctAnswer": "onMounted"
+  },
+  {
+    "question": "How do you define props in the Composition API?",
+    "options": ["defineProps", "props", "setupProps", "useProps"],
+    "correctAnswer": "defineProps"
+  },
+  {
+    "question": "What is the purpose of the `ref` function in Vue 3?",
+    "options": [
+      "To create a reactive reference to a DOM element",
+      "To create a reactive reference to a value",
+      "To create a reference to a component",
+      "To create a reference to a method"
+    ],
+    "correctAnswer": "To create a reactive reference to a value"
+  },
+  {
+    "question": "Which directive is used for conditional rendering in Vue 3?",
+    "options": ["v-show", "v-if", "v-for", "v-bind"],
+    "correctAnswer": "v-if"
+  },
+  {
+    "question": "How do you watch a reactive property in Vue 3?",
+    "options": ["watchEffect", "watch", "onWatch", "useWatch"],
+    "correctAnswer": "watch"
+  },
+  {
+    "question": "What is the purpose of the `computed` function in Vue 3?",
+    "options": [
+      "To define computed properties",
+      "To define methods",
+      "To define props",
+      "To define watchers"
+    ],
+    "correctAnswer": "To define computed properties"
+  },
+  {
+    "question": "Which lifecycle hook is called before a component is unmounted in Vue 3?",
+    "options": ["onBeforeUnmount", "onUnmounted", "onBeforeMount", "onMounted"],
+    "correctAnswer": "onBeforeUnmount"
+  },
+  {
+    "question": "How do you create a reactive object in Vue 3?",
+    "options": ["reactive", "ref", "computed", "watch"],
+    "correctAnswer": "reactive"
+  },
+  {
+    "question": "What is the purpose of the `provide` function in Vue 3?",
+    "options": [
+      "To provide data to child components",
+      "To inject data from parent components",
+      "To create a reactive reference",
+      "To define props"
+    ],
+    "correctAnswer": "To provide data to child components"
+  },
+  {
+    "question": "How do you inject provided data in a child component in Vue 3?",
+    "options": ["inject", "provide", "ref", "reactive"],
+    "correctAnswer": "inject"
+  },
+  {
+    "question": "Which directive is used for binding attributes in Vue 3?",
+    "options": ["v-bind", "v-if", "v-for", "v-show"],
+    "correctAnswer": "v-bind"
+  },
+  {
+    "question": "What is the purpose of the `watchEffect` function in Vue 3?",
+    "options": [
+      "To watch reactive properties and run a function when they change",
+      "To define computed properties",
+      "To define methods",
+      "To define props"
+    ],
+    "correctAnswer": "To watch reactive properties and run a function when they change"
+  },
+  {
+    "question": "How do you define a component in Vue 3 using the Composition API?",
+    "options": ["defineComponent", "createComponent", "setupComponent", "useComponent"],
+    "correctAnswer": "defineComponent"
+  },
+  {
+    "question": "Which directive is used for looping through items in Vue 3?",
+    "options": ["v-for", "v-if", "v-show", "v-bind"],
+    "correctAnswer": "v-for"
+  },
+  {
+    "question": "What is the purpose of the `onBeforeMount` lifecycle hook in Vue 3?",
+    "options": [
+      "To perform actions before the component is mounted",
+      "To perform actions after the component is mounted",
+      "To perform actions before the component is updated",
+      "To perform actions after the component is updated"
+    ],
+    "correctAnswer": "To perform actions before the component is mounted"
+  },
+  {
+    "question": "How do you create a reactive reference to a DOM element in Vue 3?",
+    "options": ["ref", "reactive", "computed", "watch"],
+    "correctAnswer": "ref"
+  },
+  {
+    "question": "Which function is used to define a reactive state in Vue 3?",
+    "options": ["reactive", "ref", "computed", "watch"],
+    "correctAnswer": "reactive"
+  },
+  {
+    "question": "What is the purpose of the `onUpdated` lifecycle hook in Vue 3?",
+    "options": [
+      "To perform actions after the component is updated",
+      "To perform actions before the component is updated",
+      "To perform actions after the component is mounted",
+      "To perform actions before the component is mounted"
+    ],
+    "correctAnswer": "To perform actions after the component is updated"
+  },
+  {
+    "question": "How do you define a method in Vue 3 using the Composition API?",
+    "options": [
+      "Inside the setup function",
+      "Inside the methods option",
+      "Inside the data option",
+      "Inside the computed option"
+    ],
+    "correctAnswer": "Inside the setup function"
+  },
+  {
+    "question": "Which directive is used to show or hide elements in Vue 3?",
+    "options": ["v-show", "v-if", "v-for", "v-bind"],
+    "correctAnswer": "v-show"
+  },
+  {
+    "question": "What is the purpose of the `onBeforeUpdate` lifecycle hook in Vue 3?",
+    "options": [
+      "To perform actions before the component is updated",
+      "To perform actions after the component is updated",
+      "To perform actions before the component is mounted",
+      "To perform actions after the component is mounted"
+    ],
+    "correctAnswer": "To perform actions before the component is updated"
+  },
+  {
+    "question": "How do you create a computed property in Vue 3?",
+    "options": ["computed", "ref", "reactive", "watch"],
+    "correctAnswer": "computed"
+  },
+  {
+    "question": "Which function is used to watch reactive properties in Vue 3?",
+    "options": ["watch", "watchEffect", "onWatch", "useWatch"],
+    "correctAnswer": "watch"
+  },
+  {
+    "question": "What is the purpose of the `onUnmounted` lifecycle hook in Vue 3?",
+    "options": [
+      "To perform actions after the component is unmounted",
+      "To perform actions before the component is unmounted",
+      "To perform actions after the component is mounted",
+      "To perform actions before the component is mounted"
+    ],
+    "correctAnswer": "To perform actions after the component is unmounted"
+  },
+  {
+    "question": "How do you define a reactive state in Vue 3 using the Composition API?",
+    "options": ["reactive", "ref", "computed", "watch"],
+    "correctAnswer": "reactive"
+  },
+  {
+    "question": "Which directive is used to bind event listeners in Vue 3?",
+    "options": ["v-on", "v-bind", "v-if", "v-for"],
+    "correctAnswer": "v-on"
+  },
+  {
+    "question": "What is the purpose of the `onBeforeUnmount` lifecycle hook in Vue 3?",
+    "options": [
+      "To perform actions before the component is unmounted",
+      "To perform actions after the component is unmounted",
+      "To perform actions before the component is mounted",
+      "To perform actions after the component is mounted"
+    ],
+    "correctAnswer": "To perform actions before the component is unmounted"
+  },
+  {
+    "question": "How do you create a reactive reference to a value in Vue 3?",
+    "options": ["ref", "reactive", "computed", "watch"],
+    "correctAnswer": "ref"
+  },
+  {
+    "question": "Which function is used to define a component in Vue 3 using the Composition API?",
+    "options": ["defineComponent", "createComponent", "setupComponent", "useComponent"],
+    "correctAnswer": "defineComponent"
+  }
+]
