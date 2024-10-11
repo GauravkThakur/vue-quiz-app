@@ -4,7 +4,7 @@
       <Button
         label="Quit"
         severity="danger"
-        icon="pi pi-stop-full"
+        icon="pi pi-stop"
         outlined
         @click.prevent.stop="emitQuit"
       />

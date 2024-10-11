@@ -31,6 +31,7 @@ import { onMounted, onUnmounted, computed, watchEffect } from 'vue';
 import { useQuizStore } from '@/stores/quiz';
 import { storeToRefs } from 'pinia';
 
+const emit = defineEmits(['onTimerOut']);
 const props = withDefaults(defineProps<{ isRestart: boolean }>(), {
   isRestart: false
 });
@@ -47,6 +48,9 @@ const resetInterval = () => {
   timerInterval.value = setInterval(() => {
     if (timeLeft.value) {
       timeLeft.value--;
+      if (timeLeft.value === 0) {
+        emit('onTimerOut');
+      }
     } else {
       clearInterval(timerInterval.value);
     }

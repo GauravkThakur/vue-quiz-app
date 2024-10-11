@@ -25,7 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineEmits } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 

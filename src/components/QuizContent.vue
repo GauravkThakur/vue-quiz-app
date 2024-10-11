@@ -1,5 +1,5 @@
 <template>
-  <QuizHeader :is-restart="isRestarted" />
+  <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish"/>
   <QuizMain :data="data" />
   <QuizFooter @on-quiz-finish="onFinish" @on-quiz-quit="onQuit" @on-quiz-restart="onRestart" />
 </template>
