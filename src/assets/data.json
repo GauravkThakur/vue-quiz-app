@@ -1,207 +1,358 @@
 [
   {
-    "question": "What is the primary purpose of the `setup` function in Vue 3?",
+    "question": "What is the purpose of the `v-for` directive in Vue.js?",
     "options": [
-      "To define component methods",
-      "To define component data",
-      "To set up the component's reactive state and lifecycle hooks",
-      "To register global components"
+      "To conditionally render elements",
+      "To loop through an array and render a list of elements",
+      "To bind attributes to elements",
+      "To handle events"
     ],
-    "correctAnswer": "To set up the component's reactive state and lifecycle hooks"
+    "correctAnswer": "To loop through an array and render a list of elements"
   },
   {
-    "question": "Which hook is used to perform actions when a component is mounted in Vue 3?",
-    "options": ["onCreated", "onMounted", "onUpdated", "onUnmounted"],
-    "correctAnswer": "onMounted"
-  },
-  {
-    "question": "How do you define props in the Composition API?",
-    "options": ["defineProps", "props", "setupProps", "useProps"],
-    "correctAnswer": "defineProps"
-  },
-  {
-    "question": "What is the purpose of the `ref` function in Vue 3?",
-    "options": [
-      "To create a reactive reference to a DOM element",
-      "To create a reactive reference to a value",
-      "To create a reference to a component",
-      "To create a reference to a method"
-    ],
-    "correctAnswer": "To create a reactive reference to a value"
-  },
-  {
-    "question": "Which directive is used for conditional rendering in Vue 3?",
-    "options": ["v-show", "v-if", "v-for", "v-bind"],
-    "correctAnswer": "v-if"
-  },
-  {
-    "question": "How do you watch a reactive property in Vue 3?",
-    "options": ["watchEffect", "watch", "onWatch", "useWatch"],
-    "correctAnswer": "watch"
-  },
-  {
-    "question": "What is the purpose of the `computed` function in Vue 3?",
-    "options": [
-      "To define computed properties",
-      "To define methods",
-      "To define props",
-      "To define watchers"
-    ],
-    "correctAnswer": "To define computed properties"
-  },
-  {
-    "question": "Which lifecycle hook is called before a component is unmounted in Vue 3?",
-    "options": ["onBeforeUnmount", "onUnmounted", "onBeforeMount", "onMounted"],
-    "correctAnswer": "onBeforeUnmount"
-  },
-  {
-    "question": "How do you create a reactive object in Vue 3?",
-    "options": ["reactive", "ref", "computed", "watch"],
-    "correctAnswer": "reactive"
-  },
-  {
-    "question": "What is the purpose of the `provide` function in Vue 3?",
-    "options": [
-      "To provide data to child components",
-      "To inject data from parent components",
-      "To create a reactive reference",
-      "To define props"
-    ],
-    "correctAnswer": "To provide data to child components"
-  },
-  {
-    "question": "How do you inject provided data in a child component in Vue 3?",
-    "options": ["inject", "provide", "ref", "reactive"],
-    "correctAnswer": "inject"
-  },
-  {
-    "question": "Which directive is used for binding attributes in Vue 3?",
-    "options": ["v-bind", "v-if", "v-for", "v-show"],
-    "correctAnswer": "v-bind"
-  },
-  {
-    "question": "What is the purpose of the `watchEffect` function in Vue 3?",
-    "options": [
-      "To watch reactive properties and run a function when they change",
-      "To define computed properties",
-      "To define methods",
-      "To define props"
-    ],
-    "correctAnswer": "To watch reactive properties and run a function when they change"
-  },
-  {
-    "question": "How do you define a component in Vue 3 using the Composition API?",
-    "options": ["defineComponent", "createComponent", "setupComponent", "useComponent"],
-    "correctAnswer": "defineComponent"
-  },
-  {
-    "question": "Which directive is used for looping through items in Vue 3?",
-    "options": ["v-for", "v-if", "v-show", "v-bind"],
-    "correctAnswer": "v-for"
-  },
-  {
-    "question": "What is the purpose of the `onBeforeMount` lifecycle hook in Vue 3?",
-    "options": [
-      "To perform actions before the component is mounted",
-      "To perform actions after the component is mounted",
-      "To perform actions before the component is updated",
-      "To perform actions after the component is updated"
-    ],
-    "correctAnswer": "To perform actions before the component is mounted"
+    "question": "How do you bind a class dynamically in Vue.js?",
+    "options": ["Using `v-bind:class`", "Using `:class`", "Using `v-if`", "Using `v-for`"],
+    "correctAnswer": "Using `:class`"
   },
   {
     "question": "How do you create a reactive reference to a DOM element in Vue 3?",
-    "options": ["ref", "reactive", "computed", "watch"],
-    "correctAnswer": "ref"
+    "options": ["Using `reactive`", "Using `ref`", "Using `computed`", "Using `watch`"],
+    "correctAnswer": "Using `ref`"
   },
   {
-    "question": "Which function is used to define a reactive state in Vue 3?",
-    "options": ["reactive", "ref", "computed", "watch"],
-    "correctAnswer": "reactive"
+    "question": "How do you define a computed property in Vue 3 using the Composition API?",
+    "options": ["Using `reactive`", "Using `ref`", "Using `computed`", "Using `watch`"],
+    "correctAnswer": "Using `computed`"
   },
   {
-    "question": "What is the purpose of the `onUpdated` lifecycle hook in Vue 3?",
+    "question": "How do you watch a reactive property in Vue 3 using the Composition API?",
+    "options": ["Using `reactive`", "Using `ref`", "Using `computed`", "Using `watch`"],
+    "correctAnswer": "Using `watch`"
+  },
+  {
+    "question": "How do you bind a class dynamically in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <div :class=\"{ active: isActive }\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isActive = ref(true);\n</script>",
+    "options": ["Using `v-bind:class`", "Using `:class`", "Using `v-if`", "Using `v-for`"],
+    "correctAnswer": "Using `:class`"
+  },
+  {
+    "question": "How do you bind multiple classes conditionally in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <div :class=\"[isActive ? 'active' : '', isError ? 'error' : '']\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isActive = ref(true);\nconst isError = ref(false);\n</script>",
     "options": [
-      "To perform actions after the component is updated",
-      "To perform actions before the component is updated",
-      "To perform actions after the component is mounted",
-      "To perform actions before the component is mounted"
+      "Using `v-bind:class`",
+      "Using `:class` with an array",
+      "Using `v-if`",
+      "Using `v-for`"
     ],
-    "correctAnswer": "To perform actions after the component is updated"
+    "correctAnswer": "Using `:class` with an array"
   },
   {
-    "question": "How do you define a method in Vue 3 using the Composition API?",
+    "question": "How do you bind inline styles dynamically in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <div :style=\"{ color: textColor, fontSize: fontSize + 'px' }\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst textColor = ref('red');\nconst fontSize = ref(16);\n</script>",
+    "options": ["Using `v-bind:style`", "Using `:style`", "Using `v-if`", "Using `v-for`"],
+    "correctAnswer": "Using `:style`"
+  },
+  {
+    "question": "How do you conditionally render an element in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <div v-if=\"isVisible\">This is a visible div</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isVisible = ref(true);\n</script>",
+    "options": ["Using `v-show`", "Using `v-if`", "Using `v-for`", "Using `v-bind`"],
+    "correctAnswer": "Using `v-if`"
+  },
+  {
+    "question": "How do you toggle the visibility of an element using `v-show` in Vue.js with the Composition API?",
+    "codeSnippet": "<template>\n  <div v-show=\"isVisible\">This is a visible div</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isVisible = ref(true);\n</script>",
+    "options": ["Using `v-if`", "Using `v-show`", "Using `v-for`", "Using `v-bind`"],
+    "correctAnswer": "Using `v-show`"
+  },
+  {
+    "question": "How do you use `v-else` for conditional rendering in Vue.js with the Composition API?",
+    "codeSnippet": "<template>\n  <div v-if=\"isVisible\">This is visible</div>\n  <div v-else>This is hidden</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isVisible = ref(true);\n</script>",
     "options": [
-      "Inside the setup function",
-      "Inside the methods option",
-      "Inside the data option",
-      "Inside the computed option"
+      "Using `v-if` and `v-else`",
+      "Using `v-show` and `v-else`",
+      "Using `v-for` and `v-else`",
+      "Using `v-bind` and `v-else`"
     ],
-    "correctAnswer": "Inside the setup function"
+    "correctAnswer": "Using `v-if` and `v-else`"
   },
   {
-    "question": "Which directive is used to show or hide elements in Vue 3?",
-    "options": ["v-show", "v-if", "v-for", "v-bind"],
-    "correctAnswer": "v-show"
+    "question": "How do you render a list of items in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <ul>\n    <li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "options": ["Using `v-if`", "Using `v-show`", "Using `v-for`", "Using `v-bind`"],
+    "correctAnswer": "Using `v-for`"
   },
   {
-    "question": "What is the purpose of the `onBeforeUpdate` lifecycle hook in Vue 3?",
+    "question": "How do you render a list of items with an index in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <ul>\n    <li v-for=\"(item, index) in items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "options": ["Using `v-if`", "Using `v-show`", "Using `v-for` with an index", "Using `v-bind`"],
+    "correctAnswer": "Using `v-for` with an index"
+  },
+  {
+    "question": "How do you render a list of items with a template in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <ul>\n    <template v-for=\"item in items\">\n      <li :key=\"item.id\">{{ item.name }}</li>\n    </template>\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
     "options": [
-      "To perform actions before the component is updated",
-      "To perform actions after the component is updated",
-      "To perform actions before the component is mounted",
-      "To perform actions after the component is mounted"
+      "Using `v-if`",
+      "Using `v-show`",
+      "Using `v-for` with a template",
+      "Using `v-bind`"
     ],
-    "correctAnswer": "To perform actions before the component is updated"
+    "correctAnswer": "Using `v-for` with a template"
   },
   {
-    "question": "How do you create a computed property in Vue 3?",
-    "options": ["computed", "ref", "reactive", "watch"],
-    "correctAnswer": "computed"
-  },
-  {
-    "question": "Which function is used to watch reactive properties in Vue 3?",
-    "options": ["watch", "watchEffect", "onWatch", "useWatch"],
-    "correctAnswer": "watch"
-  },
-  {
-    "question": "What is the purpose of the `onUnmounted` lifecycle hook in Vue 3?",
+    "question": "How do you handle a click event in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <button @click=\"handleClick\">Click me</button>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleClick = () => {\n  console.log('Button clicked');\n};\n</script>",
     "options": [
-      "To perform actions after the component is unmounted",
-      "To perform actions before the component is unmounted",
-      "To perform actions after the component is mounted",
-      "To perform actions before the component is mounted"
+      "Using `v-on:click`",
+      "Using `@click`",
+      "Using `v-bind:click`",
+      "Using `v-if:click`"
     ],
-    "correctAnswer": "To perform actions after the component is unmounted"
+    "correctAnswer": "Using `@click`"
   },
   {
-    "question": "How do you define a reactive state in Vue 3 using the Composition API?",
-    "options": ["reactive", "ref", "computed", "watch"],
-    "correctAnswer": "reactive"
-  },
-  {
-    "question": "Which directive is used to bind event listeners in Vue 3?",
-    "options": ["v-on", "v-bind", "v-if", "v-for"],
-    "correctAnswer": "v-on"
-  },
-  {
-    "question": "What is the purpose of the `onBeforeUnmount` lifecycle hook in Vue 3?",
+    "question": "How do you handle an input event in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <input @input=\"handleInput\" />\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleInput = (event) => {\n  console.log('Input value:', event.target.value);\n};\n</script>",
     "options": [
-      "To perform actions before the component is unmounted",
-      "To perform actions after the component is unmounted",
-      "To perform actions before the component is mounted",
-      "To perform actions after the component is mounted"
+      "Using `v-on:input`",
+      "Using `@input`",
+      "Using `v-bind:input`",
+      "Using `v-if:input`"
     ],
-    "correctAnswer": "To perform actions before the component is unmounted"
+    "correctAnswer": "Using `@input`"
   },
   {
-    "question": "How do you create a reactive reference to a value in Vue 3?",
-    "options": ["ref", "reactive", "computed", "watch"],
-    "correctAnswer": "ref"
+    "question": "How do you handle a form submit event in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <form @submit.prevent=\"handleSubmit\">\n    <button type=\"submit\">Submit</button>\n  </form>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleSubmit = () => {\n  console.log('Form submitted');\n};\n</script>",
+    "options": [
+      "Using `v-on:submit`",
+      "Using `@submit.prevent`",
+      "Using `v-bind:submit`",
+      "Using `v-if:submit`"
+    ],
+    "correctAnswer": "Using `@submit.prevent`"
   },
   {
-    "question": "Which function is used to define a component in Vue 3 using the Composition API?",
-    "options": ["defineComponent", "createComponent", "setupComponent", "useComponent"],
-    "correctAnswer": "defineComponent"
+    "question": "How do you handle a click event with the `.prevent` modifier in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <button @click.prevent=\"handleClick\">Click me</button>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleClick = () => {\n  console.log('Button clicked with prevent');\n};\n</script>",
+    "options": [
+      "Using `@click`",
+      "Using `@click.prevent`",
+      "Using `@click.stop`",
+      "Using `@click.capture`"
+    ],
+    "correctAnswer": "Using `@click.prevent`"
+  },
+  {
+    "question": "How do you handle a submit event with the `.stop` modifier in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <form @submit.stop=\"handleSubmit\">\n    <button type=\"submit\">Submit</button>\n  </form>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleSubmit = () => {\n  console.log('Form submitted with stop');\n};\n</script>",
+    "options": [
+      "Using `@submit`",
+      "Using `@submit.prevent`",
+      "Using `@submit.stop`",
+      "Using `@submit.capture`"
+    ],
+    "correctAnswer": "Using `@submit.stop`"
+  },
+  {
+    "question": "How do you handle a keydown event with the `.capture` modifier in Vue.js using the Composition API?",
+    "codeSnippet": "<template>\n  <input @keydown.capture=\"handleKeydown\" />\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst handleKeydown = (event) => {\n  console.log('Keydown event with capture:', event.key);\n};\n</script>",
+    "options": [
+      "Using `@keydown`",
+      "Using `@keydown.prevent`",
+      "Using `@keydown.stop`",
+      "Using `@keydown.capture`"
+    ],
+    "correctAnswer": "Using `@keydown.capture`"
+  },
+  {
+    "question": "How do you bind a `textarea` input in Vue.js using the Composition API without `v-model`?",
+    "codeSnippet": "<template>\n  <textarea :value=\"text\" @input=\"updateText\"></textarea>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst text = ref('');\nconst updateText = (event) => {\n  text.value = event.target.value;\n};\n</script>",
+    "options": [
+      "Using `v-bind:value` and `@input`",
+      "Using `v-bind:value` and `@change`",
+      "Using `v-bind:value` and `@click`",
+      "Using `v-bind:value` and `@keydown`"
+    ],
+    "correctAnswer": "Using `v-bind:value` and `@input`"
+  },
+  {
+    "question": "How do you bind a `checkbox` input in Vue.js using the Composition API without `v-model`?",
+    "codeSnippet": "<template>\n  <input type=\"checkbox\" :checked=\"isChecked\" @change=\"updateChecked\" />\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst isChecked = ref(false);\nconst updateChecked = (event) => {\n  isChecked.value = event.target.checked;\n};\n</script>",
+    "options": [
+      "Using `v-bind:checked` and `@input`",
+      "Using `v-bind:checked` and `@change`",
+      "Using `v-bind:checked` and `@click`",
+      "Using `v-bind:checked` and `@keydown`"
+    ],
+    "correctAnswer": "Using `v-bind:checked` and `@change`"
+  },
+  {
+    "question": "How do you bind a `select` input in Vue.js using the Composition API without `v-model`?",
+    "codeSnippet": "<template>\n  <select :value=\"selected\" @change=\"updateSelected\">\n    <option value=\"option1\">Option 1</option>\n    <option value=\"option2\">Option 2</option>\n  </select>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst selected = ref('option1');\nconst updateSelected = (event) => {\n  selected.value = event.target.value;\n};\n</script>",
+    "options": [
+      "Using `v-bind:value` and `@input`",
+      "Using `v-bind:value` and `@change`",
+      "Using `v-bind:value` and `@click`",
+      "Using `v-bind:value` and `@keydown`"
+    ],
+    "correctAnswer": "Using `v-bind:value` and `@change`"
+  },
+  {
+    "question": "Which lifecycle hook is called before a component is mounted in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { onBeforeMount } from 'vue';\n\nonBeforeMount(() => {\n  console.log('Component is about to be mounted');\n});\n</script>",
+    "options": ["onMounted", "onBeforeMount", "onBeforeUpdate", "onUpdated"],
+    "correctAnswer": "onBeforeMount"
+  },
+  {
+    "question": "Which lifecycle hook is called after a component is mounted in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { onMounted } from 'vue';\n\nonMounted(() => {\n  console.log('Component has been mounted');\n});\n</script>",
+    "options": ["onBeforeMount", "onMounted", "onBeforeUpdate", "onUpdated"],
+    "correctAnswer": "onMounted"
+  },
+  {
+    "question": "Which lifecycle hook is called before a component is updated in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { onBeforeUpdate } from 'vue';\n\nonBeforeUpdate(() => {\n  console.log('Component is about to be updated');\n});\n</script>",
+    "options": ["onBeforeMount", "onMounted", "onBeforeUpdate", "onUpdated"],
+    "correctAnswer": "onBeforeUpdate"
+  },
+  {
+    "question": "What is the primary difference between `watch` and `watchEffect` in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { ref, watch, watchEffect } from 'vue';\n\nconst count = ref(0);\n\nwatch(count, (newValue, oldValue) => {\n  console.log(`Count changed from ${oldValue} to ${newValue}`);\n});\n\nwatchEffect(() => {\n  console.log(`Count is now ${count.value}`);\n});\n</script>",
+    "options": [
+      "`watch` requires a specific source to watch, while `watchEffect` runs immediately and tracks dependencies automatically",
+      "`watchEffect` requires a specific source to watch, while `watch` runs immediately and tracks dependencies automatically",
+      "`watch` and `watchEffect` are identical in functionality",
+      "`watch` is used for computed properties, while `watchEffect` is used for reactive properties"
+    ],
+    "correctAnswer": "`watch` requires a specific source to watch, while `watchEffect` runs immediately and tracks dependencies automatically"
+  },
+  {
+    "question": "When should you use `watch` instead of `watchEffect` in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { ref, watch } from 'vue';\n\nconst count = ref(0);\n\nwatch(count, (newValue, oldValue) => {\n  console.log(`Count changed from ${oldValue} to ${newValue}`);\n});\n</script>",
+    "options": [
+      "When you need to watch a specific reactive property or ref",
+      "When you need to track dependencies automatically",
+      "When you need to run the watcher immediately",
+      "When you need to watch multiple reactive properties"
+    ],
+    "correctAnswer": "When you need to watch a specific reactive property or ref"
+  },
+  {
+    "question": "When should you use `watchEffect` instead of `watch` in Vue.js using the Composition API?",
+    "codeSnippet": "<script setup>\nimport { ref, watchEffect } from 'vue';\n\nconst count = ref(0);\n\nwatchEffect(() => {\n  console.log(`Count is now ${count.value}`);\n});\n</script>",
+    "options": [
+      "When you need to track dependencies automatically and run the effect immediately",
+      "When you need to watch a specific reactive property or ref",
+      "When you need to run the watcher only when a specific property changes",
+      "When you need to watch multiple reactive properties"
+    ],
+    "correctAnswer": "When you need to track dependencies automatically and run the effect immediately"
+  },
+  {
+    "question": "How do you create a reactive reference to a DOM element in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <div ref=\"myElement\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\n\nconst myElement = ref(null);\n\nonMounted(() => {\n  console.log(myElement.value); // Access the DOM element\n});\n</script>",
+    "options": ["Using `reactive`", "Using `ref`", "Using `computed`", "Using `watch`"],
+    "correctAnswer": "Using `ref`"
+  },
+  {
+    "question": "How do you create a reactive reference to a DOM element in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <div ref=\"myElement\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\n\nconst myElement = ref(null);\n\nonMounted(() => {\n  console.log(myElement.value); // Access the DOM element\n});\n</script>",
+    "options": ["Using `reactive`", "Using `ref`", "Using `computed`", "Using `watch`"],
+    "correctAnswer": "Using `ref`"
+  },
+  {
+    "question": "How do you focus an input element using a template ref in Vue 3?",
+    "codeSnippet": "<template>\n  <input ref=\"inputRef\" type=\"text\" />\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\n\nconst inputRef = ref(null);\n\nonMounted(() => {\n  inputRef.value.focus(); // Focus the input element\n});\n</script>",
+    "options": [
+      "Using `inputRef.value.focus()` in `onMounted`",
+      "Using `inputRef.value.focus()` in `onBeforeMount`",
+      "Using `inputRef.value.focus()` in `onBeforeUpdate`",
+      "Using `inputRef.value.focus()` in `onUpdated`"
+    ],
+    "correctAnswer": "Using `inputRef.value.focus()` in `onMounted`"
+  },
+  {
+    "question": "How do you access a DOM element's properties using a template ref in Vue 3?",
+    "codeSnippet": "<template>\n  <div ref=\"divRef\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\n\nconst divRef = ref(null);\n\nonMounted(() => {\n  console.log(divRef.value.innerText); // Access the innerText property of the div\n});\n</script>",
+    "options": [
+      "Using `divRef.value.innerText` in `onMounted`",
+      "Using `divRef.value.innerText` in `onBeforeMount`",
+      "Using `divRef.value.innerText` in `onBeforeUpdate`",
+      "Using `divRef.value.innerText` in `onUpdated`"
+    ],
+    "correctAnswer": "Using `divRef.value.innerText` in `onMounted`"
+  },
+  {
+    "question": "How do you access a DOM element using in Vue 3 composition API?",
+    "codeSnippet": "<template>\n  <div ref=\"myElement\">This is a div</div>\n</template>\n\n<script setup>\nimport { ref, onMounted, useTemplateRef } from 'vue';\n\nconst { myElement } = useTemplateRef('myElement');\n\nonMounted(() => {\n  console.log(myElement.value); // Access the DOM element\n});\n</script>",
+    "options": ["Using `ref`", "Using `reactive`", "Using `useTemplateRef`", "Using `computed`"],
+    "correctAnswer": "Using `useTemplateRefs`"
+  },
+  {
+    "question": "How do you define props in a Vue 3 component using the Composition API?",
+    "codeSnippet": "<template>\n  <div>{{ title }}</div>\n</template>\n\n<script setup>\nimport { defineProps } from 'vue';\n\nconst props = defineProps({\n  title: String\n});\n</script>",
+    "options": ["Using `defineProps`", "Using `props`", "Using `setupProps`", "Using `useProps`"],
+    "correctAnswer": "Using `defineProps`"
+  },
+  {
+    "question": "How do you pass dynamic props to a child component in Vue 3?",
+    "codeSnippet": "<template>\n  <ChildComponent :title=\"dynamicTitle\" />\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport ChildComponent from './ChildComponent.vue';\n\nconst dynamicTitle = ref('Dynamic Title');\n</script>",
+    "options": ["Using `v-bind`", "Using `v-if`", "Using `v-for`", "Using `v-model`"],
+    "correctAnswer": "Using `v-bind`"
+  },
+  {
+    "question": "How do you define a boolean prop in a Vue 3 component using the Composition API?",
+    "codeSnippet": "<template>\n  <div v-if=\"isVisible\">This is visible</div>\n</template>\n\n<script setup>\nimport { defineProps } from 'vue';\n\nconst props = defineProps({\n  isVisible: Boolean\n});\n</script>",
+    "options": [
+      "Using `defineProps` with `Boolean`",
+      "Using `props` with `Boolean`",
+      "Using `setupProps` with `Boolean`",
+      "Using `useProps` with `Boolean`"
+    ],
+    "correctAnswer": "Using `defineProps` with `Boolean`"
+  },
+  {
+    "question": "How do you emit and listen to custom events in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <ChildComponent @custom-event=\"handleEvent\" />\n</template>\n\n<script setup>\nimport { defineEmits } from 'vue';\nimport ChildComponent from './ChildComponent.vue';\n\nconst handleEvent = (payload) => {\n  console.log('Event received with payload:', payload);\n};\n</script>\n\n<!-- ChildComponent.vue -->\n<template>\n  <button @click=\"emitEvent\">Emit Event</button>\n</template>\n\n<script setup>\nimport { defineEmits } from 'vue';\n\nconst emit = defineEmits(['custom-event']);\n\nconst emitEvent = () => {\n  emit('custom-event', { message: 'Hello from ChildComponent' });\n};\n</script>",
+    "options": [
+      "Using `defineEmits` and `@custom-event`",
+      "Using `defineProps` and `@custom-event`",
+      "Using `defineEmits` and `@click`",
+      "Using `defineProps` and `@click`"
+    ],
+    "correctAnswer": "Using `defineEmits` and `@custom-event`"
+  },
+  {
+    "question": "How do you define a default slot in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <ParentComponent>\n    <template #default>\n      <div>This is the default slot content</div>\n    </template>\n  </ParentComponent>\n</template>\n\n<script setup>\nimport ParentComponent from './ParentComponent.vue';\n</script>",
+    "options": [
+      "Using `<template #default>`",
+      "Using `<template v-slot:default>`",
+      "Using `<template v-slot>`",
+      "Using `<template slot>`"
+    ],
+    "correctAnswer": "Using `<template #default>`"
+  },
+  {
+    "question": "How do you define a named slot in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <ParentComponent>\n    <template #header>\n      <div>This is the header slot content</div>\n    </template>\n  </ParentComponent>\n</template>\n\n<script setup>\nimport ParentComponent from './ParentComponent.vue';\n</script>",
+    "options": [
+      "Using `<template #header>`",
+      "Using `<template v-slot:header>`",
+      "Using `<template v-slot>`",
+      "Using `<template slot>`"
+    ],
+    "correctAnswer": "Using `<template #header>`"
+  },
+  {
+    "question": "How do you conditionally render a slot in Vue 3 using the Composition API?",
+    "codeSnippet": "<template>\n  <ParentComponent>\n    <template v-if=\"showSlot\" #default>\n      <div>This slot is conditionally rendered</div>\n    </template>\n  </ParentComponent>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nimport ParentComponent from './ParentComponent.vue';\n\nconst showSlot = ref(true);\n</script>",
+    "options": [
+      "Using `v-if` with `<template #default>`",
+      "Using `v-show` with `<template #default>`",
+      "Using `v-if` with `<template v-slot:default>`",
+      "Using `v-show` with `<template v-slot:default>`"
+    ],
+    "correctAnswer": "Using `v-if` with `<template #default>`"
   }
 ]

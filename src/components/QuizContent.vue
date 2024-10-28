@@ -1,6 +1,6 @@
 <template>
-  <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish"/>
-  <QuizMain :data="data" />
+  <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish" />
+  <QuizMain :data="questions" v-if="questions.length" />
   <QuizFooter @on-quiz-finish="onFinish" @on-quiz-quit="onQuit" @on-quiz-restart="onRestart" />
 </template>
 
@@ -12,11 +12,14 @@ import { useQuizStore } from '@/stores/quiz';
 import QuizHeader from './QuizHeader.vue';
 import QuizFooter from './QuizFooter.vue';
 import QuizMain from './QuizMain.vue';
-import data from '@/assets/data.json';
+import { useQuestions } from '@/composables/questions';
 
 const isRestarted = ref(false);
 
-const { timeLeft, username, status, selectedOptions, answers } = storeToRefs(useQuizStore());
+const { questions } = useQuestions();
+
+const { timeLeft, username, status, selectedOptions, answers, questionIndexes } =
+  storeToRefs(useQuizStore());
 const { resetQuizProps } = useQuizStore();
 
 const onFinish = () => {
@@ -24,11 +27,11 @@ const onFinish = () => {
   status.value = 'completed';
 
   if (!selectedOptions.value.length) {
-    answers.value = { correct: 0, incorrect: 0, unanswered: data.length };
+    answers.value = { correct: 0, incorrect: 0, unanswered: questions.value.length };
     return;
   }
 
-  answers.value = data
+  answers.value = questions.value
     .map((option, index) => {
       const { selected } = selectedOptions.value.find((opt) => opt.index === index) ?? {};
       return {
@@ -56,6 +59,8 @@ const onFinish = () => {
 const onQuit = () => {
   resetQuizProps();
   username.value = '';
+  questions.value = [];
+  questionIndexes.value = [];
   status.value = 'inactive';
 };
 

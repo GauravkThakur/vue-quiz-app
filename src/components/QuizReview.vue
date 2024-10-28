@@ -1,8 +1,8 @@
 <template>
-  <Card class="w-9/12 m-auto mt-2" v-for="(item, index) in data" :key="index">
+  <Card class="w-9/12 m-auto mt-2" v-for="(item, index) in questions" :key="index">
     <template #header>
       <div class="flex justify-center">
-        <strong>Question {{ index + 1 }}/{{ data.length }}</strong>
+        <strong>Question {{ index + 1 }}/{{ questions.length }}</strong>
       </div>
     </template>
     <template #title>
@@ -40,9 +40,10 @@
 
 <script setup lang="ts">
 import { storeToRefs } from 'pinia';
-import data from '@/assets/data.json';
 import { useQuizStore } from '@/stores/quiz';
+import { useQuestions } from '@/composables/questions';
 
+const { questions } = useQuestions();
 const { selectedOptions } = storeToRefs(useQuizStore());
 
 const selected = (index: number) => {

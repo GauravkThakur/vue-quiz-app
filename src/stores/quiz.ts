@@ -12,6 +12,7 @@ export const useQuizStore = defineStore(
     const timerInterval = ref<number | undefined>(undefined);
     const currentPage = ref(0);
     const selectedOption = ref<string | null>(null);
+    const questionIndexes = ref<number[]>([]);
     const selectedOptions = ref<{ index: number; selected: string | null }[]>([]);
     const answers = ref<{ correct: number; incorrect: number; unanswered: number }>({
       correct: 0,
@@ -38,6 +39,7 @@ export const useQuizStore = defineStore(
       currentPage,
       selectedOption,
       selectedOptions,
+      questionIndexes,
       answers,
       resetQuizProps
     };
@@ -53,7 +55,8 @@ export const useQuizStore = defineStore(
         'currentPage',
         'selectedOption',
         'selectedOptions',
-        'answers'
+        'answers',
+        'questionIndexes'
       ]
     }
   }

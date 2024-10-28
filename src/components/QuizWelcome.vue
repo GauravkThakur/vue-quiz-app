@@ -2,7 +2,7 @@
   <Card class="w-9/12 h-1/2 mx-auto my-12">
     <template #title>
       <h1 class="flex justify-center">Welcome to the Vue Quiz App</h1>
-      <Image src="src/assets/logo.svg" alt="Vue Quiz" class="flex justify-center mt-4" width="50" />
+      <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center mt-4" width="50" />
     </template>
     <template #content>
       <div class="flex justify-center my-4">

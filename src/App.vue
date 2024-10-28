@@ -17,7 +17,6 @@ const startQuiz = () => {
 };
 </script>
 
-
 <style lang="scss">
 @import 'primeicons/primeicons.css';
 </style>

@@ -66,11 +66,13 @@
 import { ref, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
+import { useQuestions } from '@/composables/questions';
 
 const visible = ref(false);
 const quizStore = useQuizStore();
+const { questions } = useQuestions();
 const { resetQuizProps } = quizStore;
-const { answers, status, username } = storeToRefs(quizStore);
+const { answers, status, username, questionIndexes } = storeToRefs(quizStore);
 
 const totalQuestions = computed(
   () => answers.value.correct + answers.value.incorrect + answers.value.unanswered
@@ -85,6 +87,8 @@ const isPassing = computed(() => parseFloat(percentage.value) > 70);
 const goHome = () => {
   resetQuizProps();
   username.value = '';
+  questions.value = [];
+  questionIndexes.value = [];
   status.value = 'inactive';
 };
 
