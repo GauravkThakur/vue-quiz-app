@@ -10,6 +10,9 @@
         <template #title>
           <div class="flex flex-col gap-4">{{ data[currentPage].question }}</div>
         </template>
+        <template #subtitle>
+          <pre><code class="flex flex-col gap-4">{{ data[currentPage].codeSnippet }}</code></pre>
+        </template>
         <template #content>
           <div class="flex flex-col gap-2">
             <div
