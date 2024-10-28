@@ -1,7 +1,7 @@
 <template>
-  <Splitter style="max-height: 500px; min-height: 400px">
-    <SplitterPanel class="flex flex-col items-center justify-center" :size="65">
-      <Card class="w-9/12 m-auto">
+  <Splitter class="h-auto">
+    <SplitterPanel class="flex flex-col items-center justify-center" :size="60">
+      <Card class="mt-4 w-full">
         <template #header>
           <div class="flex justify-center">
             <strong>Question {{ currentPage + 1 }}/{{ data.length }}</strong>
@@ -33,8 +33,8 @@
       </Card>
       <Pagination :total-pages="data.length"></Pagination>
     </SplitterPanel>
-    <SplitterPanel class="flex items-center justify-center overflow-auto" :size="35" :minSize="10">
-      <div class="flex flex-wrap gap-5 justify-center mx-auto p-10">
+    <SplitterPanel class="flex items-center justify-center overflow-auto" :size="40" :minSize="10">
+      <div class="flex flex-wrap gap-2 sm:gap-5 justify-center mx-auto p-4 p-sm-10">
         <Button
           v-for="(option, index) in options"
           class="w-11 h-11"
@@ -64,7 +64,7 @@ import Pagination from './QuizPagination.vue';
 const options = ref<{ name: string; value: number }[]>([]);
 
 const props = defineProps<{
-  data: { question: string; options: string[]; correctAnswer: string }[];
+  data: { question: string; options: string[]; correctAnswer: string; codeSnippet?: string }[];
 }>();
 
 const { currentPage, selectedOption, selectedOptions } = storeToRefs(useQuizStore());
@@ -120,3 +120,8 @@ const onClickQuestionItem = (value: number) => {
   currentPage.value = options.value.findIndex((option) => option.value === value);
 };
 </script>
+<style lang="css" scoped>
+pre {
+  font-size: 0.85em;
+}
+</style>

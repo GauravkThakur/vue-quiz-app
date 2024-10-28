@@ -1,7 +1,15 @@
 <template>
-  <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish" />
-  <QuizMain :data="questions" v-if="questions.length" />
-  <QuizFooter @on-quiz-finish="onFinish" @on-quiz-quit="onQuit" @on-quiz-restart="onRestart" />
+  <div class="flex flex-col min-h-screen">
+    <header class="absolute w-full top-0">
+      <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish" />
+    </header>
+    <div class="absolute flex-grow top-32 sm:top-20 bottom-20 overflow-y-auto">
+      <QuizMain :data="questions" v-if="questions.length" />
+    </div>
+    <footer class="absolute w-full bottom-0">
+      <QuizFooter @on-quiz-finish="onFinish" @on-quiz-quit="onQuit" @on-quiz-restart="onRestart" />
+    </footer>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -70,3 +78,11 @@ const onRestart = () => {
   isRestarted.value = true;
 };
 </script>
+
+<style scoped lang="scss">
+.main {
+  top: 74px;
+  bottom: 68px;
+  overflow-y: auto;
+}
+</style>
