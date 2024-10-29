@@ -424,7 +424,7 @@
   },
   {
     "question": "How do you dynamically bind CSS styles to an element in Vue 3, Select the incorrect statement?",
-    "codeSnippet": "<template>\n  <p :style=\"divStyles\">This is a styled div</p>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst divStyles = ref({\n  color: 'red'});\n</script>",
+    "codeSnippet": "<template>\n  <p>This is a styled div</p>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst divStyles = ref({\n  color: 'red'});\n</script>",
     "options": [
       "<p :style=\"divStyles\">This is a styled div</p>",
       "<style scoped> p { color: v-bind('divStyles.color'); } </style>",
@@ -504,7 +504,7 @@
   },
   {
     "question": "Which of the following is a correct usage of the `v-html` directive in Vue.js?",
-    "codeSnippet": "<template>\n  <div v-html=\"rawHtml\"></div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst rawHtml = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>",
+    "codeSnippet": "<template>\n  <!-- Answer goes here -->\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst rawHtml = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>",
     "options": [
       "<div v-html=\"rawHtml\"></div>",
       "<div v-html=\"<p>This is <strong>raw HTML</strong> content.</p>\"></div>",
