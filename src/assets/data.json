@@ -40,6 +40,17 @@
     "correctAnswer": "Using `:class`"
   },
   {
+    "question": "To bind a class `newClass` dynamically when `someCondition` is true, which option is incorrect?",
+    "codeSnippet": "<div class=\"oldClass\">Some Div</div>",
+    "options": [
+      "<div class=\"oldClass\" :class=\"{ newClass: someCondition }\">Some Div</div>",
+      "<div class=\"oldClass\" :class=\"someCondition ? 'newClass': ''\">Some Div</div>",
+      "<div class=\"oldClass\" :class=\"['newClass']\">Some Div</div>",
+      "<div class=\"oldClass\" :class=\"['someCondition ? 'newClass': '']\">Some Div</div>"
+    ],
+    "correctAnswer": "<div class=\"oldClass\" :class=\"['newClass']\">Some Div</div>"
+  },
+  {
     "question": "How do you bind multiple classes conditionally in Vue.js using the Composition API?",
     "options": [
       "Using `v-bind:class`",
@@ -120,7 +131,7 @@
     "correctAnswer": "Using `v-on:submit`"
   },
   {
-    "question": "How do you handle a click event with the `.prevent` modifier in Vue.js using the Composition API?",
+    "question": "How can you prevent the default behavior of an event in Vue JS?",
     "options": [
       "Using `@click`",
       "Using `@click.prevent`",
@@ -199,6 +210,33 @@
     ],
     "correctAnswer": "<p>{{ message }}</p>"
   },
+  {
+    "question": "What is the correct syntax for text interpolation in Vue.js?",
+    "options": ["{{ message }}", "{ message }", "[[ message ]]", "( message )"],
+    "correctAnswer": "{{ message }}"
+  },
+  {
+    "question": "How do you bind a JavaScript expression to the <div> using Vue.js interpolation?",
+    "codeSnippet": "<template>\n  <div><!-- Answer goes here --></div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst message = ref('Hello');\n</script>",
+    "options": [
+      "{{ message + '!' }}",
+      "{ message + '!' }",
+      "[[ message + '!' ]]",
+      "( message + '!' )"
+    ],
+    "correctAnswer": "{{ message + '!' }}"
+  },
+  {
+    "question": "Which of the following is NOT a valid use of Vue.js interpolation?",
+    "options": [
+      "Binding text content",
+      "Binding HTML content",
+      "Binding attributes",
+      "Binding event handlers"
+    ],
+    "correctAnswer": "Binding event handlers"
+  },
+
   {
     "question": "Vue uses a file to initialize the root Vue instance and mount it to the DOM, what is the file's name?",
     "options": ["main.js", "settings.js", "config.js", "view.js"],
@@ -285,6 +323,16 @@
     "correctAnswer": "Using `v-bind`"
   },
   {
+    "question": "What is the purpose of `v-bind` directive when used with an object in Vue.js?",
+    "options": [
+      "To bind an attribute to an expression",
+      "To create a loop for rendering a list of items",
+      "To dynamically bind multiple attributes",
+      "To handle user input events"
+    ],
+    "correctAnswer": "To dynamically bind multiple attributes"
+  },
+  {
     "question": "How do you define a boolean prop in a Vue 3 component using the Composition API?",
     "options": [
       "Using `defineProps` with `Boolean`",
@@ -303,6 +351,16 @@
       "Using `defineProps` and `@click`"
     ],
     "correctAnswer": "Using `defineEmits` and `@custom-event`"
+  },
+  {
+    "question": "What is the purpose of slots in Vue.js?",
+    "options": [
+      "To pass data from parent to child components",
+      "To define reusable templates within a component",
+      "To handle events in a component",
+      "To manage state in a component"
+    ],
+    "correctAnswer": "To define reusable templates within a component"
   },
   {
     "question": "How do you define a default slot in Vue 3 using the Composition API?",
@@ -346,8 +404,18 @@
   },
   {
     "question": "Which specific attribute is recommended to add when generating elements with v-for",
-    "options": ["number", "eleentId", "key", "note"],
+    "options": ["number", "elementId", "key", "note"],
     "correctAnswer": "key"
+  },
+  {
+    "question": "What is the use of `:key` attribute when used with `v-for`",
+    "options": [
+      "It sets the CSS class for each element in the loop",
+      "It binds the value to the element's content",
+      "It identifies each rendered element, aiding to efficient updates",
+      "It triggers a methos when the element is clicked"
+    ],
+    "correctAnswer": "It identifies each rendered element, aiding to efficient updates"
   },
   {
     "question": "What attribute must be used to make the CSS rules inside the <style> tag of a component local to only that specific component?",
@@ -355,10 +423,112 @@
     "correctAnswer": "<style scoped>"
   },
   {
+    "question": "How do you dynamically bind CSS styles to an element in Vue 3, Select the incorrect statement?",
+    "codeSnippet": "<template>\n  <p :style=\"divStyles\">This is a styled div</p>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst divStyles = ref({\n  color: 'red'});\n</script>",
+    "options": [
+      "<p :style=\"divStyles\">This is a styled div</p>",
+      "<style scoped> p { color: v-bind('divStyles.color'); } </style>",
+      "<p :class=\"divStyles\">This is a styled div</p>"
+    ],
+    "correctAnswer": "<p :class=\"divStyles\">This is a styled div</p>"
+  },
+  {
+    "question": "What is the purpose of the `v-html` directive in Vue.js?",
+    "options": [
+      "To bind raw HTML content to an element",
+      "To bind CSS styles to an element",
+      "To bind JavaScript events to an element",
+      "To bind text content to an element"
+    ],
+    "correctAnswer": "To bind raw HTML content to an element"
+  },
+  {
+    "question": "What is the purpose of the `v-pre` directive in Vue.js?",
+    "options": [
+      "To skip compilation of the element and its children",
+      "To skip rendering of the element and its children",
+      "To skip binding of the element and its children",
+      "To skip styling of the element and its children"
+    ],
+    "correctAnswer": "To skip compilation of the element and its children"
+  },
+  {
+    "question": "What is the purpose of the `v-cloak` directive in Vue.js?",
+    "options": [
+      "To skip compilation of the element and its children",
+      "To skip rendering of the element and its children",
+      "To skip binding of the element and its children",
+      "To skip styling of the element and its children"
+    ],
+    "correctAnswer": "To skip rendering of the element and its children"
+  },
+  {
+    "question": "What is the purpose of the `v-once` directive in Vue.js?",
+    "options": [
+      "To skip compilation of the element and its children",
+      "To skip rendering of the element and its children",
+      "To skip binding of the element and its children",
+      "To skip styling of the element and its children"
+    ],
+    "correctAnswer": "To skip re-rendering of the element and its children"
+  },
+  {
+    "question": "What is the purpose of the `v-text` directive in Vue.js?",
+    "options": [
+      "To bind raw HTML content to an element",
+      "To bind text content to an element",
+      "To bind CSS styles to an element",
+      "To bind JavaScript events to an element"
+    ],
+    "correctAnswer": "To bind text content to an element"
+  },
+  {
+    "question": "What is the purpose of the `v-show` directive in Vue.js?",
+    "options": [
+      "To conditionally render elements",
+      "To loop through an array and render a list of elements",
+      "To bind attributes to elements",
+      "To handle events"
+    ],
+    "correctAnswer": "To conditionally render elements"
+  },
+  {
+    "question": "What is the purpose of the `v-if` directive in Vue.js?",
+    "options": [
+      "To conditionally render elements",
+      "To loop through an array and render a list of elements",
+      "To bind attributes to elements",
+      "To handle events"
+    ],
+    "correctAnswer": "To conditionally render elements"
+  },
+  {
+    "question": "Which of the following is a correct usage of the `v-html` directive in Vue.js?",
+    "codeSnippet": "<template>\n  <div v-html=\"rawHtml\"></div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst rawHtml = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>",
+    "options": [
+      "<div v-html=\"rawHtml\"></div>",
+      "<div v-html=\"<p>This is <strong>raw HTML</strong> content.</p>\"></div>",
+      "<div v-html:rawHtml></div>",
+      "<div v-html='rawHtml'></div>"
+    ],
+    "correctAnswer": "<div v-html=\"rawHtml\"></div>"
+  },
+  {
+    "question": "What should you be cautious about when using the `v-html` directive in Vue.js?",
+    "options": [
+      "It can make your application vulnerable to XSS attacks if the content is not sanitized",
+      "It can cause performance issues",
+      "It can break the reactivity system",
+      "It can only be used with static content"
+    ],
+    "correctAnswer": "It can make your application vulnerable to XSS attacks if the content is not sanitized"
+  },
+  {
     "question": "How to create a dynamic component in Vue JS",
     "options": ["<Slot>", "<component>", "<dynamic-component>", "<KeepAlive>"],
     "correctAnswer": "<component>"
   },
+
   {
     "question": "Which attribute is used with the <component> tag so that we can switch between components?",
     "options": ["dynamic", "switch", "is", "componentName"],
@@ -396,5 +566,259 @@
       "Will not show anything"
     ],
     "correctAnswer": "Will display `1.Tomatoes\n2.Potatoes`"
+  },
+  {
+    "question": "What is the purpose of the `Transition` component in Vue.js?",
+    "options": [
+      "To apply transition effects to a single element or component",
+      "To apply transition effects to a list of elements or components",
+      "To handle form submissions",
+      "To manage state in a Vue component"
+    ],
+    "correctAnswer": "To apply transition effects to a single element or component"
+  },
+  {
+    "question": "How do you use the `TransitionGroup` component to apply transition effects to a list of elements in Vue.js?",
+    "options": [
+      "Using `transition-group` with `v-for`",
+      "Using `transition` with `v-for`",
+      "Using `transition-group` with `v-if`",
+      "Using `transition` with `v-if`"
+    ],
+    "correctAnswer": "Using `transition-group` with `v-for`"
+  },
+  {
+    "question": "Which of the following is NOT a valid attribute for the `Transition` component in Vue.js?",
+    "options": ["name", "mode", "appear", "tag"],
+    "correctAnswer": "tag"
+  },
+  {
+    "question": "What is the primary purpose of async components in Vue.js?",
+    "options": [
+      "To handle asynchronous data fetching",
+      "To dynamically load components only when they are needed",
+      "To manage state in a component",
+      "To handle event listeners"
+    ],
+    "correctAnswer": "To dynamically load components only when they are needed"
+  },
+  {
+    "question": "How do you define an async component in Vue.js using a dynamic import?",
+    "codeHint": "<template>\n  <component :is=\"AsyncComponent\" />\n</template>\n\n<script setup>\nimport { defineAsyncComponent } from 'vue';\n\nconst AsyncComponent = defineAsyncComponent(() => import('./MyComponent.vue'));\n</script>",
+    "options": [
+      "Using `defineAsyncComponent` with a dynamic import",
+      "Using `defineComponent` with a dynamic import",
+      "Using `defineAsyncComponent` with a static import",
+      "Using `defineComponent` with a static import"
+    ],
+    "correctAnswer": "Using `defineAsyncComponent` with a dynamic import"
+  },
+  {
+    "question": "Which of the following is NOT a benefit of using async components in Vue.js?",
+    "options": [
+      "Reducing the initial load time of the application",
+      "Improving the performance by loading components only when needed",
+      "Handling large components more efficiently",
+      "Automatically managing state within the component"
+    ],
+    "correctAnswer": "Automatically managing state within the component"
+  },
+  {
+    "question": "What is the purpose of the `Suspense` component in Vue.js?",
+    "options": [
+      "To handle asynchronous data fetching",
+      "To dynamically load components only when they are needed",
+      "To manage state in a component",
+      "To handle event listeners"
+    ],
+    "correctAnswer": "To handle asynchronous data fetching"
+  },
+  {
+    "question": "How do you use the `Suspense` component to handle asynchronous data fetching in Vue.js?",
+    "options": [
+      "Using `Suspense` with `v-if`",
+      "Using `Suspense` with `v-show`",
+      "Using `Suspense` with `v-for`",
+      "Using `Suspense` with `v-slot`"
+    ],
+    "correctAnswer": "Using `Suspense` with `v-slot`"
+  },
+  {
+    "question": "What is the purpose of the `v-slot` directive in Vue.js?",
+    "options": [
+      "To bind data to a component",
+      "To define a slot in a component",
+      "To handle events in a component",
+      "To manage state in a component"
+    ],
+    "correctAnswer": "To define a slot in a component"
+  },
+  {
+    "question": "How do you pass data to a named slot in Vue.js using the `v-slot` directive?",
+    "options": [
+      "<template v-slot:header=\"slotProps\">",
+      "<template slot:header=\"slotProps\">",
+      "<template v-slot=\"slotProps\">",
+      "<template slot=\"slotProps\">"
+    ],
+    "correctAnswer": "<template v-slot:header=\"slotProps\">"
+  },
+  {
+    "question": "How do you use the `v-for` directive to render a list of items in Vue.js?",
+    "codeSnippet": "<template>\n  <ul>\n    <!-- Answer goes here -->\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "options": [
+      "<li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>",
+      "<li v-for=\"item of items\" :key=\"item.id\">{{ item.name }}</li>",
+      "<li v-for=\"item from items\" :key=\"item.id\">{{ item.name }}</li>",
+      "<li v-for=\"item with items\" :key=\"item.id\">{{ item.name }}</li>"
+    ],
+    "correctAnswer": "<li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>"
+  },
+  {
+    "question": "How do you access both the item and its index when using the `v-for` directive in Vue.js?",
+    "codeSnippet": "<template>\n  <ul>\n    <!-- Answer goes here -->\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "options": [
+      "<li v-for=\"(item, index) in items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
+      "<li v-for=\"(item, index) of items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
+      "<li v-for=\"(item, index) from items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
+      "<li v-for=\"(item, index) with items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>"
+    ],
+    "correctAnswer": "<li v-for=\"(item, index) in items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>"
+  },
+  {
+    "question": "What is the primary purpose of composables in Vue.js?",
+    "options": [
+      "To manage state in a component",
+      "To create reusable logic that can be shared across multiple components",
+      "To handle event listeners",
+      "To define component templates"
+    ],
+    "correctAnswer": "To create reusable logic that can be shared across multiple components"
+  },
+  {
+    "question": "How do you define a composable function in Vue.js?",
+    "options": [
+      "By exporting a function that returns reactive state and methods",
+      "By defining a method inside a component",
+      "By using the `setup` function",
+      "By using the `data` option"
+    ],
+    "correctAnswer": "By exporting a function that returns reactive state and methods"
+  },
+  {
+    "question": "How do you use a composable function in a Vue.js component?",
+    "options": [
+      "By importing the composable function and calling it inside the `setup` function",
+      "By defining the composable function inside the component",
+      "By using the `data` option",
+      "By using the `methods` option"
+    ],
+    "correctAnswer": "By importing the composable function and calling it inside the `setup` function"
+  },
+  {
+    "question": "What is the primary purpose of the `KeepAlive` component in Vue.js?",
+    "options": [
+      "To keep dynamic components alive and preserve their state",
+      "To handle event listeners",
+      "To manage state in a component",
+      "To create reusable logic that can be shared across multiple components"
+    ],
+    "correctAnswer": "To keep dynamic components alive and preserve their state"
+  },
+  {
+    "question": "How do you use the `KeepAlive` component to cache and preserve the state of a dynamic component in Vue.js?",
+    "options": [
+      "<KeepAlive><component :is=\"currentComponent\" /></KeepAlive>",
+      "<KeepAlive><component v-if=\"currentComponent\" /></KeepAlive>",
+      "<KeepAlive><component v-show=\"currentComponent\" /></KeepAlive>"
+    ],
+    "correctAnswer": "<KeepAlive><component :is=\"currentComponent\" /></KeepAlive>"
+  },
+  {
+    "question": "Which lifecycle hook is called when a component is activated by `KeepAlive` in Vue.js?",
+    "codeHint": "<script setup>\nimport { onActivated } from 'vue';\n\nonActivated(() => {\n  console.log('Component activated');\n});\n</script>",
+    "options": ["onActivated", "onMounted", "onUpdated", "onBeforeMount"],
+    "correctAnswer": "onActivated"
+  },
+  {
+    "question": "What is the purpose of the `provide` and `inject` functions in Vue.js?",
+    "options": [
+      "To make data available to child components without passing props",
+      "To manage state in a component",
+      "To handle event listeners",
+      "To create reusable logic that can be shared across multiple components"
+    ],
+    "correctAnswer": "To make data available to child components without passing props"
+  },
+  {
+    "question": "How do you provide data to child components using the `provide` function in Vue.js?",
+    "options": [
+      "By defining a `provide` property in the parent component's `setup` function",
+      "By defining a `provide` property in the child component's `setup` function",
+      "By using the `data` option",
+      "By using the `props` option"
+    ],
+    "correctAnswer": "By defining a `provide` property in the parent component's `setup` function"
+  },
+  {
+    "question": "How do you inject data provided by a parent component using the `inject` function in Vue.js?",
+    "options": [
+      "By calling the `inject` function inside the child component's `setup` function",
+      "By calling the `provide` function inside the child component's `setup` function",
+      "By using the `data` option",
+      "By using the `props` option"
+    ],
+    "correctAnswer": "By calling the `inject` function inside the child component's `setup` function"
+  },
+  {
+    "question": "What are the three main sections of a Vue.js Single File Component (SFC)?",
+    "options": [
+      "<template>, <script>, <style>",
+      "<template>, <data>, <methods>",
+      "<template>, <computed>, <watch>",
+      "<template>, <props>, <methods>"
+    ],
+    "correctAnswer": "<template>, <script>, <style>"
+  },
+  {
+    "question": "What is the purpose of the `<template>` section in a Vue.js Single File Component (SFC)?",
+    "options": [
+      "To define the HTML template of the component",
+      "To define the data properties of the component",
+      "To define the methods of the component",
+      "To define the computed properties of the component"
+    ],
+    "correctAnswer": "To define the HTML template of the component"
+  },
+  {
+    "question": "What is the purpose of the `<script>` section in a Vue.js Single File Component (SFC)?",
+    "options": [
+      "To define the JavaScript logic of the component",
+      "To define the HTML template of the component",
+      "To define the CSS styles of the component",
+      "To define the data properties of the component"
+    ],
+    "correctAnswer": "To define the JavaScript logic of the component"
+  },
+  {
+    "question": "What is the purpose of the `<style>` section in a Vue.js Single File Component (SFC)?",
+    "options": [
+      "To define the CSS styles of the component",
+      "To define the HTML template of the component",
+      "To define the JavaScript logic of the component",
+      "To define the data properties of the component"
+    ],
+    "correctAnswer": "To define the CSS styles of the component"
+  },
+  {
+    "question": "How do you define scoped styles in a Vue.js Single File Component (SFC)?",
+    "codeHint": "<template>\n  <div class=\"example\">This is a scoped style example</div>\n</template>\n\n<script>\nexport default {\n  name: 'ExampleComponent'\n};\n</script>\n\n<style scoped>\n.example {\n  color: red;\n}\n</style>",
+    "options": [
+      "By adding the `scoped` attribute to the `<style>` tag",
+      "By adding the `scoped` attribute to the `<template>` tag",
+      "By adding the `scoped` attribute to the `<script>` tag",
+      "By adding the `scoped` attribute to the `<div>` tag"
+    ],
+    "correctAnswer": "By adding the `scoped` attribute to the `<style>` tag"
   }
 ]

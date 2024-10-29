@@ -17,6 +17,9 @@
         <Tag v-else class="w-11 h-11" icon="pi pi-thumbs-down-fill" severity="danger"></Tag>
       </div>
     </template>
+    <template #subtitle>
+      <pre><code class="flex flex-col gap-4"><span>{{ item.codeSnippet }}</span></code></pre>
+    </template>
     <template #content>
       <div class="flex flex-col gap-2">
         <div v-for="(option, index1) in item.options" :key="index1" class="flex items-center">

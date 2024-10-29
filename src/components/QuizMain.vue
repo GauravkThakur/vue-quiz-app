@@ -45,7 +45,7 @@
             currentPage === option.value
               ? 'warn'
               : isOptionSelected(option.value)
-                ? 'success'
+                ? 'info'
                 : 'secondary'
           "
           @click.prevent.stop="onClickQuestionItem(option.value)"
@@ -120,8 +120,3 @@ const onClickQuestionItem = (value: number) => {
   currentPage.value = options.value.findIndex((option) => option.value === value);
 };
 </script>
-<style lang="css" scoped>
-pre {
-  font-size: 0.85em;
-}
-</style>
