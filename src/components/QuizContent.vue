@@ -3,7 +3,7 @@
     <header class="absolute w-full top-0">
       <QuizHeader :is-restart="isRestarted" @on-timer-out="onFinish" />
     </header>
-    <div class="absolute flex-grow top-32 sm:top-20 bottom-20 overflow-y-auto">
+    <div class="absolute flex-grow top-20 bottom-20 overflow-y-hidden">
       <QuizMain :data="questions" v-if="questions.length" />
     </div>
     <footer class="absolute w-full bottom-0">

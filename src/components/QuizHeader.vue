@@ -1,11 +1,11 @@
 <template>
-  <Toolbar>
+  <Toolbar class="h-20">
     <template #start>
-      <span class="flex items-center gap-2 text-sm">
+      <span class="flex items-center text-sm">
         <Avatar
           icon="pi pi-user"
           class="mr-2"
-          size="large"
+          size="normal"
           style="background-color: #dee9fc; color: #1a2551"
           shape="circle"
         />
@@ -13,15 +13,12 @@
       </span>
     </template>
     <template #end>
-      <Message severity="info">
-        <template #icon>
-          <i class="pi pi-clock"></i>
-        </template>
-        <span class="flex items-center gap-2 text-sm">
-          Time Left
-          <Tag class="w-16 h-8" severity="contrast" :value="formattedTime"></Tag>
-        </span>
-      </Message>
+      <Tag
+        icon="text-lg flex justify-center items-center mr-1 pi pi-clock"
+        class="w-24 h-10 text-xl"
+        severity="contrast"
+        :value="formattedTime"
+      ></Tag>
     </template>
   </Toolbar>
 </template>

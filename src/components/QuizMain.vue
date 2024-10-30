@@ -1,40 +1,11 @@
 <template>
-  <Splitter class="h-auto">
-    <SplitterPanel class="flex flex-col items-center justify-center" :size="60">
-      <Card class="mt-4 w-full">
-        <template #header>
-          <div class="flex justify-center">
-            <strong>Question {{ currentPage + 1 }}/{{ data.length }}</strong>
-          </div>
-        </template>
-        <template #title>
-          <div class="flex flex-col gap-4">{{ data[currentPage].question }}</div>
-        </template>
-        <template #subtitle>
-          <pre><code class="flex flex-col gap-4">{{ data[currentPage].codeSnippet }}</code></pre>
-        </template>
-        <template #content>
-          <div class="flex flex-col gap-2">
-            <div
-              v-for="(option, index) in data[currentPage].options"
-              :key="index"
-              class="flex items-center"
-            >
-              <RadioButton
-                v-model="selectedOption"
-                :inputId="`${index}`"
-                name="dynamic"
-                :value="option"
-              />
-              <label :for="`${index}`" class="ml-2">{{ option }}</label>
-            </div>
-          </div>
-        </template>
-      </Card>
-      <Pagination :total-pages="data.length"></Pagination>
-    </SplitterPanel>
-    <SplitterPanel class="flex items-center justify-center overflow-auto" :size="40" :minSize="10">
-      <div class="flex flex-wrap gap-2 sm:gap-5 justify-center mx-auto p-4 p-sm-10">
+  <Splitter class="h-full">
+    <SplitterPanel
+      class="flex items-center justify-center overflow-auto h-full"
+      :size="25"
+      :minSize="10"
+    >
+      <div class="flex flex-wrap gap-2 sm:gap-5 justify-center mx-auto p-4 p-sm-10 h-full">
         <Button
           v-for="(option, index) in options"
           class="w-11 h-11"
@@ -51,6 +22,45 @@
           @click.prevent.stop="onClickQuestionItem(option.value)"
         />
       </div>
+    </SplitterPanel>
+    <SplitterPanel class="flex flex-col items-center justify-center overflow-auto" :size="75">
+      <Splitter layout="vertical" class="w-full h-full">
+        <SplitterPanel class="flex items-center justify-center" :size="10">
+          <strong>Question {{ currentPage + 1 }} of {{ data.length }}</strong>
+        </SplitterPanel>
+        <SplitterPanel :size="75" class="h-full overflow-auto">
+          <Card
+            class="shadow-none rounded-none w-full sm:w-3/4 items-center flex justify-center m-auto"
+          >
+            <template #title>
+              <div class="flex flex-col gap-4">{{ data[currentPage].question }}</div>
+            </template>
+            <template #subtitle>
+              <pre><code class="flex flex-col gap-4">{{ data[currentPage].codeSnippet }}</code></pre>
+            </template>
+            <template #content>
+              <div class="flex flex-col gap-2">
+                <div
+                  v-for="(option, index) in data[currentPage].options"
+                  :key="index"
+                  class="flex items-center"
+                >
+                  <RadioButton
+                    v-model="selectedOption"
+                    :inputId="`${index}`"
+                    name="dynamic"
+                    :value="option"
+                  />
+                  <label :for="`${index}`" class="ml-2">{{ option }}</label>
+                </div>
+              </div>
+            </template>
+          </Card>
+        </SplitterPanel>
+        <SplitterPanel class="flex items-center justify-center" :size="15">
+          <Pagination :total-pages="data.length"></Pagination>
+        </SplitterPanel>
+      </Splitter>
     </SplitterPanel>
   </Splitter>
 </template>

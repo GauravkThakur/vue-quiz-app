@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between w-9/12 mx-auto my-6">
+  <div class="flex justify-between w-full sm:w-9/12 m-6">
     <Button
       icon="pi pi-arrow-left"
       label="Previous"

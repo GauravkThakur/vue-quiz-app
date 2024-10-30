@@ -1,5 +1,5 @@
 <template>
-  <Toolbar>
+  <Toolbar class="h-20">
     <template #start>
       <Button
         label="Quit"
