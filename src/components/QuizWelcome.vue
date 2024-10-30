@@ -4,7 +4,7 @@
       <Button
         :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'"
         :severity="!isDarkMode ? 'contrast' : 'secondary'"
-        aria-label="light skin"
+        aria-label="Toggle Dark Mode"
         label="Toggle Dark Mode"
         @click="toggleDarkMode()"
         class="float-right"
@@ -55,7 +55,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 
@@ -78,16 +78,22 @@ const validateInput = () => {
   isInvalid.value = false;
 };
 
-const { username, numberOfIndexes, isDarkMode } = storeToRefs(useQuizStore());
+const { username, numberOfIndexes, timeLeft, isDarkMode } = storeToRefs(useQuizStore());
 
 watch(numberOfIndexes, () => {
-  useQuizStore().timeLeft = parseInt(numberOfIndexes.value, 10) * 60;
+  timeLeft.value = parseInt(numberOfIndexes.value, 10) * 60;
 });
 
 function toggleDarkMode() {
   document.documentElement.classList.toggle('my-app-dark');
   isDarkMode.value = !isDarkMode.value;
 }
+
+onMounted(() => {
+  if (isDarkMode.value) {
+    document.documentElement.classList.add('my-app-dark');
+  }
+});
 </script>
 
 <style scoped></style>

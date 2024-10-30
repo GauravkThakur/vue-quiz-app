@@ -6,15 +6,16 @@ import { useQuizStore } from '@/stores/quiz';
 type Question = {
   question: string;
   options: string[];
-  correctAnswer: string;
+  codeHint?: string;
   codeSnippet?: string;
+  correctAnswer: string;
 };
 
 export function useQuestions() {
   const totalItems = data.length;
 
   const questions = ref<Question[]>([]);
-  const { questionIndexes, numberOfIndexes } = storeToRefs(useQuizStore());
+  const { isDarkMode, questionIndexes, numberOfIndexes } = storeToRefs(useQuizStore());
 
   function getRandomIndexes(totalItems: number, numberOfIndexes: number) {
     const indexes = Array.from({ length: totalItems }, (_, i) => i);
@@ -31,6 +32,10 @@ export function useQuestions() {
   }
 
   onMounted(() => {
+    if (isDarkMode.value) {
+      document.documentElement.classList.add('my-app-dark');
+    }
+
     questionIndexes.value = questionIndexes.value.length
       ? questionIndexes.value
       : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10));
