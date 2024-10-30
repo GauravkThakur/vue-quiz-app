@@ -1,5 +1,5 @@
 <template>
-  <Card class="w-9/12 h-1/2 mx-auto my-12">
+  <Card class="w-11/12 sm:w-9/12 h-1/2 mx-auto my-12">
     <template #title>
       <h1 class="flex justify-center">Quiz Results</h1>
     </template>

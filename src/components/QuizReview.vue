@@ -1,5 +1,5 @@
 <template>
-  <Card class="w-9/12 m-auto mt-2" v-for="(item, index) in questions" :key="index">
+  <Card class="w-full sm:w-9/12 m-auto mt-2" v-for="(item, index) in questions" :key="index">
     <template #header>
       <div class="flex justify-center">
         <strong>Question {{ index + 1 }}/{{ questions.length }}</strong>
