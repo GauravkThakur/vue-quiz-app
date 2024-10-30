@@ -4,7 +4,6 @@ import { defineStore } from 'pinia';
 export const useQuizStore = defineStore(
   'quiz',
   () => {
-
     const username = ref('');
     const status = ref('inactive');
     const isQuizFinished = ref(false);

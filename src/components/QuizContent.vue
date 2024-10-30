@@ -26,8 +26,7 @@ const isRestarted = ref(false);
 
 const { questions } = useQuestions();
 
-const { timeLeft, status, selectedOptions, answers } =
-  storeToRefs(useQuizStore());
+const { timeLeft, status, selectedOptions, answers } = storeToRefs(useQuizStore());
 const { resetQuiz, resetQuizProps } = useQuizStore();
 
 const onFinish = () => {
@@ -75,11 +74,3 @@ const onRestart = () => {
   isRestarted.value = true;
 };
 </script>
-
-<style scoped lang="scss">
-.main {
-  top: 74px;
-  bottom: 68px;
-  overflow-y: auto;
-}
-</style>

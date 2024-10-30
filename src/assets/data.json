@@ -509,7 +509,7 @@
       "<div v-html=\"rawHtml\"></div>",
       "<div v-html=\"<p>This is <strong>raw HTML</strong> content.</p>\"></div>",
       "<div v-html:rawHtml></div>",
-      "<div v-html='rawHtml'></div>"
+      "<div v-html=\"{{rawHtml}}\"></div>"
     ],
     "correctAnswer": "<div v-html=\"rawHtml\"></div>"
   },

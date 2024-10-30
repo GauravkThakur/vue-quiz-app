@@ -1,11 +1,17 @@
 <template>
-  <Card class="w-9/12 h-1/2 mx-auto my-12">
+  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto my-12">
     <template #title>
-      <h1 class="flex justify-center">Welcome to the Vue Quiz App</h1>
-      <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center mt-4" width="50" />
+      <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center" width="50" />
+      <h1 class="flex justify-center">Vue JS Quiz</h1>
     </template>
     <template #subtitle>
-      <div class="card flex flex-col justify-center items-center">
+      <h2 class="w-full md:w-3/4 m-auto">
+        This quiz is designed to test your knowledge of Vue.js. You will be presented with a series
+        of multiple-choice questions which focus on Vue composition API concepts. Good luck :-)
+      </h2>
+    </template>
+    <template #content>
+      <div class="flex flex-col gap-4 text-center w-full md:w-3/4 m-auto">
         <Fieldset>
           <template #legend>
             <div class="flex items-center pl-2">
@@ -16,29 +22,20 @@
             <template #option="slotProps">{{ slotProps.option }} Questions</template>
           </SelectButton>
         </Fieldset>
-      </div>
-    </template>
-    <template #content>
-      <div class="flex justify-center my-4">
-        <div class="flex flex-col gap-4">
-          <p>
-            Test your knowledge with our interactive quiz. Click the button below to get started!
-          </p>
-          <FloatLabel variant="in">
-            <InputText
-              id="username"
-              v-model="username"
-              fluid
-              :invalid="isInvalid"
-              @input="validateInput"
-            />
-            <label for="username">Enter your name</label>
-          </FloatLabel>
-        </div>
+        <FloatLabel variant="in">
+          <InputText
+            id="username"
+            v-model="username"
+            fluid
+            :invalid="isInvalid"
+            @input="validateInput"
+          />
+          <label for="username">Enter your name</label>
+        </FloatLabel>
       </div>
     </template>
     <template #footer>
-      <div class="flex justify-center">
+      <div class="flex justify-center w-full md:w-3/4 m-auto">
         <Button label="Start Quiz" severity="primary" @click="startQuiz" fluid />
       </div>
     </template>
