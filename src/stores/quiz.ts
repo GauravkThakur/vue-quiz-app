@@ -5,6 +5,7 @@ export const useQuizStore = defineStore(
   'quiz',
   () => {
     const username = ref('');
+    const isDarkMode = ref(false);
     const status = ref('inactive');
     const isQuizFinished = ref(false);
     const timerInterval = ref<number | undefined>(undefined);
@@ -50,6 +51,7 @@ export const useQuizStore = defineStore(
       selectedOptions,
       questionIndexes,
       answers,
+      isDarkMode,
       resetQuiz,
       resetQuizProps
     };
@@ -67,6 +69,7 @@ export const useQuizStore = defineStore(
         'selectedOption',
         'selectedOptions',
         'answers',
+        'isDarkMode',
         'questionIndexes'
       ]
     }

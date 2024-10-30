@@ -1,5 +1,17 @@
 <template>
-  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto my-12">
+  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto my-6 items-center">
+    <template #content>
+      <Button
+        :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'"
+        :severity="!isDarkMode ? 'contrast' : 'secondary'"
+        aria-label="light skin"
+        label="Toggle Dark Mode"
+        @click="toggleDarkMode()"
+        class="float-right"
+      />
+    </template>
+  </Card>
+  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto">
     <template #title>
       <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center" width="50" />
       <h1 class="flex justify-center">Vue JS Quiz</h1>
@@ -66,11 +78,16 @@ const validateInput = () => {
   isInvalid.value = false;
 };
 
-const { username, numberOfIndexes } = storeToRefs(useQuizStore());
+const { username, numberOfIndexes, isDarkMode } = storeToRefs(useQuizStore());
 
 watch(numberOfIndexes, () => {
   useQuizStore().timeLeft = parseInt(numberOfIndexes.value, 10) * 60;
 });
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('my-app-dark');
+  isDarkMode.value = !isDarkMode.value;
+}
 </script>
 
 <style scoped></style>
