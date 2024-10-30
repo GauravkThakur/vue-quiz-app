@@ -4,13 +4,14 @@ import { defineStore } from 'pinia';
 export const useQuizStore = defineStore(
   'quiz',
   () => {
-    const totalTime = 30 * 60; // 30 minutes in seconds
+
     const username = ref('');
     const status = ref('inactive');
     const isQuizFinished = ref(false);
-    const timeLeft = ref(totalTime);
     const timerInterval = ref<number | undefined>(undefined);
     const currentPage = ref(0);
+    const numberOfIndexes = ref('30');
+    const timeLeft = ref(parseInt(numberOfIndexes.value, 10) * 60);
     const selectedOption = ref<string | null>(null);
     const questionIndexes = ref<number[]>([]);
     const selectedOptions = ref<{ index: number; selected: string | null }[]>([]);
@@ -22,12 +23,20 @@ export const useQuizStore = defineStore(
 
     function resetQuizProps() {
       clearInterval(timerInterval.value);
-      timeLeft.value = totalTime;
+      timeLeft.value = parseInt(numberOfIndexes.value, 10) * 60;
       timerInterval.value = undefined;
       currentPage.value = 0;
       selectedOption.value = null;
       selectedOptions.value = [];
       answers.value = { correct: 0, incorrect: 0, unanswered: 0 };
+    }
+
+    function resetQuiz() {
+      username.value = '';
+      questionIndexes.value = [];
+      numberOfIndexes.value = '30';
+      status.value = 'inactive';
+      resetQuizProps();
     }
 
     return {
@@ -37,10 +46,12 @@ export const useQuizStore = defineStore(
       timeLeft,
       timerInterval,
       currentPage,
+      numberOfIndexes,
       selectedOption,
       selectedOptions,
       questionIndexes,
       answers,
+      resetQuiz,
       resetQuizProps
     };
   },
@@ -53,6 +64,7 @@ export const useQuizStore = defineStore(
         'timeLeft',
         'timerInterval',
         'currentPage',
+        'numberOfIndexes',
         'selectedOption',
         'selectedOptions',
         'answers',

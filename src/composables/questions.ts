@@ -11,11 +11,10 @@ type Question = {
 };
 
 export function useQuestions() {
-  const numberOfIndexes = 30;
   const totalItems = data.length;
 
   const questions = ref<Question[]>([]);
-  const { questionIndexes } = storeToRefs(useQuizStore());
+  const { questionIndexes, numberOfIndexes } = storeToRefs(useQuizStore());
 
   function getRandomIndexes(totalItems: number, numberOfIndexes: number) {
     const indexes = Array.from({ length: totalItems }, (_, i) => i);
@@ -34,7 +33,7 @@ export function useQuestions() {
   onMounted(() => {
     questionIndexes.value = questionIndexes.value.length
       ? questionIndexes.value
-      : getRandomIndexes(totalItems, numberOfIndexes);
+      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10));
     questions.value = questionIndexes.value.map((index) => data[index]);
   });
 

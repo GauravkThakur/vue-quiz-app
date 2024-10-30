@@ -71,8 +71,8 @@ import { useQuestions } from '@/composables/questions';
 const visible = ref(false);
 const quizStore = useQuizStore();
 const { questions } = useQuestions();
-const { resetQuizProps } = quizStore;
-const { answers, status, username, questionIndexes } = storeToRefs(quizStore);
+const { resetQuiz } = quizStore;
+const { answers, username } = storeToRefs(quizStore);
 
 const totalQuestions = computed(
   () => answers.value.correct + answers.value.incorrect + answers.value.unanswered
@@ -85,13 +85,9 @@ const percentage = computed(() =>
 const isPassing = computed(() => parseFloat(percentage.value) > 70);
 
 const goHome = () => {
-  resetQuizProps();
-  username.value = '';
+  resetQuiz();
   questions.value = [];
-  questionIndexes.value = [];
-  status.value = 'inactive';
 };
-
 const reviewAnswers = () => {
   visible.value = true;
 };

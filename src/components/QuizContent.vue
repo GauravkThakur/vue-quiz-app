@@ -26,9 +26,9 @@ const isRestarted = ref(false);
 
 const { questions } = useQuestions();
 
-const { timeLeft, username, status, selectedOptions, answers, questionIndexes } =
+const { timeLeft, status, selectedOptions, answers } =
   storeToRefs(useQuizStore());
-const { resetQuizProps } = useQuizStore();
+const { resetQuiz, resetQuizProps } = useQuizStore();
 
 const onFinish = () => {
   timeLeft.value = 0;
@@ -65,11 +65,8 @@ const onFinish = () => {
 };
 
 const onQuit = () => {
-  resetQuizProps();
-  username.value = '';
+  resetQuiz();
   questions.value = [];
-  questionIndexes.value = [];
-  status.value = 'inactive';
 };
 
 const onRestart = () => {

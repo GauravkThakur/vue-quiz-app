@@ -4,6 +4,20 @@
       <h1 class="flex justify-center">Welcome to the Vue Quiz App</h1>
       <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center mt-4" width="50" />
     </template>
+    <template #subtitle>
+      <div class="card flex flex-col justify-center items-center">
+        <Fieldset>
+          <template #legend>
+            <div class="flex items-center pl-2">
+              <span class="font-bold p-2">Number of questions</span>
+            </div>
+          </template>
+          <SelectButton v-model="numberOfIndexes" :options="options" aria-labelledby="basic">
+            <template #option="slotProps">{{ slotProps.option }} Questions</template>
+          </SelectButton>
+        </Fieldset>
+      </div>
+    </template>
     <template #content>
       <div class="flex justify-center my-4">
         <div class="flex flex-col gap-4">
@@ -32,11 +46,12 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 
 const isInvalid = ref(false);
+const options = ref(['30', '40', '50']);
 const emit = defineEmits(['start']);
 
 const startQuiz = () => {
@@ -47,7 +62,6 @@ const startQuiz = () => {
 };
 
 const validateInput = () => {
-  console.log(username.value);
   if (username.value === '') {
     isInvalid.value = true;
     return;
@@ -55,7 +69,11 @@ const validateInput = () => {
   isInvalid.value = false;
 };
 
-const { username } = storeToRefs(useQuizStore());
+const { username, numberOfIndexes } = storeToRefs(useQuizStore());
+
+watch(numberOfIndexes, () => {
+  useQuizStore().timeLeft = parseInt(numberOfIndexes.value, 10) * 60;
+});
 </script>
 
 <style scoped></style>
