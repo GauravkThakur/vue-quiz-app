@@ -1163,5 +1163,25 @@
       "<div v-on:click=\"handlers.click\" v-on:mouseover=\"handlers.mouseover\" v-on:mouseout=\"handlers.mouseout\">Click me</div>"
     ],
     "correctAnswer": "<div v-on=\"handlers\">Click me</div>"
+  },
+  {
+    "question": "Select the correct statement when the text property changes?",
+    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span>{{ text }}</span>\n</transition>\n</template>\n\n<script setup>\n import { ref } from 'vue';\nconst text = ref('');\n</script>",
+    "options": [
+      "The transition will be triggered",
+      "The transition will be trigerred on blur",
+      "The transition will not be trigerred"
+    ],
+    "correctAnswer": "The transition will not be trigerred"
+  },
+  {
+    "question": "Select the correct statement when the text property changes?",
+    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span :key=\"text\">{{ text }}</span>\n</transition>\n</template>\n\n<script setup>\n import { ref } from 'vue';\nconst text = ref('');\n</script>",
+    "options": [
+      "The transition will be triggered",
+      "The transition will be trigerred on blur",
+      "The transition will not be trigerred"
+    ],
+    "correctAnswer": "The transition will be triggered"
   }
 ]

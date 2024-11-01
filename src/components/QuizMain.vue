@@ -10,6 +10,7 @@
           v-for="(option, index) in options"
           class="w-11 h-11"
           rounded
+          :raised="data[index].codeSnippet"
           :key="index"
           :label="`${option.value < 9 ? '0' : ''}${option.value + 1}`"
           :severity="

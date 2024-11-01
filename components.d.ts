@@ -17,7 +17,6 @@ declare module 'vue' {
     Image: typeof import('primevue/image')['default']
     InputText: typeof import('primevue/inputtext')['default']
     Message: typeof import('primevue/message')['default']
-    ProgressBar: typeof import('primevue/progressbar')['default']
     QuizContent: typeof import('./src/components/QuizContent.vue')['default']
     QuizFooter: typeof import('./src/components/QuizFooter.vue')['default']
     QuizHeader: typeof import('./src/components/QuizHeader.vue')['default']
