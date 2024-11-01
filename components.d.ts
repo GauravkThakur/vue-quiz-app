@@ -25,6 +25,7 @@ declare module 'vue' {
     QuizPagination: typeof import('./src/components/QuizPagination.vue')['default']
     QuizResults: typeof import('./src/components/QuizResults.vue')['default']
     QuizReview: typeof import('./src/components/QuizReview.vue')['default']
+    QuizSyntaxHighlighter: typeof import('./src/components/QuizSyntaxHighlighter.vue')['default']
     QuizWelcome: typeof import('./src/components/QuizWelcome.vue')['default']
     RadioButton: typeof import('primevue/radiobutton')['default']
     SelectButton: typeof import('primevue/selectbutton')['default']

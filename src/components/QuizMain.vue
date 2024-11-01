@@ -36,7 +36,12 @@
               <div class="flex flex-col gap-4">{{ data[currentPage].question }}</div>
             </template>
             <template #subtitle>
-              <pre><code class="flex flex-col gap-4">{{ data[currentPage].codeSnippet }}</code></pre>
+              <QuizSyntaxHighlighter
+                v-if="data[currentPage].codeSnippet"
+                language="html"
+                class="flex flex-col gap-4 mb-3"
+                >{{ data[currentPage].codeSnippet }}</QuizSyntaxHighlighter
+              >
             </template>
             <template #content>
               <div class="flex flex-col gap-2">
@@ -71,6 +76,7 @@ import { storeToRefs } from 'pinia';
 
 import { useQuizStore } from '@/stores/quiz';
 import Pagination from './QuizPagination.vue';
+import QuizSyntaxHighlighter from '@/components/QuizSyntaxHighlighter.vue';
 const options = ref<{ name: string; value: number }[]>([]);
 
 const props = defineProps<{
