@@ -227,7 +227,7 @@
     "correctAnswer": "{{ message + '!' }}"
   },
   {
-    "question": "Which of the following options will disable the button in code snippet",
+    "question": "Which of the following options will disable the button in code snippet?",
     "codeSnippet": "<template>\n  <button>Click Me!</button>\n</template>\n\n",
     "options": [
       "Using `:disabled=\"false\"`",
@@ -1153,5 +1153,15 @@
       "It will not render anything"
     ],
     "correctAnswer": "<div id=\"1\" name=\"div name\">This is a div</div>"
+  },
+  {
+    "question": "Given the handlers object, which of the following is the correct way to bind all the event handlers to div element at once?",
+    "codeSnippet": "<template>\n  <div>Click me</div>\n</template>\n\n<script setup>\nconst handlers = {\n  click: () => console.log('click'),\n  mouseover: () => console.log('mouseover'),\n  mouseout: () => console.log('mouseout')\n};\n</script>",
+    "options": [
+      "<div v-on=\"handlers\">Click me</div>",
+      "<div v-bind=\"handlers\">Click me</div>",
+      "<div v-on:click=\"handlers.click\" v-on:mouseover=\"handlers.mouseover\" v-on:mouseout=\"handlers.mouseout\">Click me</div>"
+    ],
+    "correctAnswer": "<div v-on=\"handlers\">Click me</div>"
   }
 ]

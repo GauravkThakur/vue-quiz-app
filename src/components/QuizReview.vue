@@ -18,7 +18,14 @@
       </div>
     </template>
     <template #subtitle>
-      <pre><code class="flex flex-col gap-4"><span>{{ item.codeSnippet }}</span></code></pre>
+      <QuizSyntaxHighlighter
+        :key="index"
+        v-if="item.codeSnippet"
+        language="html"
+        class="flex flex-col gap-4 my-3"
+      >
+        {{ item.codeSnippet }}
+      </QuizSyntaxHighlighter>
     </template>
     <template #content>
       <div class="flex flex-col gap-2">
@@ -45,6 +52,7 @@
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 import { useQuestions } from '@/composables/questions';
+import QuizSyntaxHighlighter from '@/components/QuizSyntaxHighlighter.vue';
 
 const { questions } = useQuestions();
 const { selectedOptions } = storeToRefs(useQuizStore());

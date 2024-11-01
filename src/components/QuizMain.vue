@@ -37,11 +37,13 @@
             </template>
             <template #subtitle>
               <QuizSyntaxHighlighter
+                :key="currentPage"
                 v-if="data[currentPage].codeSnippet"
                 language="html"
-                class="flex flex-col gap-4 mb-3"
-                >{{ data[currentPage].codeSnippet }}</QuizSyntaxHighlighter
+                class="flex flex-col gap-4 my-3"
               >
+                {{ data[currentPage].codeSnippet }}
+              </QuizSyntaxHighlighter>
             </template>
             <template #content>
               <div class="flex flex-col gap-2">
