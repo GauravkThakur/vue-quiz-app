@@ -30,7 +30,7 @@
               <span class="font-bold p-2">Number of questions</span>
             </div>
           </template>
-          <SelectButton v-model="numberOfIndexes" :options="options" aria-labelledby="basic">
+          <SelectButton v-model="numberOfIndexes" :options="options" aria-labelledby="basic" class="flex-wrap gap-2 justify-center">
             <template #option="slotProps">{{ slotProps.option }} Questions</template>
           </SelectButton>
         </Fieldset>
@@ -60,7 +60,7 @@ import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 
 const isInvalid = ref(false);
-const options = ref(['30', '40', '50']);
+const options = ref(['30', '40', '50', 'All']);
 const emit = defineEmits(['start']);
 
 const startQuiz = () => {
@@ -78,10 +78,10 @@ const validateInput = () => {
   isInvalid.value = false;
 };
 
-const { username, numberOfIndexes, timeLeft, isDarkMode } = storeToRefs(useQuizStore());
+const { username, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } = storeToRefs(useQuizStore());
 
 watch(numberOfIndexes, () => {
-  timeLeft.value = parseInt(numberOfIndexes.value, 10) * 60;
+  timeLeft.value = updatedNumberOfIndexes.value * 60;
 });
 
 function toggleDarkMode() {
