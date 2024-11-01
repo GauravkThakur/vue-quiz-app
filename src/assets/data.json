@@ -1118,5 +1118,35 @@
       "The `ref` should be initialized as a string and populated with elements using a function inside `v-for`"
     ],
     "correctAnswer": "The `ref` should be initialized as an empty array and populated with elements using a function inside `v-for`"
+  },
+  {
+    "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
+    "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value * 2;\n});\n</script>",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "1"
+  },
+  {
+    "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
+    "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value++;\n});\n</script>",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "3"
+  },
+  {
+    "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
+    "codeSnippet": "<template>\n  <MyButton>Click me</MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
+    "options": ["True", "False"],
+    "correctAnswer": "False"
+  },
+  {
+    "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
+    "codeSnippet": "<template>\n  <MyButton></MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
+    "options": ["True", "False"],
+    "correctAnswer": "True"
+  },
+  {
+    "question": "When using the dynamic attribute binding in Vue JS, How will be <div> element rendered in browser?",
+    "codeSnippet": "<template>\n  <div v-bind=\"attrObj\">This is a div</div>\n</template>\n\n<script setup>\nconst attrObj = { \n id: \"1\",\n name: \"div name\" \n};\n</script>",
+    "options": ["<div id=\"1\" name=\"div name\">This is a div</div>", "<div v-bind=\"attrObj\">This is a div</div>", "It will throw an error", "It will not render anything"],
+    "correctAnswer": "<div id=\"1\" name=\"div name\">This is a div</div>"
   }
 ]

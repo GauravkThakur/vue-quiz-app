@@ -38,7 +38,7 @@ export function useQuestions() {
 
     questionIndexes.value = questionIndexes.value.length
       ? questionIndexes.value
-      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10));
+      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10) || totalItems);
     questions.value = questionIndexes.value.map((index) => data[index]);
   });
 

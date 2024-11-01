@@ -1,4 +1,4 @@
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
 
 export const useQuizStore = defineStore(
@@ -11,7 +11,6 @@ export const useQuizStore = defineStore(
     const timerInterval = ref<number | undefined>(undefined);
     const currentPage = ref(0);
     const numberOfIndexes = ref('30');
-    const timeLeft = ref(parseInt(numberOfIndexes.value, 10) * 60);
     const selectedOption = ref<string | null>(null);
     const questionIndexes = ref<number[]>([]);
     const selectedOptions = ref<{ index: number; selected: string | null }[]>([]);
@@ -21,9 +20,16 @@ export const useQuizStore = defineStore(
       unanswered: 0
     });
 
+    const updatedNumberOfIndexes = computed(() =>
+      numberOfIndexes.value === 'All' ? 100 : parseInt(numberOfIndexes.value, 10)
+    );
+
+    const timeLeft = ref(updatedNumberOfIndexes.value * 60);
+
     function resetQuizProps() {
       clearInterval(timerInterval.value);
-      timeLeft.value = parseInt(numberOfIndexes.value, 10) * 60;
+      console.log(numberOfIndexes.value);
+      timeLeft.value = updatedNumberOfIndexes.value * 60;
       timerInterval.value = undefined;
       currentPage.value = 0;
       selectedOption.value = null;
@@ -50,6 +56,7 @@ export const useQuizStore = defineStore(
       selectedOption,
       selectedOptions,
       questionIndexes,
+      updatedNumberOfIndexes,
       answers,
       isDarkMode,
       resetQuiz,

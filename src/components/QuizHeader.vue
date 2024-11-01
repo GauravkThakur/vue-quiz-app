@@ -15,7 +15,7 @@
     <template #end>
       <Tag
         icon="text-lg flex justify-center items-center mr-1 pi pi-clock"
-        class="w-24 h-10 text-xl"
+        class="w-28 h-10 text-xl"
         severity="contrast"
         :value="formattedTime"
       ></Tag>
