@@ -1146,7 +1146,12 @@
   {
     "question": "When using the dynamic attribute binding in Vue JS, How will be <div> element rendered in browser?",
     "codeSnippet": "<template>\n  <div v-bind=\"attrObj\">This is a div</div>\n</template>\n\n<script setup>\nconst attrObj = { \n id: \"1\",\n name: \"div name\" \n};\n</script>",
-    "options": ["<div id=\"1\" name=\"div name\">This is a div</div>", "<div v-bind=\"attrObj\">This is a div</div>", "It will throw an error", "It will not render anything"],
+    "options": [
+      "<div id=\"1\" name=\"div name\">This is a div</div>",
+      "<div v-bind=\"attrObj\">This is a div</div>",
+      "It will throw an error",
+      "It will not render anything"
+    ],
     "correctAnswer": "<div id=\"1\" name=\"div name\">This is a div</div>"
   }
 ]

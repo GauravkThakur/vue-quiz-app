@@ -30,7 +30,12 @@
               <span class="font-bold p-2">Number of questions</span>
             </div>
           </template>
-          <SelectButton v-model="numberOfIndexes" :options="options" aria-labelledby="basic" class="flex-wrap gap-2 justify-center">
+          <SelectButton
+            v-model="numberOfIndexes"
+            :options="options"
+            aria-labelledby="basic"
+            class="flex-wrap gap-2 justify-center"
+          >
             <template #option="slotProps">{{ slotProps.option }} Questions</template>
           </SelectButton>
         </Fieldset>
@@ -78,7 +83,8 @@ const validateInput = () => {
   isInvalid.value = false;
 };
 
-const { username, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } = storeToRefs(useQuizStore());
+const { username, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } =
+  storeToRefs(useQuizStore());
 
 watch(numberOfIndexes, () => {
   timeLeft.value = updatedNumberOfIndexes.value * 60;
