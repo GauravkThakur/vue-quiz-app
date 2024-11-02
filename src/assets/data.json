@@ -191,14 +191,24 @@
     "correctAnswer": "Using `v-bind:value` and `@change`"
   },
   {
-    "question": "Which lifecycle hook is called before a component is mounted in Vue.js using the Composition API?",
-    "options": ["onBeforeMount", "onMounted", "onUpdated", "onBeforeUpdate"],
-    "correctAnswer": "onBeforeMount"
-  },
-  {
-    "question": "Which lifecycle hook is called after a component is mounted in Vue.js using the Composition API?",
+    "question": "Which lifecycle hook should be used to access an element via template ref?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onBeforeUpdate"],
     "correctAnswer": "onMounted"
+  },
+  {
+    "question": "Which lifecycle hook should be used to clear pending timers and intervals?",
+    "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
+    "correctAnswer": "onUnmounted"
+  },
+  {
+    "question": "Which lifecycle hook is called after any DOM update of the component, caused by different state changes?",
+    "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
+    "correctAnswer": "onUpdated"
+  },
+  {
+    "question": "Which lifecycle hook is called when the component has finished setting up its reactive state, but no DOM nodes have been created yet?",
+    "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
+    "correctAnswer": "onBeforeMount"
   },
   {
     "question": "To display the value from the data property 'message' inside a <p> tag with text interpolation, what is the correct syntax?",
@@ -253,7 +263,7 @@
     "correctAnswer": "main.js"
   },
   {
-    "question": "Which lifecycle hook is called before a component is updated in Vue.js using the Composition API?",
+    "question": "Which lifecycle hook can be used to access the DOM state before Vue updates the DOM?",
     "options": ["onBeforeUpdate", "onUpdated", "onBeforeMount", "onMounted"],
     "correctAnswer": "onBeforeUpdate"
   },
@@ -522,6 +532,26 @@
       "<div v-html=\"{{rawHtml}}\"></div>"
     ],
     "correctAnswer": "<div v-html=\"rawHtml\"></div>"
+  },
+  {
+    "question": "When using `v-html`, select the correct statement for styling content",
+    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template>\n\n<script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>\n\n<style scoped>\n p {\ncolor: red;\n}\n</style>",
+    "options": [
+      "It will display the paragraph content in red color",
+      "Styling will not be applied on paragraph <p> content",
+      "Paragraph content will not be rendered"
+    ],
+    "correctAnswer": "Styling will not be applied on paragraph <p> content"
+  },
+  {
+    "question": "When using `v-html`, select the correct statement for styling content",
+    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template>\n\n<script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>\n\n<style>\n p {\ncolor: red;\n}\n</style>",
+    "options": [
+      "It will display the paragraph content in red color",
+      "Styling will not be applied on paragraph <p> content",
+      "Paragraph content will not be rendered"
+    ],
+    "correctAnswer": "It will display the paragraph content in red color"
   },
   {
     "question": "What should you be cautious about when using the `v-html` directive in Vue.js?",
@@ -836,7 +866,7 @@
   },
   {
     "question": "How do you define scoped styles in a Vue.js Single File Component (SFC)?",
-    "codeHint": "<template>\n  <div class=\"example\">This is a scoped style example</div>\n</template>\n\n<script>\nexport default {\n  name: 'ExampleComponent'\n};\n</script>\n\n<style scoped>\n.example {\n  color: red;\n}\n</style>",
+    "codeHint": "<template>\n  <div class=\"example\">This is a scoped style example</div>\n</template>\n\n<script>\nexport default {\n  name: 'ExampleComponent'\n};\n</script>\n\n<style scoped>\n.example {\n  color: red;\n}\n</>",
     "options": [
       "By adding the `scoped` attribute to the `<style>` tag",
       "By adding the `scoped` attribute to the `<template>` tag",
@@ -1183,5 +1213,17 @@
       "The transition will not be trigerred"
     ],
     "correctAnswer": "The transition will be triggered"
+  },
+  {
+    "question": "What value will be rendered in the view for computed prop `plusOne`?",
+    "codeSnippet": "<template>\n<span>{{ plusOne++ }}</span>\n</template>\n\n<script setup>\n import { ref, computed } from 'vue';\nconst count = ref(1);\nconst plusOne = computed(() => count.value + 1);\n</script>",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "2"
+  },
+  {
+    "question": "What value be the output of `count.value`?",
+    "codeSnippet": "<script setup>\n import { ref, reactive } from 'vue';\n\nconst count = ref(1);\nconst obj = reactive({ count });\nobj.count++;</script>",
+    "options": ["0", "1", "2", "3"],
+    "correctAnswer": "2"
   }
 ]
