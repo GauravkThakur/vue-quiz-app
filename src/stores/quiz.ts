@@ -4,12 +4,14 @@ import { defineStore } from 'pinia';
 export const useQuizStore = defineStore(
   'quiz',
   () => {
+    const allTopics = ref(['Vue', 'JavaScript']);
     const username = ref('');
     const isDarkMode = ref(false);
     const status = ref('inactive');
     const isQuizFinished = ref(false);
     const timerInterval = ref<number | undefined>(undefined);
     const currentPage = ref(0);
+    const selectedTopics = ref<string[]>(allTopics.value);
     const numberOfIndexes = ref('30');
     const selectedOption = ref<string | null>(null);
     const questionIndexes = ref<number[]>([]);
@@ -39,19 +41,22 @@ export const useQuizStore = defineStore(
 
     function resetQuiz() {
       username.value = '';
+      status.value = 'inactive';
       questionIndexes.value = [];
       numberOfIndexes.value = '30';
-      status.value = 'inactive';
+      selectedTopics.value = allTopics.value;
       resetQuizProps();
     }
 
     return {
+      allTopics,
       username,
       status,
       isQuizFinished,
       timeLeft,
       timerInterval,
       currentPage,
+      selectedTopics,
       numberOfIndexes,
       selectedOption,
       selectedOptions,
@@ -72,6 +77,7 @@ export const useQuizStore = defineStore(
         'timeLeft',
         'timerInterval',
         'currentPage',
+        'selectedTopics',
         'numberOfIndexes',
         'selectedOption',
         'selectedOptions',

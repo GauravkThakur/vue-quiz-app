@@ -7,37 +7,44 @@
       "To bind attributes to elements",
       "To loop through an array and render a list of elements"
     ],
-    "correctAnswer": "To loop through an array and render a list of elements"
+    "correctAnswer": "To loop through an array and render a list of elements",
+    "tag": "Vue"
   },
   {
     "question": "Which modifier is not supported on v-model?",
     "options": ["v-model.lazy", "v-model.number", "v-model.string", "v-model.trim"],
-    "correctAnswer": "v-model.string"
+    "correctAnswer": "v-model.string",
+    "tag": "Vue"
   },
   {
     "question": "Which inbuilt directive is not a conditional directive?",
     "options": ["v-if", "v-else", "v-show", "v-model"],
-    "correctAnswer": "v-model"
+    "correctAnswer": "v-model",
+    "tag": "Vue"
   },
   {
     "question": "How do you create a reactive reference to a DOM element in Vue 3?",
     "options": ["Using `ref`", "Using `reactive`", "Using `watch`", "Using `computed`"],
-    "correctAnswer": "Using `ref`"
+    "correctAnswer": "Using `ref`",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a computed property in Vue 3 using the Composition API?",
     "options": ["Using `computed`", "Using `ref`", "Using `reactive`", "Using `watch`"],
-    "correctAnswer": "Using `computed`"
+    "correctAnswer": "Using `computed`",
+    "tag": "Vue"
   },
   {
     "question": "How do you watch a reactive property in Vue 3 using the Composition API?",
     "options": ["Using `watch`", "Using `computed`", "Using `reactive`", "Using `ref`"],
-    "correctAnswer": "Using `watch`"
+    "correctAnswer": "Using `watch`",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind a class dynamically in Vue.js using the Composition API?",
     "options": ["Using `v-if`", "Using `v-for`", "Using `:class`"],
-    "correctAnswer": "Using `:class`"
+    "correctAnswer": "Using `:class`",
+    "tag": "Vue"
   },
   {
     "question": "To bind a class `newClass` dynamically when `someCondition` is true, which option is incorrect?",
@@ -48,7 +55,8 @@
       "<div class=\"oldClass\" :class=\"['someCondition ? 'newClass': '']\">Some Div</div>",
       "<div class=\"oldClass\" :class=\"someCondition ? 'newClass': ''\">Some Div</div>"
     ],
-    "correctAnswer": "<div class=\"oldClass\" :class=\"['newClass']\">Some Div</div>"
+    "correctAnswer": "<div class=\"oldClass\" :class=\"['newClass']\">Some Div</div>",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind multiple classes conditionally in Vue.js using the Composition API?",
@@ -58,22 +66,26 @@
       "Using `v-bind:class`",
       "Using `:class` with an array"
     ],
-    "correctAnswer": "Using `:class` with an array"
+    "correctAnswer": "Using `:class` with an array",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind inline styles dynamically in Vue.js using the Composition API?",
     "options": ["Using `v-for`", "Using `v-if`", "Using `:style`"],
-    "correctAnswer": "Using `:style`"
+    "correctAnswer": "Using `:style`",
+    "tag": "Vue"
   },
   {
     "question": "How do you conditionally render an element in Vue.js using the Composition API?",
     "options": ["Using `v-if`", "Using `v-show`", "Using `v-for`", "Using `v-bind`"],
-    "correctAnswer": "Using `v-if`"
+    "correctAnswer": "Using `v-if`",
+    "tag": "Vue"
   },
   {
     "question": "How do you toggle the visibility of an element in Vue.js with the Composition API?",
     "options": ["Using `v-show`", "Using `v-if`", "Using `v-for`", "Using `v-bind`"],
-    "correctAnswer": "Using `v-show`"
+    "correctAnswer": "Using `v-show`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the provide() method?",
@@ -83,7 +95,8 @@
       "To keep methods local to a single component",
       "To make data locally available to a specific parent component"
     ],
-    "correctAnswer": "To make data available to other components"
+    "correctAnswer": "To make data available to other components",
+    "tag": "Vue"
   },
   {
     "question": "How do you use `v-else` for conditional rendering in Vue.js with the Composition API?",
@@ -93,17 +106,20 @@
       "Using `v-if` and `v-else`",
       "Using `v-bind` and `v-else`"
     ],
-    "correctAnswer": "Using `v-if` and `v-else`"
+    "correctAnswer": "Using `v-if` and `v-else`",
+    "tag": "Vue"
   },
   {
     "question": "How do you render a list of items in Vue.js using the Composition API?",
     "options": ["Using `v-for`", "Using `v-if`", "Using `v-show`", "Using `v-bind`"],
-    "correctAnswer": "Using `v-for`"
+    "correctAnswer": "Using `v-for`",
+    "tag": "Vue"
   },
   {
     "question": "How do you render a list of items with an index in Vue.js using the Composition API?",
     "options": ["Using `v-for` with an index", "Using `v-if`", "Using `v-show`", "Using `v-bind`"],
-    "correctAnswer": "Using `v-for` with an index"
+    "correctAnswer": "Using `v-for` with an index",
+    "tag": "Vue"
   },
   {
     "question": "How do you render a list of items with a template in Vue.js using the Composition API?",
@@ -113,22 +129,26 @@
       "Using `v-show`",
       "Using `v-bind`"
     ],
-    "correctAnswer": "Using `v-for` with a template"
+    "correctAnswer": "Using `v-for` with a template",
+    "tag": "Vue"
   },
   {
     "question": "How do you handle a click event in Vue.js using the Composition API?",
     "options": ["Using `@click`", "Using `v-if:click`", "Using `v-bind:click`"],
-    "correctAnswer": "Using `@click`"
+    "correctAnswer": "Using `@click`",
+    "tag": "Vue"
   },
   {
     "question": "How do you handle an input event in Vue.js using the Composition API?",
     "options": ["Using `@input`", "Using `v-if:input`", "Using `v-bind:input`"],
-    "correctAnswer": "Using `@input`"
+    "correctAnswer": "Using `@input`",
+    "tag": "Vue"
   },
   {
     "question": "How do you handle a form submit event in Vue.js using the Composition API?",
     "options": ["Using `v-on:submit`", "Using `v-if:submit`", "Using `v-bind:submit`"],
-    "correctAnswer": "Using `v-on:submit`"
+    "correctAnswer": "Using `v-on:submit`",
+    "tag": "Vue"
   },
   {
     "question": "How can you prevent the default behavior of an event in Vue JS?",
@@ -138,7 +158,8 @@
       "Using `@click.capture`",
       "Using `@click.stop`"
     ],
-    "correctAnswer": "Using `@click.prevent`"
+    "correctAnswer": "Using `@click.prevent`",
+    "tag": "Vue"
   },
   {
     "question": "How do you handle a submit event with the `.stop` modifier in Vue.js using the Composition API?",
@@ -148,7 +169,8 @@
       "Using `@submit.capture`",
       "Using `@submit.prevent`"
     ],
-    "correctAnswer": "Using `@submit.stop`"
+    "correctAnswer": "Using `@submit.stop`",
+    "tag": "Vue"
   },
   {
     "question": "How do you handle a keydown event with the `.capture` modifier in Vue.js using the Composition API?",
@@ -158,7 +180,8 @@
       "Using `@keydown.stop`",
       "Using `@keydown.prevent`"
     ],
-    "correctAnswer": "Using `@keydown.capture`"
+    "correctAnswer": "Using `@keydown.capture`",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind a `textarea` input in Vue.js using the Composition API without `v-model`?",
@@ -168,7 +191,8 @@
       "Using `v-bind:value` and `@click`",
       "Using `v-bind:value` and `@change`"
     ],
-    "correctAnswer": "Using `v-bind:value` and `@input`"
+    "correctAnswer": "Using `v-bind:value` and `@input`",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind a `checkbox` input in Vue.js using the Composition API without `v-model`?",
@@ -178,7 +202,8 @@
       "Using `v-bind:checked` and `@input`",
       "Using `v-bind:checked` and `@click`"
     ],
-    "correctAnswer": "Using `v-bind:checked` and `@change`"
+    "correctAnswer": "Using `v-bind:checked` and `@change`",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind a `select` input in Vue.js using the Composition API without `v-model`?",
@@ -188,27 +213,32 @@
       "Using `v-bind:value` and `@click`",
       "Using `v-bind:value` and `@input`"
     ],
-    "correctAnswer": "Using `v-bind:value` and `@change`"
+    "correctAnswer": "Using `v-bind:value` and `@change`",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook should be used to access an element via template ref?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onBeforeUpdate"],
-    "correctAnswer": "onMounted"
+    "correctAnswer": "onMounted",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook should be used to clear pending timers and intervals?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
-    "correctAnswer": "onUnmounted"
+    "correctAnswer": "onUnmounted",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook is called after any DOM update of the component, caused by different state changes?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
-    "correctAnswer": "onUpdated"
+    "correctAnswer": "onUpdated",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook is called when the component has finished setting up its reactive state, but no DOM nodes have been created yet?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
-    "correctAnswer": "onBeforeMount"
+    "correctAnswer": "onBeforeMount",
+    "tag": "Vue"
   },
   {
     "question": "To display the value from the data property 'message' inside a <p> tag with text interpolation, what is the correct syntax?",
@@ -218,12 +248,14 @@
       "<p>$$ message $$</p>",
       "<p>## message ##</p>"
     ],
-    "correctAnswer": "<p>{{ message }}</p>"
+    "correctAnswer": "<p>{{ message }}</p>",
+    "tag": "Vue"
   },
   {
     "question": "What is the correct syntax for text interpolation in Vue.js?",
     "options": ["{{ message }}", "[[ message ]]", "( message )", "{ message }"],
-    "correctAnswer": "{{ message }}"
+    "correctAnswer": "{{ message }}",
+    "tag": "Vue"
   },
   {
     "question": "How do you bind a JavaScript expression to the <div> using Vue.js interpolation?",
@@ -234,7 +266,8 @@
       "( message + '!' )",
       "{ message + '!' }"
     ],
-    "correctAnswer": "{{ message + '!' }}"
+    "correctAnswer": "{{ message + '!' }}",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following options will disable the button in code snippet?",
@@ -245,7 +278,8 @@
       "Using `:disabled=\"true\"`",
       "Using `:disabled=\"null\"`"
     ],
-    "correctAnswer": "Using `:disabled=\"true\"`"
+    "correctAnswer": "Using `:disabled=\"true\"`",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following is NOT a valid use of Vue.js interpolation?",
@@ -255,22 +289,26 @@
       "Binding HTML content",
       "Binding attributes"
     ],
-    "correctAnswer": "Binding event handlers"
+    "correctAnswer": "Binding event handlers",
+    "tag": "Vue"
   },
   {
     "question": "Vue uses a file to initialize the root Vue instance and mount it to the DOM, what is the file's name?",
     "options": ["main.js", "view.js", "config.js", "settings.js"],
-    "correctAnswer": "main.js"
+    "correctAnswer": "main.js",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook can be used to access the DOM state before Vue updates the DOM?",
     "options": ["onBeforeUpdate", "onUpdated", "onBeforeMount", "onMounted"],
-    "correctAnswer": "onBeforeUpdate"
+    "correctAnswer": "onBeforeUpdate",
+    "tag": "Vue"
   },
   {
     "question": "In which lifecycle hook is the DOM accessible and ready for manipulation?",
     "options": ["onMounted", "onBeforeMount", "onUpdated", "onBeforeUpdate"],
-    "correctAnswer": "onMounted"
+    "correctAnswer": "onMounted",
+    "tag": "Vue"
   },
   {
     "question": "What is the primary difference between `watch` and `watchEffect` in Vue.js using the Composition API?",
@@ -280,7 +318,8 @@
       "`watchEffect` requires a specific source to watch, while `watch` runs immediately and tracks dependencies automatically",
       "`watch` is used for computed properties, while `watchEffect` is used for reactive properties"
     ],
-    "correctAnswer": "`watch` requires a specific source to watch, while `watchEffect` runs immediately and tracks dependencies automatically"
+    "correctAnswer": "`watch` requires a specific source to watch, while `watchEffect` runs immediately and tracks dependencies automatically",
+    "tag": "Vue"
   },
   {
     "question": "When should you use `watch` instead of `watchEffect` in Vue.js using the Composition API?",
@@ -290,7 +329,8 @@
       "When you need to track dependencies automatically",
       "When you need to watch multiple reactive properties"
     ],
-    "correctAnswer": "When you need to watch a specific reactive property or ref"
+    "correctAnswer": "When you need to watch a specific reactive property or ref",
+    "tag": "Vue"
   },
   {
     "question": "When should you use `watchEffect` instead of `watch` in Vue.js using the Composition API?",
@@ -300,12 +340,14 @@
       "When you need to watch a specific reactive property or ref",
       "When you need to run the watcher only when a specific property changes"
     ],
-    "correctAnswer": "When you need to track dependencies automatically and run the effect immediately"
+    "correctAnswer": "When you need to track dependencies automatically and run the effect immediately",
+    "tag": "Vue"
   },
   {
     "question": "How do you create a reactive reference to a DOM element in Vue 3 using the Composition API?",
     "options": ["Using `ref`", "Using `reactive`", "Using `computed`", "Using `watch`"],
-    "correctAnswer": "Using `ref`"
+    "correctAnswer": "Using `ref`",
+    "tag": "Vue"
   },
   {
     "question": "How do you focus an input element using a template ref in Vue 3?",
@@ -315,7 +357,8 @@
       "Using `inputRef.value.focus()` in `onUpdated`",
       "Using `inputRef.value.focus()` in `onBeforeMount`"
     ],
-    "correctAnswer": "Using `inputRef.value.focus()` in `onMounted`"
+    "correctAnswer": "Using `inputRef.value.focus()` in `onMounted`",
+    "tag": "Vue"
   },
   {
     "question": "How do you access a DOM element's properties using a template ref in Vue 3?",
@@ -325,22 +368,26 @@
       "Using `divRef.value.innerText` in `onUpdated`",
       "Using `divRef.value.innerText` in `onBeforeMount`"
     ],
-    "correctAnswer": "Using `divRef.value.innerText` in `onMounted`"
+    "correctAnswer": "Using `divRef.value.innerText` in `onMounted`",
+    "tag": "Vue"
   },
   {
     "question": "How do you access a DOM element using in Vue 3 composition API?",
     "options": ["Using `useTemplateRef`", "Using `ref`", "Using `reactive`", "Using `computed`"],
-    "correctAnswer": "Using `useTemplateRef`"
+    "correctAnswer": "Using `useTemplateRef`",
+    "tag": "Vue"
   },
   {
     "question": "How do you define props in a Vue 3 component using the Composition API?",
     "options": ["Using `props`", "Using `defineProps`", "Using `setupProps`", "Using `useProps`"],
-    "correctAnswer": "Using `defineProps`"
+    "correctAnswer": "Using `defineProps`",
+    "tag": "Vue"
   },
   {
     "question": "How do you pass dynamic props to a child component in Vue 3?",
     "options": ["Using `v-if`", "Using `v-for`", "Using `v-bind`", "Using `v-model`"],
-    "correctAnswer": "Using `v-bind`"
+    "correctAnswer": "Using `v-bind`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of `v-bind` directive when used with an object in Vue.js?",
@@ -350,7 +397,8 @@
       "To handle user input events",
       "To bind an attribute to an expression"
     ],
-    "correctAnswer": "To dynamically bind multiple attributes"
+    "correctAnswer": "To dynamically bind multiple attributes",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a boolean prop in a Vue 3 component using the Composition API?",
@@ -360,7 +408,8 @@
       "Using `defineProps` with `Boolean`",
       "Using `useProps` with `Boolean`"
     ],
-    "correctAnswer": "Using `defineProps` with `Boolean`"
+    "correctAnswer": "Using `defineProps` with `Boolean`",
+    "tag": "Vue"
   },
   {
     "question": "How do you emit and listen to custom events in Vue 3 using the Composition API?",
@@ -370,7 +419,8 @@
       "Using `defineEmits` and `@custom-event`",
       "Using `defineProps` and `@custom-event`"
     ],
-    "correctAnswer": "Using `defineEmits` and `@custom-event`"
+    "correctAnswer": "Using `defineEmits` and `@custom-event`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of slots in Vue.js?",
@@ -380,7 +430,8 @@
       "To handle events in a component",
       "To manage state in a component"
     ],
-    "correctAnswer": "To define reusable templates within a component"
+    "correctAnswer": "To define reusable templates within a component",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a default slot in Vue 3 using the Composition API?",
@@ -390,7 +441,8 @@
       "Using `<template #default>`",
       "Using `<template slot>`"
     ],
-    "correctAnswer": "Using `<template #default>`"
+    "correctAnswer": "Using `<template #default>`",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a named slot in Vue 3 using the Composition API?",
@@ -400,7 +452,8 @@
       "Using `<template slot>`",
       "Using `<template v-slot:header>`"
     ],
-    "correctAnswer": "Using `<template v-slot:header>`"
+    "correctAnswer": "Using `<template v-slot:header>`",
+    "tag": "Vue"
   },
   {
     "question": "How do you conditionally render a slot in Vue 3 using the Composition API?",
@@ -410,7 +463,8 @@
       "Using `v-if` with `<template slot:default>`",
       "Using `v-show` with `<template slot:default>`"
     ],
-    "correctAnswer": "Using `v-if` with `<template #default>`"
+    "correctAnswer": "Using `v-if` with `<template #default>`",
+    "tag": "Vue"
   },
   {
     "question": "How can you add a transition effect to an element in Vue?",
@@ -420,12 +474,14 @@
       "Using the transition() method",
       "Vue JS doesn't support Transition"
     ],
-    "correctAnswer": "Using <Transition> wrapper element"
+    "correctAnswer": "Using <Transition> wrapper element",
+    "tag": "Vue"
   },
   {
     "question": "Which specific attribute is recommended to add when generating elements with v-for",
     "options": ["number", "elementId", "key", "note"],
-    "correctAnswer": "key"
+    "correctAnswer": "key",
+    "tag": "Vue"
   },
   {
     "question": "What is the use of `:key` attribute when used with `v-for`",
@@ -435,12 +491,14 @@
       "It identifies each rendered element, aiding to efficient updates",
       "It triggers a methos when the element is clicked"
     ],
-    "correctAnswer": "It identifies each rendered element, aiding to efficient updates"
+    "correctAnswer": "It identifies each rendered element, aiding to efficient updates",
+    "tag": "Vue"
   },
   {
     "question": "What attribute must be used to make the CSS rules inside the <style> tag of a component local to only that specific component?",
     "options": ["<style local>", "<style scoped>", "<style this>"],
-    "correctAnswer": "<style scoped>"
+    "correctAnswer": "<style scoped>",
+    "tag": "Vue"
   },
   {
     "question": "How do you dynamically bind CSS styles to an element in Vue 3, Select the incorrect statement?",
@@ -450,7 +508,8 @@
       "<style scoped> p { color: v-bind('divStyles.color'); } </style>",
       "<p :class=\"divStyles\">This is a styled div</p>"
     ],
-    "correctAnswer": "<p :class=\"divStyles\">This is a styled div</p>"
+    "correctAnswer": "<p :class=\"divStyles\">This is a styled div</p>",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-html` directive in Vue.js?",
@@ -460,7 +519,8 @@
       "To bind JavaScript events to an element",
       "To bind text content to an element"
     ],
-    "correctAnswer": "To bind raw HTML content to an element"
+    "correctAnswer": "To bind raw HTML content to an element",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-pre` directive in Vue.js?",
@@ -470,7 +530,8 @@
       "To skip binding of the element and its children",
       "To skip styling of the element and its children"
     ],
-    "correctAnswer": "To skip compilation of the element and its children"
+    "correctAnswer": "To skip compilation of the element and its children",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-cloak` directive in Vue.js?",
@@ -480,7 +541,8 @@
       "To skip binding of the element and its children",
       "To skip styling of the element and its children"
     ],
-    "correctAnswer": "To skip rendering of the element and its children"
+    "correctAnswer": "To skip rendering of the element and its children",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-once` directive in Vue.js?",
@@ -490,7 +552,8 @@
       "To skip re-rendering of the element and its children",
       "To skip styling of the element and its children"
     ],
-    "correctAnswer": "To skip re-rendering of the element and its children"
+    "correctAnswer": "To skip re-rendering of the element and its children",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-text` directive in Vue.js?",
@@ -500,7 +563,8 @@
       "To bind CSS styles to an element",
       "To bind JavaScript events to an element"
     ],
-    "correctAnswer": "To bind text content to an element"
+    "correctAnswer": "To bind text content to an element",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-show` directive in Vue.js?",
@@ -510,7 +574,8 @@
       "To bind attributes to elements",
       "To handle events"
     ],
-    "correctAnswer": "To conditionally toggle elements visiblity"
+    "correctAnswer": "To conditionally toggle elements visiblity",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-if` directive in Vue.js?",
@@ -520,7 +585,8 @@
       "To bind attributes to elements",
       "To handle events"
     ],
-    "correctAnswer": "To conditionally render elements"
+    "correctAnswer": "To conditionally render elements",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following is a correct usage of the `v-html` directive in Vue.js?",
@@ -531,7 +597,8 @@
       "<div v-html=\"rawHtml\"></div>",
       "<div v-html=\"{{rawHtml}}\"></div>"
     ],
-    "correctAnswer": "<div v-html=\"rawHtml\"></div>"
+    "correctAnswer": "<div v-html=\"rawHtml\"></div>",
+    "tag": "Vue"
   },
   {
     "question": "When using `v-html`, select the correct statement for styling content",
@@ -541,7 +608,8 @@
       "Styling will not be applied on paragraph <p> content",
       "Paragraph content will not be rendered"
     ],
-    "correctAnswer": "Styling will not be applied on paragraph <p> content"
+    "correctAnswer": "Styling will not be applied on paragraph <p> content",
+    "tag": "Vue"
   },
   {
     "question": "When using `v-html`, select the correct statement for styling content",
@@ -551,7 +619,8 @@
       "Styling will not be applied on paragraph <p> content",
       "Paragraph content will not be rendered"
     ],
-    "correctAnswer": "It will display the paragraph content in red color"
+    "correctAnswer": "It will display the paragraph content in red color",
+    "tag": "Vue"
   },
   {
     "question": "What should you be cautious about when using the `v-html` directive in Vue.js?",
@@ -561,17 +630,20 @@
       "It can cause performance issues",
       "It can only be used with static content"
     ],
-    "correctAnswer": "It can make your application vulnerable to XSS attacks if the content is not sanitized"
+    "correctAnswer": "It can make your application vulnerable to XSS attacks if the content is not sanitized",
+    "tag": "Vue"
   },
   {
     "question": "How to create a dynamic component in Vue JS",
     "options": ["<Slot>", "<component>", "<dynamic-component>", "<KeepAlive>"],
-    "correctAnswer": "<component>"
+    "correctAnswer": "<component>",
+    "tag": "Vue"
   },
   {
     "question": "Which attribute is used with the <component> tag so that we can switch between components?",
     "options": ["dynamic", "switch", "is", "componentName"],
-    "correctAnswer": "is"
+    "correctAnswer": "is",
+    "tag": "Vue"
   },
   {
     "question": "What will be the output of below code snippet when `someCondition` is true?",
@@ -582,7 +654,8 @@
       "Will show compiler error `<Transition> expects exactly one child element or component`",
       "Will throw runtime error `<Transition> expects exactly one child element or component`"
     ],
-    "correctAnswer": "Will throw runtime error `<Transition> expects exactly one child element or component`"
+    "correctAnswer": "Will throw runtime error `<Transition> expects exactly one child element or component`",
+    "tag": "Vue"
   },
   {
     "question": "What will be the output of below code snippet when `someCondition` is true?",
@@ -593,7 +666,8 @@
       "Will show compiler error `<Transition> expects exactly one child element or component`",
       "Will throw runtime error `<Transition> expects exactly one child element or component`"
     ],
-    "correctAnswer": "Will display text `First condition` in view"
+    "correctAnswer": "Will display text `First condition` in view",
+    "tag": "Vue"
   },
   {
     "question": "What will be the output of below code snippet?",
@@ -604,7 +678,8 @@
       "Will show compiler error",
       "Will not show anything"
     ],
-    "correctAnswer": "Will display `1.Tomatoes\n2.Potatoes`"
+    "correctAnswer": "Will display `1.Tomatoes\n2.Potatoes`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `Transition` component in Vue.js?",
@@ -614,7 +689,8 @@
       "To handle form submissions",
       "To manage state in a Vue component"
     ],
-    "correctAnswer": "To apply transition effects to a single element or component"
+    "correctAnswer": "To apply transition effects to a single element or component",
+    "tag": "Vue"
   },
   {
     "question": "How do you use the `TransitionGroup` component to apply transition effects to a list of elements in Vue.js?",
@@ -624,12 +700,14 @@
       "Using `transition-group` with `v-if`",
       "Using `transition` with `v-if`"
     ],
-    "correctAnswer": "Using `transition-group` with `v-for`"
+    "correctAnswer": "Using `transition-group` with `v-for`",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following is NOT a valid attribute for the `Transition` component in Vue.js?",
     "options": ["name", "mode", "appear", "tag"],
-    "correctAnswer": "tag"
+    "correctAnswer": "tag",
+    "tag": "Vue"
   },
   {
     "question": "What is the primary purpose of async components in Vue.js?",
@@ -639,7 +717,8 @@
       "To manage state in a component",
       "To handle event listeners"
     ],
-    "correctAnswer": "To dynamically load components only when they are needed"
+    "correctAnswer": "To dynamically load components only when they are needed",
+    "tag": "Vue"
   },
   {
     "question": "How do you define an async component in Vue.js using a dynamic import?",
@@ -650,7 +729,8 @@
       "Using `defineAsyncComponent` with a static import",
       "Using `defineComponent` with a static import"
     ],
-    "correctAnswer": "Using `defineAsyncComponent` with a dynamic import"
+    "correctAnswer": "Using `defineAsyncComponent` with a dynamic import",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following is NOT a benefit of using async components in Vue.js?",
@@ -660,7 +740,8 @@
       "Handling large components more efficiently",
       "Automatically managing state within the component"
     ],
-    "correctAnswer": "Automatically managing state within the component"
+    "correctAnswer": "Automatically managing state within the component",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `Suspense` component in Vue.js?",
@@ -670,7 +751,8 @@
       "To manage state in a component",
       "To handle event listeners"
     ],
-    "correctAnswer": "To handle asynchronous data fetching"
+    "correctAnswer": "To handle asynchronous data fetching",
+    "tag": "Vue"
   },
   {
     "question": "How do you use the `Suspense` component to handle asynchronous data fetching in Vue.js?",
@@ -680,7 +762,8 @@
       "Using `Suspense` with `v-for`",
       "Using `Suspense` with `v-slot`"
     ],
-    "correctAnswer": "Using `Suspense` with `v-slot`"
+    "correctAnswer": "Using `Suspense` with `v-slot`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `v-slot` directive in Vue.js?",
@@ -690,7 +773,8 @@
       "To handle events in a component",
       "To manage state in a component"
     ],
-    "correctAnswer": "To define a slot in a component"
+    "correctAnswer": "To define a slot in a component",
+    "tag": "Vue"
   },
   {
     "question": "How do you pass data to a named slot in Vue.js using the `v-slot` directive?",
@@ -700,7 +784,8 @@
       "<template v-slot=\"slotProps\">",
       "<template slot=\"slotProps\">"
     ],
-    "correctAnswer": "<template v-slot:header=\"slotProps\">"
+    "correctAnswer": "<template v-slot:header=\"slotProps\">",
+    "tag": "Vue"
   },
   {
     "question": "How do you use the `v-for` directive to render a list of items in Vue.js?",
@@ -710,7 +795,8 @@
       "<li v-for=\"item from items\" :key=\"item.id\">{{ item.name }}</li>",
       "<li v-for=\"item with items\" :key=\"item.id\">{{ item.name }}</li>"
     ],
-    "correctAnswer": "<li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>"
+    "correctAnswer": "<li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>",
+    "tag": "Vue"
   },
   {
     "question": "How do you access both the item and its index when using the `v-for` directive in Vue.js?",
@@ -720,7 +806,8 @@
       "<li v-for=\"(item, index) from items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
       "<li v-for=\"(item, index) with items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>"
     ],
-    "correctAnswer": "<li v-for=\"(item, index) of items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>"
+    "correctAnswer": "<li v-for=\"(item, index) of items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
+    "tag": "Vue"
   },
   {
     "question": "How do you iterate over the properties of an object to get key and value for each property in Vue.js?",
@@ -731,13 +818,15 @@
       "Using `v-for=\"value in user\"`",
       "Using `v-for=\"key in user\"`"
     ],
-    "correctAnswer": "Using `v-for=\"(value, key) in user\"`"
+    "correctAnswer": "Using `v-for=\"(value, key) in user\"`",
+    "tag": "Vue"
   },
   {
     "question": "What is the output of the following code snippet?",
     "codeSnippet": "<template>\n  <span v-for=\"n in 5\">{{ n }}</span> \n</template>",
     "options": ["01234", "12345", "1234"],
-    "correctAnswer": "12345"
+    "correctAnswer": "12345",
+    "tag": "Vue"
   },
   {
     "question": "What is the primary purpose of composables in Vue.js?",
@@ -747,7 +836,8 @@
       "To handle event listeners",
       "To define component templates"
     ],
-    "correctAnswer": "To create reusable logic that can be shared across multiple components"
+    "correctAnswer": "To create reusable logic that can be shared across multiple components",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a composable function in Vue.js?",
@@ -757,7 +847,8 @@
       "By using the `setup` function",
       "By using the `data` option"
     ],
-    "correctAnswer": "By exporting a function that returns reactive state and methods"
+    "correctAnswer": "By exporting a function that returns reactive state and methods",
+    "tag": "Vue"
   },
   {
     "question": "How do you use a composable function in a Vue.js component?",
@@ -767,7 +858,8 @@
       "By importing the composable function and calling it inside the `setup` function",
       "By using the `methods` option"
     ],
-    "correctAnswer": "By importing the composable function and calling it inside the `setup` function"
+    "correctAnswer": "By importing the composable function and calling it inside the `setup` function",
+    "tag": "Vue"
   },
   {
     "question": "What is the primary purpose of the `KeepAlive` component in Vue.js?",
@@ -777,7 +869,8 @@
       "To create reusable logic that can be shared across multiple components",
       "To keep dynamic components alive and preserve their state"
     ],
-    "correctAnswer": "To keep dynamic components alive and preserve their state"
+    "correctAnswer": "To keep dynamic components alive and preserve their state",
+    "tag": "Vue"
   },
   {
     "question": "How do you use the `KeepAlive` component to cache and preserve the state of a dynamic component in Vue.js?",
@@ -786,13 +879,15 @@
       "<KeepAlive><component :is=\"currentComponent\" /></KeepAlive>",
       "<KeepAlive><component v-show=\"currentComponent\" /></KeepAlive>"
     ],
-    "correctAnswer": "<KeepAlive><component :is=\"currentComponent\" /></KeepAlive>"
+    "correctAnswer": "<KeepAlive><component :is=\"currentComponent\" /></KeepAlive>",
+    "tag": "Vue"
   },
   {
     "question": "Which lifecycle hook is called when a component is activated by `KeepAlive` in Vue.js?",
     "codeHint": "<script setup>\nimport { onActivated } from 'vue';\n\nonActivated(() => {\n  console.log('Component activated');\n});\n</script>",
     "options": ["onMounted", "onUpdated", "onActivated", "onBeforeMount"],
-    "correctAnswer": "onActivated"
+    "correctAnswer": "onActivated",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `provide` and `inject` functions in Vue.js?",
@@ -802,7 +897,8 @@
       "To handle event listeners",
       "To create reusable logic that can be shared across multiple components"
     ],
-    "correctAnswer": "To make data available to child components without passing props"
+    "correctAnswer": "To make data available to child components without passing props",
+    "tag": "Vue"
   },
   {
     "question": "How do you provide data to child components using the `provide` function in Vue.js?",
@@ -812,7 +908,8 @@
       "By using the `data` option",
       "By using the `props` option"
     ],
-    "correctAnswer": "By defining a `provide` property in the parent component's `setup` function"
+    "correctAnswer": "By defining a `provide` property in the parent component's `setup` function",
+    "tag": "Vue"
   },
   {
     "question": "How do you inject data provided by a parent component using the `inject` function in Vue.js?",
@@ -822,7 +919,8 @@
       "By using the `data` option",
       "By using the `props` option"
     ],
-    "correctAnswer": "By calling the `inject` function inside the child component's `setup` function"
+    "correctAnswer": "By calling the `inject` function inside the child component's `setup` function",
+    "tag": "Vue"
   },
   {
     "question": "What are the three main sections of a Vue.js Single File Component (SFC)?",
@@ -832,7 +930,8 @@
       "<template>, <computed>, <watch>",
       "<template>, <props>, <methods>"
     ],
-    "correctAnswer": "<template>, <script>, <style>"
+    "correctAnswer": "<template>, <script>, <style>",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `<template>` section in a Vue.js Single File Component (SFC)?",
@@ -842,7 +941,8 @@
       "To define the methods of the component",
       "To define the computed properties of the component"
     ],
-    "correctAnswer": "To define the HTML template of the component"
+    "correctAnswer": "To define the HTML template of the component",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `<script>` section in a Vue.js Single File Component (SFC)?",
@@ -852,7 +952,8 @@
       "To define the JavaScript logic of the component",
       "To define the data properties of the component"
     ],
-    "correctAnswer": "To define the JavaScript logic of the component"
+    "correctAnswer": "To define the JavaScript logic of the component",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `<style>` section in a Vue.js Single File Component (SFC)?",
@@ -862,7 +963,8 @@
       "To define the JavaScript logic of the component",
       "To define the data properties of the component"
     ],
-    "correctAnswer": "To define the CSS styles of the component"
+    "correctAnswer": "To define the CSS styles of the component",
+    "tag": "Vue"
   },
   {
     "question": "How do you define scoped styles in a Vue.js Single File Component (SFC)?",
@@ -873,7 +975,8 @@
       "By adding the `scoped` attribute to the `<script>` tag",
       "By adding the `scoped` attribute to the `<div>` tag"
     ],
-    "correctAnswer": "By adding the `scoped` attribute to the `<style>` tag"
+    "correctAnswer": "By adding the `scoped` attribute to the `<style>` tag",
+    "tag": "Vue"
   },
   {
     "question": "What is Pinia in the context of Vue.js?",
@@ -883,7 +986,8 @@
       "A state management library",
       "A testing library"
     ],
-    "correctAnswer": "A state management library"
+    "correctAnswer": "A state management library",
+    "tag": "Vue"
   },
   {
     "question": "How do you install Pinia in a Vue.js project?",
@@ -893,7 +997,8 @@
       "npm install pinia-vue",
       "npm install vuex-pinia"
     ],
-    "correctAnswer": "npm install pinia"
+    "correctAnswer": "npm install pinia",
+    "tag": "Vue"
   },
   {
     "question": "How do you create a Pinia store in Vue.js?",
@@ -904,7 +1009,8 @@
       "Using `defineStore`",
       "Using `createPinia`"
     ],
-    "correctAnswer": "Using `defineStore`"
+    "correctAnswer": "Using `defineStore`",
+    "tag": "Vue"
   },
   {
     "question": "How do you register Pinia in a Vue.js application?",
@@ -915,7 +1021,8 @@
       "Using `app.use(pinia)`",
       "Using `app.use(createPinia)`"
     ],
-    "correctAnswer": "Using `app.use(pinia)`"
+    "correctAnswer": "Using `app.use(pinia)`",
+    "tag": "Vue"
   },
   {
     "question": "How do you persist the state of a Pinia store?",
@@ -925,7 +1032,8 @@
       "Using the `sessionStorage` property",
       "Using plugins like `pinia-plugin-persistedstate`"
     ],
-    "correctAnswer": "Using plugins like `pinia-plugin-persistedstate`"
+    "correctAnswer": "Using plugins like `pinia-plugin-persistedstate`",
+    "tag": "Vue"
   },
   {
     "question": "How do you install Vue Router in a Vue.js project?",
@@ -935,7 +1043,8 @@
       "npm install vue-router-next",
       "npm install vue-router-vue3"
     ],
-    "correctAnswer": "npm install vue-router"
+    "correctAnswer": "npm install vue-router",
+    "tag": "Vue"
   },
   {
     "question": "How do you create a Vue Router instance using the Composition API?",
@@ -946,7 +1055,8 @@
       "Using `createRouter` and `createHashHistory`",
       "Using `createRouter` and `createBrowserHistory`"
     ],
-    "correctAnswer": "Using `createRouter` and `createWebHistory`"
+    "correctAnswer": "Using `createRouter` and `createWebHistory`",
+    "tag": "Vue"
   },
   {
     "question": "How do you register the Vue Router instance in a Vue.js application?",
@@ -957,7 +1067,8 @@
       "Using `app.use(routerInstance)`",
       "Using `app.use(createRouterInstance)`"
     ],
-    "correctAnswer": "Using `app.use(router)`"
+    "correctAnswer": "Using `app.use(router)`",
+    "tag": "Vue"
   },
   {
     "question": "How do you navigate to a different route programmatically using the Composition API?",
@@ -968,7 +1079,8 @@
       "Using `router.navigate('/');`",
       "Using `router.redirect('/');`"
     ],
-    "correctAnswer": "Using `router.push('/');`"
+    "correctAnswer": "Using `router.push('/');`",
+    "tag": "Vue"
   },
   {
     "question": "How do you access route parameters using the Composition API?",
@@ -979,7 +1091,8 @@
       "Using `useRoute().query`",
       "Using `useRouter().query`"
     ],
-    "correctAnswer": "Using `useRoute().params`"
+    "correctAnswer": "Using `useRoute().params`",
+    "tag": "Vue"
   },
   {
     "question": "How do you define a dynamic route in Vue Router?",
@@ -990,7 +1103,8 @@
       "Using `path: '/user/[id]'`",
       "Using `path: '/user/<id>'`"
     ],
-    "correctAnswer": "Using `path: '/user/:id'`"
+    "correctAnswer": "Using `path: '/user/:id'`",
+    "tag": "Vue"
   },
   {
     "question": "How do you use named routes in Vue Router?",
@@ -1001,7 +1115,8 @@
       "Using `name` property in route definition and `router.navigate({ name: 'user', params: { id: 123 } })`",
       "Using `name` property in route definition and `router.redirect({ name: 'user', params: { id: 123 } })`"
     ],
-    "correctAnswer": "Using `name` property in route definition and `router.push({ name: 'user', params: { id: 123 } })`"
+    "correctAnswer": "Using `name` property in route definition and `router.push({ name: 'user', params: { id: 123 } })`",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of dynamic arguments in Vue.js?",
@@ -1011,7 +1126,8 @@
       "To manage state in a component",
       "To create reusable logic that can be shared across multiple components"
     ],
-    "correctAnswer": "To bind attributes or props dynamically based on an expression"
+    "correctAnswer": "To bind attributes or props dynamically based on an expression",
+    "tag": "Vue"
   },
   {
     "question": "How do you use dynamic arguments to bind an attribute in Vue.js?",
@@ -1022,7 +1138,8 @@
       "Using `v-for:[attributeName]`",
       "Using `:[attributeName]`"
     ],
-    "correctAnswer": "Using `:[attributeName]`"
+    "correctAnswer": "Using `:[attributeName]`",
+    "tag": "Vue"
   },
   {
     "question": "How do you use dynamic arguments to bind a handler to a dynamic event name in Vue.js?",
@@ -1032,7 +1149,8 @@
       "Using `v-if:[eventName]`",
       "Using `v-for:[eventName]`"
     ],
-    "correctAnswer": "Using `@[eventName]`"
+    "correctAnswer": "Using `@[eventName]`",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following statements is true about the difference between `ref` and `reactive` in Vue 3 Composition API?",
@@ -1042,7 +1160,8 @@
       "`ref` and `reactive` are interchangeable and can be used for the same purposes",
       "`ref` is used for defining computed properties, while `reactive` is used for watching changes"
     ],
-    "correctAnswer": "`ref` is used for primitive values and objects, while `reactive` is used for objects with nested properties"
+    "correctAnswer": "`ref` is used for primitive values and objects, while `reactive` is used for objects with nested properties",
+    "tag": "Vue"
   },
   {
     "question": "Which of NOT the limitations of `reactive` in Vue 3 Composition API?",
@@ -1052,7 +1171,8 @@
       "`reactive` cannot replace entire objects",
       "`reactive` is non destructure friendly and loses reactivity"
     ],
-    "correctAnswer": "`reactive` objects do not support reactivity"
+    "correctAnswer": "`reactive` objects do not support reactivity",
+    "tag": "Vue"
   },
   {
     "question": "What is the primary difference between computed properties and methods in Vue 3 Composition API?",
@@ -1062,7 +1182,8 @@
       "Computed properties can only return primitive values, while methods can return objects",
       "Methods can only return primitive values, while computed properties can return objects"
     ],
-    "correctAnswer": "Computed properties are cached based on their dependencies, while methods are not cached"
+    "correctAnswer": "Computed properties are cached based on their dependencies, while methods are not cached",
+    "tag": "Vue"
   },
   {
     "question": "Which of the following statements is true about caching in computed properties in Vue 3 Composition API?",
@@ -1072,7 +1193,8 @@
       "Computed properties are cached and never re-evaluated",
       "Computed properties are cached and re-evaluated on a fixed interval"
     ],
-    "correctAnswer": "Computed properties are cached and only re-evaluated when their dependencies change"
+    "correctAnswer": "Computed properties are cached and only re-evaluated when their dependencies change",
+    "tag": "Vue"
   },
   {
     "question": "How do you create a writable computed property in Vue 3 Composition API?",
@@ -1083,7 +1205,8 @@
       "Using `reactive` with a getter and setter",
       "Using `watch` with a getter and setter"
     ],
-    "correctAnswer": "Using `computed` with a getter and setter"
+    "correctAnswer": "Using `computed` with a getter and setter",
+    "tag": "Vue"
   },
   {
     "question": "What is the purpose of the `$attrs` property in Vue 3 Composition API?",
@@ -1093,7 +1216,8 @@
       "To create computed properties",
       "To manage component state"
     ],
-    "correctAnswer": "To access attributes and listeners passed to a component"
+    "correctAnswer": "To access attributes and listeners passed to a component",
+    "tag": "Vue"
   },
   {
     "question": "How do you pass attributes to a specific root element in a Vue 3 component?",
@@ -1104,7 +1228,8 @@
       "By using `v-bind=\"$listeners\"` on the desired root element",
       "By using `v-bind=\"$refs\"` on the desired root element"
     ],
-    "correctAnswer": "By using `v-bind=\"$attrs\"` on the desired root element"
+    "correctAnswer": "By using `v-bind=\"$attrs\"` on the desired root element",
+    "tag": "Vue"
   },
   {
     "question": "What is the effect of setting `inheritAttrs: false` in a Vue 3 component?",
@@ -1114,7 +1239,8 @@
       "It prevents the component from receiving props",
       "It disables event handling for the component"
     ],
-    "correctAnswer": "It prevents automatic inheritance of attributes by the root element"
+    "correctAnswer": "It prevents automatic inheritance of attributes by the root element",
+    "tag": "Vue"
   },
   {
     "question": "Which directive is NOT compaitable with <template> element in Vue JS?",
@@ -1125,7 +1251,8 @@
       "Using `v-show` directive",
       "Using `v-else-if` directive"
     ],
-    "correctAnswer": "Using `v-show` directive"
+    "correctAnswer": "Using `v-show` directive",
+    "tag": "Vue"
   },
   {
     "question": "How do you filter and sort an array of objects in Vue.js using the Composition API?",
@@ -1136,7 +1263,8 @@
       "Using `computed` with `filter` and `sort` methods",
       "Using `reactive` with `filter` and `sort` methods"
     ],
-    "correctAnswer": "Using `computed` with `filter` and `sort` methods"
+    "correctAnswer": "Using `computed` with `filter` and `sort` methods",
+    "tag": "Vue"
   },
   {
     "question": "When `ref` is used inside `v-for`, how should the corresponding `ref` be structured to contain an array value populated with the elements after mount in Vue.js?",
@@ -1147,31 +1275,36 @@
       "The `ref` should be initialized as an empty array and populated with elements using a function inside `v-for`",
       "The `ref` should be initialized as a string and populated with elements using a function inside `v-for`"
     ],
-    "correctAnswer": "The `ref` should be initialized as an empty array and populated with elements using a function inside `v-for`"
+    "correctAnswer": "The `ref` should be initialized as an empty array and populated with elements using a function inside `v-for`",
+    "tag": "Vue"
   },
   {
     "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
     "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value * 2;\n});\n</script>",
     "options": ["0", "1", "2", "3"],
-    "correctAnswer": "1"
+    "correctAnswer": "1",
+    "tag": "Vue"
   },
   {
     "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
     "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value++;\n});\n</script>",
     "options": ["0", "1", "2", "3"],
-    "correctAnswer": "3"
+    "correctAnswer": "3",
+    "tag": "Vue"
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
     "codeSnippet": "<template>\n  <MyButton>Click me</MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
     "options": ["True", "False"],
-    "correctAnswer": "False"
+    "correctAnswer": "False",
+    "tag": "Vue"
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
     "codeSnippet": "<template>\n  <MyButton></MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
     "options": ["True", "False"],
-    "correctAnswer": "True"
+    "correctAnswer": "True",
+    "tag": "Vue"
   },
   {
     "question": "When using the dynamic attribute binding in Vue JS, How will be <div> element rendered in browser?",
@@ -1182,7 +1315,8 @@
       "It will throw an error",
       "It will not render anything"
     ],
-    "correctAnswer": "<div id=\"1\" name=\"div name\">This is a div</div>"
+    "correctAnswer": "<div id=\"1\" name=\"div name\">This is a div</div>",
+    "tag": "Vue"
   },
   {
     "question": "Given the handlers object, which of the following is the correct way to bind all the event handlers to div element at once?",
@@ -1192,7 +1326,8 @@
       "<div v-bind=\"handlers\">Click me</div>",
       "<div v-on:click=\"handlers.click\" v-on:mouseover=\"handlers.mouseover\" v-on:mouseout=\"handlers.mouseout\">Click me</div>"
     ],
-    "correctAnswer": "<div v-on=\"handlers\">Click me</div>"
+    "correctAnswer": "<div v-on=\"handlers\">Click me</div>",
+    "tag": "Vue"
   },
   {
     "question": "Select the correct statement when the text property changes?",
@@ -1202,7 +1337,8 @@
       "The transition will be trigerred on blur",
       "The transition will not be trigerred"
     ],
-    "correctAnswer": "The transition will not be trigerred"
+    "correctAnswer": "The transition will not be trigerred",
+    "tag": "Vue"
   },
   {
     "question": "Select the correct statement when the text property changes?",
@@ -1212,18 +1348,446 @@
       "The transition will be trigerred on blur",
       "The transition will not be trigerred"
     ],
-    "correctAnswer": "The transition will be triggered"
+    "correctAnswer": "The transition will be triggered",
+    "tag": "Vue"
   },
   {
     "question": "What value will be rendered in the view for computed prop `plusOne`?",
     "codeSnippet": "<template>\n<span>{{ plusOne++ }}</span>\n</template>\n\n<script setup>\n import { ref, computed } from 'vue';\nconst count = ref(1);\nconst plusOne = computed(() => count.value + 1);\n</script>",
     "options": ["0", "1", "2", "3"],
-    "correctAnswer": "2"
+    "correctAnswer": "2",
+    "tag": "Vue"
   },
   {
     "question": "What value be the output of `count.value`?",
     "codeSnippet": "<script setup>\n import { ref, reactive } from 'vue';\n\nconst count = ref(1);\nconst obj = reactive({ count });\nobj.count++;</script>",
     "options": ["0", "1", "2", "3"],
-    "correctAnswer": "2"
+    "correctAnswer": "2",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => resolve('Success'), 1000);\n});\n\npromise.then(result => console.log(result));",
+    "options": ["Success", "Error", "undefined", "null"],
+    "correctAnswer": "Success",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const numbers = [1, 2, 3, 4, 5];\nconst result = numbers.map(num => num * 2);\nconsole.log(result);",
+    "options": ["[2, 4, 6, 8, 10]", "[1, 2, 3, 4, 5]", "[1, 4, 9, 16, 25]", "[2, 3, 4, 5, 6]"],
+    "correctAnswer": "[2, 4, 6, 8, 10]",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const a = 5;\nconst b = '5';\nconsole.log(a == b);\nconsole.log(a === b);",
+    "options": ["true false", "false true", "true true", "false false"],
+    "correctAnswer": "true false",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const arr = [1, 2, 3, 4, 5];\nconst result = arr.filter(num => num > 2);\nconsole.log(result);",
+    "options": ["[3, 4, 5]", "[1, 2, 3, 4, 5]", "[1, 2]", "[2, 3, 4, 5]"],
+    "correctAnswer": "[3, 4, 5]",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const promise1 = Promise.resolve('First');\nconst promise2 = Promise.resolve('Second');\n\nPromise.all([promise1, promise2]).then(values => console.log(values));",
+    "options": ["['First', 'Second']", "First Second", "Second First", "Error"],
+    "correctAnswer": "['First', 'Second']",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = null ?? 'default';\nconsole.log(foo);",
+    "options": ["null", "'default'", "undefined", "Error"],
+    "correctAnswer": "'default'",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = undefined ?? 'default';\nconsole.log(foo);",
+    "options": ["undefined", "'default'", "null", "Error"],
+    "correctAnswer": "'default'",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = 0 ?? 'default';\nconsole.log(foo);",
+    "options": ["0", "'default'", "undefined", "null"],
+    "correctAnswer": "0",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const obj = { a: { b: 2 } };\nconst value = obj?.a?.b;\nconsole.log(value);",
+    "options": ["2", "undefined", "null", "Error"],
+    "correctAnswer": "2",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const obj = { a: { b: 2 } };\nconst value = obj?.a?.c;\nconsole.log(value);",
+    "options": ["undefined", "2", "null", "Error"],
+    "correctAnswer": "undefined",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nfetchData().then(result => console.log(result));",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nconst result = fetchData();\nconsole.log(result);",
+    "options": ["Promise", "Data fetched", "undefined", "Error"],
+    "correctAnswer": "Promise",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  const result = await fetchData();\n  console.log(result);\n}\n\ngetData();",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  throw new Error('Fetch error');\n}\n\nfetchData().catch(error => console.log(error.message));",
+    "options": ["Fetch error", "undefined", "Promise", "Error"],
+    "correctAnswer": "Fetch error",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  try {\n    const result = await fetchData();\n    console.log(result);\n  } catch (error) {\n    console.log(error.message);\n  }\n}\n\ngetData();",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}",
+    "options": ["Something went wrong", "undefined", "Error", "null"],
+    "correctAnswer": "Something went wrong",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "options": [
+      "Try block\nFinally block",
+      "Try block\nCatch block\nFinally block",
+      "Catch block\nFinally block",
+      "Finally block"
+    ],
+    "correctAnswer": "Try block\nFinally block",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "options": [
+      "Catch block\nFinally block",
+      "Something went wrong\nFinally block",
+      "Finally block",
+      "Catch block"
+    ],
+    "correctAnswer": "Catch block\nFinally block",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}\nconsole.log('After try-catch');",
+    "options": [
+      "Something went wrong\nAfter try-catch",
+      "After try-catch\nSomething went wrong",
+      "Error\nAfter try-catch",
+      "After try-catch"
+    ],
+    "correctAnswer": "Something went wrong\nAfter try-catch",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n}\nconsole.log('After try-catch');",
+    "options": [
+      "Try block\nAfter try-catch",
+      "Catch block\nAfter try-catch",
+      "After try-catch",
+      "Try block"
+    ],
+    "correctAnswer": "Try block\nAfter try-catch",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const name = 'John';\nconst greeting = `Hello, ${name}!`;\nconsole.log(greeting);",
+    "options": ["Hello, John!", "Hello, ${name}!", "Hello, John", "Hello, ${name}!"],
+    "correctAnswer": "Hello, John!",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const a = 5;\nconst b = 10;\nconst result = `The sum is ${a + b}`;\nconsole.log(result);",
+    "options": ["The sum is 15", "The sum is 5 + 10", "The sum is ${a + b}", "The sum is 510"],
+    "correctAnswer": "The sum is 15",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const name = 'Alice';\nconst age = 25;\nconst info = 'Name: ' + name + ', Age: ' + age;\nconsole.log(info);",
+    "options": [
+      "Name: Alice, Age: 25",
+      "Name: Alice Age: 25",
+      "Name: ${name}, Age: ${age}",
+      "Name: Alice, Age: ${age}"
+    ],
+    "correctAnswer": "Name: Alice, Age: 25",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const firstName = 'Jane';\nconst lastName = 'Doe';\nconst fullName = `${firstName} ${lastName}`;\nconsole.log(fullName);",
+    "options": ["Jane Doe", "JaneDoe", "${firstName} ${lastName}", "Jane ${lastName}"],
+    "correctAnswer": "Jane Doe",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const city = 'New York';\nconst message = 'Welcome to ' + city + '!';\nconsole.log(message);",
+    "options": [
+      "Welcome to New York!",
+      "Welcome to ${city}!",
+      "Welcome to New York",
+      "Welcome to ' + city + '"
+    ],
+    "correctAnswer": "Welcome to New York!",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `let` keyword in JavaScript?",
+    "options": [
+      "To declare a block-scoped variable",
+      "To declare a function-scoped variable",
+      "To declare a constant variable",
+      "To declare a global variable"
+    ],
+    "correctAnswer": "To declare a block-scoped variable",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the difference between `==` and `===` in JavaScript?",
+    "options": [
+      "`==` checks for value equality, while `===` checks for both value and type equality",
+      "`==` checks for both value and type equality, while `===` checks for value equality",
+      "`==` is used for comparing strings, while `===` is used for comparing numbers",
+      "`==` is used for comparing objects, while `===` is used for comparing arrays"
+    ],
+    "correctAnswer": "`==` checks for value equality, while `===` checks for both value and type equality",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is a closure in JavaScript?",
+    "options": [
+      "A function that has access to its own scope, the scope of the outer function, and the global scope",
+      "A function that is executed immediately after it is defined",
+      "A function that is used to create objects",
+      "A function that is used to handle asynchronous operations"
+    ],
+    "correctAnswer": "A function that has access to its own scope, the scope of the outer function, and the global scope",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `const` keyword in JavaScript?",
+    "options": [
+      "To declare a block-scoped constant variable",
+      "To declare a function-scoped constant variable",
+      "To declare a global constant variable",
+      "To declare a variable that can be reassigned"
+    ],
+    "correctAnswer": "To declare a block-scoped constant variable",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `this` keyword in JavaScript?",
+    "options": [
+      "To refer to the current object",
+      "To refer to the global object",
+      "To refer to the parent object",
+      "To refer to the previous object"
+    ],
+    "correctAnswer": "To refer to the current object",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.map` method in JavaScript?",
+    "options": [
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To execute a provided function once for each array element",
+      "To reduce the array to a single value"
+    ],
+    "correctAnswer": "To create a new array with the results of calling a provided function on every element in the calling array",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.filter` method in JavaScript?",
+    "options": [
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To execute a provided function once for each array element",
+      "To reduce the array to a single value"
+    ],
+    "correctAnswer": "To create a new array with all elements that pass the test implemented by the provided function",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.reduce` method in JavaScript?",
+    "options": [
+      "To reduce the array to a single value",
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To execute a provided function once for each array element"
+    ],
+    "correctAnswer": "To reduce the array to a single value",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Promise` object in JavaScript?",
+    "options": [
+      "To represent the eventual completion (or failure) of an asynchronous operation and its resulting value",
+      "To handle synchronous operations",
+      "To create new objects",
+      "To handle exceptions"
+    ],
+    "correctAnswer": "To represent the eventual completion (or failure) of an asynchronous operation and its resulting value",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `async` keyword in JavaScript?",
+    "options": [
+      "To define an asynchronous function that returns a `Promise`",
+      "To define a synchronous function",
+      "To handle exceptions",
+      "To create new objects"
+    ],
+    "correctAnswer": "To define an asynchronous function that returns a `Promise`",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the primary difference between a regular function and an arrow function in JavaScript?",
+    "options": [
+      "Arrow functions do not have their own `this` context",
+      "Arrow functions cannot accept parameters",
+      "Arrow functions are not hoisted",
+      "Arrow functions cannot return values"
+    ],
+    "correctAnswer": "Arrow functions do not have their own `this` context",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define an arrow function in JavaScript?",
+    "options": [
+      "const myFunction = () => {}",
+      "function myFunction() {}",
+      "const myFunction = function() {}",
+      "myFunction() => {}"
+    ],
+    "correctAnswer": "const myFunction = () => {}",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `this` keyword in JavaScript?",
+    "options": [
+      "To refer to the current object",
+      "To refer to the global object",
+      "To refer to the parent object",
+      "To refer to the previous object"
+    ],
+    "correctAnswer": "To refer to the current object",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How does the `this` keyword behave differently in arrow functions compared to regular functions?",
+    "options": [
+      "Arrow functions inherit `this` from the enclosing scope",
+      "Arrow functions have their own `this` context",
+      "Arrow functions do not support the `this` keyword",
+      "Arrow functions bind `this` to the global object"
+    ],
+    "correctAnswer": "Arrow functions inherit `this` from the enclosing scope",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `class` keyword in JavaScript?",
+    "options": [
+      "To define a blueprint for creating objects",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a blueprint for creating objects",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define a class in JavaScript?",
+    "options": [
+      "class MyClass {}",
+      "function MyClass() {}",
+      "const MyClass = () => {}",
+      "MyClass() => {}"
+    ],
+    "correctAnswer": "class MyClass {}",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `constructor` method in a JavaScript class?",
+    "options": [
+      "To initialize object properties",
+      "To define static methods",
+      "To handle exceptions",
+      "To create a new array"
+    ],
+    "correctAnswer": "To initialize object properties",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you create an instance of a class in JavaScript?",
+    "options": [
+      "const obj = new MyClass()",
+      "const obj = MyClass()",
+      "const obj = create MyClass()",
+      "const obj = MyClass.create()"
+    ],
+    "correctAnswer": "const obj = new MyClass()",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `super` keyword in JavaScript classes?",
+    "options": [
+      "To call the constructor of the parent class",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To call the constructor of the parent class",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define a method in a JavaScript class?",
+    "options": [
+      "class MyClass { myMethod() {} }",
+      "class MyClass { const myMethod = () => {} }",
+      "class MyClass { function myMethod() {} }",
+      "class MyClass { myMethod: function() {} }"
+    ],
+    "correctAnswer": "class MyClass { myMethod() {} }",
+    "tag": "JavaScript"
   }
 ]

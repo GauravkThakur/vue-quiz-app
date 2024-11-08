@@ -17,10 +17,11 @@ import { ref } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import { useQuizStore } from '@/stores/quiz';
+import { useQuestions } from '@/composables/questions';
+
+import QuizMain from './QuizMain.vue';
 import QuizHeader from './QuizHeader.vue';
 import QuizFooter from './QuizFooter.vue';
-import QuizMain from './QuizMain.vue';
-import { useQuestions } from '@/composables/questions';
 
 const isRestarted = ref(false);
 

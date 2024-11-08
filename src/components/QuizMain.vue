@@ -34,7 +34,10 @@
             class="shadow-none rounded-none w-full sm:w-3/4 items-center flex justify-center m-auto"
           >
             <template #title>
-              <div class="flex flex-col gap-4">{{ data[currentPage].question }}</div>
+              <div class="flex items-center gap-2">
+                <QuizIcon :name="data[currentPage].tag" class="h-7 w-7" />
+                <span class="grow">{{ data[currentPage].question }}</span>
+              </div>
             </template>
             <template #subtitle>
               <QuizSyntaxHighlighter
@@ -78,12 +81,19 @@ import { ref, watch, watchEffect, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import { useQuizStore } from '@/stores/quiz';
+import QuizIcon from './QuizIcon.vue';
 import Pagination from './QuizPagination.vue';
 import QuizSyntaxHighlighter from '@/components/QuizSyntaxHighlighter.vue';
 const options = ref<{ name: string; value: number }[]>([]);
 
 const props = defineProps<{
-  data: { question: string; options: string[]; correctAnswer: string; codeSnippet?: string }[];
+  data: {
+    question: string;
+    options: string[];
+    correctAnswer: string;
+    codeSnippet?: string;
+    tag: string;
+  }[];
 }>();
 
 const { currentPage, selectedOption, selectedOptions } = storeToRefs(useQuizStore());

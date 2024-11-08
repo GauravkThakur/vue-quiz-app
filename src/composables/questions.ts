@@ -9,17 +9,25 @@ type Question = {
   codeHint?: string;
   codeSnippet?: string;
   correctAnswer: string;
+  tag: string;
 };
 
 export function useQuestions() {
-  const totalItems = data.length;
-
+  const { isDarkMode, questionIndexes, allTopics, selectedTopics, numberOfIndexes } =
+    storeToRefs(useQuizStore());
   const questions = ref<Question[]>([]);
-  const { isDarkMode, questionIndexes, numberOfIndexes } = storeToRefs(useQuizStore());
+  const totalItems = data.reduce((a, c, i) => {
+    const topics = selectedTopics.value.length ? selectedTopics.value : allTopics.value;
+    if (topics.includes(c.tag)) {
+      a.push(i);
+    }
+    return a;
+  }, [] as number[]);
 
-  function getRandomIndexes(totalItems: number, numberOfIndexes: number) {
-    const indexes = Array.from({ length: totalItems }, (_, i) => i);
-    const shuffledIndexes = shuffle(indexes);
+  function getRandomIndexes(totalItems: number[], numberOfIndexes: number) {
+    //const indexes = Array.from({ length: totalItems }, (_, i) => i);
+    // console.log('indexes', indexes);
+    const shuffledIndexes = shuffle(totalItems);
     return shuffledIndexes.slice(0, numberOfIndexes) as number[];
   }
 
@@ -38,7 +46,7 @@ export function useQuestions() {
 
     questionIndexes.value = questionIndexes.value.length
       ? questionIndexes.value
-      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10) || totalItems);
+      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10) || totalItems.length);
     questions.value = questionIndexes.value.map((index) => data[index]);
   });
 

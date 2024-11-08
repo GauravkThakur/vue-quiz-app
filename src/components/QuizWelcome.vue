@@ -13,17 +13,41 @@
   </Card>
   <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto">
     <template #title>
-      <Image src="/logo.svg" alt="Vue Quiz" class="flex justify-center" width="50" />
-      <h1 class="flex justify-center">Vue JS Quiz</h1>
+      <div class="flex justify-center gap-2">
+        <QuizIcon
+          v-for="topic in allTopics"
+          :key="topic"
+          :name="topic.toLowerCase()"
+          class="h-12 w-12"
+        />
+      </div>
+      <h1 class="flex justify-center">Front end Quiz</h1>
     </template>
     <template #subtitle>
       <h2 class="w-full md:w-3/4 m-auto">
-        This quiz is designed to test your knowledge of Vue.js. You will be presented with a series
-        of multiple-choice questions which focus on Vue composition API concepts. Good luck :-)
+        This quiz is designed to test your knowledge of Vue.js and JavaScript. You will be presented
+        with a series of multiple-choice questions which focus on JavaScript and Vue composition API
+        concepts. Good luck :-)
       </h2>
     </template>
     <template #content>
       <div class="flex flex-col gap-4 text-center w-full md:w-3/4 m-auto">
+        <Fieldset>
+          <template #legend>
+            <div class="flex items-center pl-2">
+              <span class="font-bold p-2">Choose topics</span>
+            </div>
+          </template>
+          <SelectButton
+            v-model="selectedTopics"
+            :options="allTopics"
+            multiple
+            aria-labelledby="multiple"
+            class="flex-wrap gap-2 justify-center"
+          >
+            <template #option="slotProps">{{ slotProps.option }}</template>
+          </SelectButton>
+        </Fieldset>
         <Fieldset>
           <template #legend>
             <div class="flex items-center pl-2">
@@ -36,7 +60,7 @@
             aria-labelledby="basic"
             class="flex-wrap gap-2 justify-center"
           >
-            <template #option="slotProps">{{ slotProps.option }} Questions</template>
+            <template #option="slotProps">{{ slotProps.option }}</template>
           </SelectButton>
         </Fieldset>
         <FloatLabel variant="in">
@@ -64,6 +88,16 @@ import { onMounted, ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 
+const {
+  username,
+  allTopics,
+  selectedTopics,
+  numberOfIndexes,
+  timeLeft,
+  isDarkMode,
+  updatedNumberOfIndexes
+} = storeToRefs(useQuizStore());
+
 const isInvalid = ref(false);
 const options = ref(['30', '40', '50', 'All']);
 const emit = defineEmits(['start']);
@@ -82,9 +116,6 @@ const validateInput = () => {
   }
   isInvalid.value = false;
 };
-
-const { username, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } =
-  storeToRefs(useQuizStore());
 
 watch(numberOfIndexes, () => {
   timeLeft.value = updatedNumberOfIndexes.value * 60;

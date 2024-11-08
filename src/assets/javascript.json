@@ -1,0 +1,427 @@
+[
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => resolve('Success'), 1000);\n});\n\npromise.then(result => console.log(result));",
+    "options": ["Success", "Error", "undefined", "null"],
+    "correctAnswer": "Success",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const numbers = [1, 2, 3, 4, 5];\nconst result = numbers.map(num => num * 2);\nconsole.log(result);",
+    "options": ["[2, 4, 6, 8, 10]", "[1, 2, 3, 4, 5]", "[1, 4, 9, 16, 25]", "[2, 3, 4, 5, 6]"],
+    "correctAnswer": "[2, 4, 6, 8, 10]",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const a = 5;\nconst b = '5';\nconsole.log(a == b);\nconsole.log(a === b);",
+    "options": ["true false", "false true", "true true", "false false"],
+    "correctAnswer": "true false",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const arr = [1, 2, 3, 4, 5];\nconst result = arr.filter(num => num > 2);\nconsole.log(result);",
+    "options": ["[3, 4, 5]", "[1, 2, 3, 4, 5]", "[1, 2]", "[2, 3, 4, 5]"],
+    "correctAnswer": "[3, 4, 5]",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const promise1 = Promise.resolve('First');\nconst promise2 = Promise.resolve('Second');\n\nPromise.all([promise1, promise2]).then(values => console.log(values));",
+    "options": ["['First', 'Second']", "First Second", "Second First", "Error"],
+    "correctAnswer": "['First', 'Second']",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = null ?? 'default';\nconsole.log(foo);",
+    "options": ["null", "'default'", "undefined", "Error"],
+    "correctAnswer": "'default'",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = undefined ?? 'default';\nconsole.log(foo);",
+    "options": ["undefined", "'default'", "null", "Error"],
+    "correctAnswer": "'default'",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const foo = 0 ?? 'default';\nconsole.log(foo);",
+    "options": ["0", "'default'", "undefined", "null"],
+    "correctAnswer": "0",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const obj = { a: { b: 2 } };\nconst value = obj?.a?.b;\nconsole.log(value);",
+    "options": ["2", "undefined", "null", "Error"],
+    "correctAnswer": "2",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const obj = { a: { b: 2 } };\nconst value = obj?.a?.c;\nconsole.log(value);",
+    "options": ["undefined", "2", "null", "Error"],
+    "correctAnswer": "undefined",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nfetchData().then(result => console.log(result));",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nconst result = fetchData();\nconsole.log(result);",
+    "options": ["Promise", "Data fetched", "undefined", "Error"],
+    "correctAnswer": "Promise",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  const result = await fetchData();\n  console.log(result);\n}\n\ngetData();",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  throw new Error('Fetch error');\n}\n\nfetchData().catch(error => console.log(error.message));",
+    "options": ["Fetch error", "undefined", "Promise", "Error"],
+    "correctAnswer": "Fetch error",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  try {\n    const result = await fetchData();\n    console.log(result);\n  } catch (error) {\n    console.log(error.message);\n  }\n}\n\ngetData();",
+    "options": ["Data fetched", "undefined", "Promise", "Error"],
+    "correctAnswer": "Data fetched",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}",
+    "options": ["Something went wrong", "undefined", "Error", "null"],
+    "correctAnswer": "Something went wrong",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "options": [
+      "Try block\nFinally block",
+      "Try block\nCatch block\nFinally block",
+      "Catch block\nFinally block",
+      "Finally block"
+    ],
+    "correctAnswer": "Try block\nFinally block",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "options": [
+      "Catch block\nFinally block",
+      "Something went wrong\nFinally block",
+      "Finally block",
+      "Catch block"
+    ],
+    "correctAnswer": "Catch block\nFinally block",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}\nconsole.log('After try-catch');",
+    "options": [
+      "Something went wrong\nAfter try-catch",
+      "After try-catch\nSomething went wrong",
+      "Error\nAfter try-catch",
+      "After try-catch"
+    ],
+    "correctAnswer": "Something went wrong\nAfter try-catch",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n}\nconsole.log('After try-catch');",
+    "options": [
+      "Try block\nAfter try-catch",
+      "Catch block\nAfter try-catch",
+      "After try-catch",
+      "Try block"
+    ],
+    "correctAnswer": "Try block\nAfter try-catch",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const name = 'John';\nconst greeting = `Hello, ${name}!`;\nconsole.log(greeting);",
+    "options": ["Hello, John!", "Hello, ${name}!", "Hello, John", "Hello, ${name}!"],
+    "correctAnswer": "Hello, John!",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const a = 5;\nconst b = 10;\nconst result = `The sum is ${a + b}`;\nconsole.log(result);",
+    "options": ["The sum is 15", "The sum is 5 + 10", "The sum is ${a + b}", "The sum is 510"],
+    "correctAnswer": "The sum is 15",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const name = 'Alice';\nconst age = 25;\nconst info = 'Name: ' + name + ', Age: ' + age;\nconsole.log(info);",
+    "options": [
+      "Name: Alice, Age: 25",
+      "Name: Alice Age: 25",
+      "Name: ${name}, Age: ${age}",
+      "Name: Alice, Age: ${age}"
+    ],
+    "correctAnswer": "Name: Alice, Age: 25",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const firstName = 'Jane';\nconst lastName = 'Doe';\nconst fullName = `${firstName} ${lastName}`;\nconsole.log(fullName);",
+    "options": ["Jane Doe", "JaneDoe", "${firstName} ${lastName}", "Jane ${lastName}"],
+    "correctAnswer": "Jane Doe",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "const city = 'New York';\nconst message = 'Welcome to ' + city + '!';\nconsole.log(message);",
+    "options": [
+      "Welcome to New York!",
+      "Welcome to ${city}!",
+      "Welcome to New York",
+      "Welcome to ' + city + '"
+    ],
+    "correctAnswer": "Welcome to New York!",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `let` keyword in JavaScript?",
+    "options": [
+      "To declare a block-scoped variable",
+      "To declare a function-scoped variable",
+      "To declare a constant variable",
+      "To declare a global variable"
+    ],
+    "correctAnswer": "To declare a block-scoped variable",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the difference between `==` and `===` in JavaScript?",
+    "options": [
+      "`==` checks for value equality, while `===` checks for both value and type equality",
+      "`==` checks for both value and type equality, while `===` checks for value equality",
+      "`==` is used for comparing strings, while `===` is used for comparing numbers",
+      "`==` is used for comparing objects, while `===` is used for comparing arrays"
+    ],
+    "correctAnswer": "`==` checks for value equality, while `===` checks for both value and type equality",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is a closure in JavaScript?",
+    "options": [
+      "A function that has access to its own scope, the scope of the outer function, and the global scope",
+      "A function that is executed immediately after it is defined",
+      "A function that is used to create objects",
+      "A function that is used to handle asynchronous operations"
+    ],
+    "correctAnswer": "A function that has access to its own scope, the scope of the outer function, and the global scope",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `const` keyword in JavaScript?",
+    "options": [
+      "To declare a block-scoped constant variable",
+      "To declare a function-scoped constant variable",
+      "To declare a global constant variable",
+      "To declare a variable that can be reassigned"
+    ],
+    "correctAnswer": "To declare a block-scoped constant variable",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `this` keyword in JavaScript?",
+    "options": [
+      "To refer to the current object",
+      "To refer to the global object",
+      "To refer to the parent object",
+      "To refer to the previous object"
+    ],
+    "correctAnswer": "To refer to the current object",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.map` method in JavaScript?",
+    "options": [
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To execute a provided function once for each array element",
+      "To reduce the array to a single value"
+    ],
+    "correctAnswer": "To create a new array with the results of calling a provided function on every element in the calling array",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.filter` method in JavaScript?",
+    "options": [
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To execute a provided function once for each array element",
+      "To reduce the array to a single value"
+    ],
+    "correctAnswer": "To create a new array with all elements that pass the test implemented by the provided function",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Array.prototype.reduce` method in JavaScript?",
+    "options": [
+      "To reduce the array to a single value",
+      "To create a new array with the results of calling a provided function on every element in the calling array",
+      "To create a new array with all elements that pass the test implemented by the provided function",
+      "To execute a provided function once for each array element"
+    ],
+    "correctAnswer": "To reduce the array to a single value",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `Promise` object in JavaScript?",
+    "options": [
+      "To represent the eventual completion (or failure) of an asynchronous operation and its resulting value",
+      "To handle synchronous operations",
+      "To create new objects",
+      "To handle exceptions"
+    ],
+    "correctAnswer": "To represent the eventual completion (or failure) of an asynchronous operation and its resulting value",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `async` keyword in JavaScript?",
+    "options": [
+      "To define an asynchronous function that returns a `Promise`",
+      "To define a synchronous function",
+      "To handle exceptions",
+      "To create new objects"
+    ],
+    "correctAnswer": "To define an asynchronous function that returns a `Promise`",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the primary difference between a regular function and an arrow function in JavaScript?",
+    "options": [
+      "Arrow functions do not have their own `this` context",
+      "Arrow functions cannot accept parameters",
+      "Arrow functions are not hoisted",
+      "Arrow functions cannot return values"
+    ],
+    "correctAnswer": "Arrow functions do not have their own `this` context",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define an arrow function in JavaScript?",
+    "options": [
+      "const myFunction = () => {}",
+      "function myFunction() {}",
+      "const myFunction = function() {}",
+      "myFunction() => {}"
+    ],
+    "correctAnswer": "const myFunction = () => {}",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `this` keyword in JavaScript?",
+    "options": [
+      "To refer to the current object",
+      "To refer to the global object",
+      "To refer to the parent object",
+      "To refer to the previous object"
+    ],
+    "correctAnswer": "To refer to the current object",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How does the `this` keyword behave differently in arrow functions compared to regular functions?",
+    "options": [
+      "Arrow functions inherit `this` from the enclosing scope",
+      "Arrow functions have their own `this` context",
+      "Arrow functions do not support the `this` keyword",
+      "Arrow functions bind `this` to the global object"
+    ],
+    "correctAnswer": "Arrow functions inherit `this` from the enclosing scope",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `class` keyword in JavaScript?",
+    "options": [
+      "To define a blueprint for creating objects",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a blueprint for creating objects",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define a class in JavaScript?",
+    "options": [
+      "class MyClass {}",
+      "function MyClass() {}",
+      "const MyClass = () => {}",
+      "MyClass() => {}"
+    ],
+    "correctAnswer": "class MyClass {}",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `constructor` method in a JavaScript class?",
+    "options": [
+      "To initialize object properties",
+      "To define static methods",
+      "To handle exceptions",
+      "To create a new array"
+    ],
+    "correctAnswer": "To initialize object properties",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you create an instance of a class in JavaScript?",
+    "options": [
+      "const obj = new MyClass()",
+      "const obj = MyClass()",
+      "const obj = create MyClass()",
+      "const obj = MyClass.create()"
+    ],
+    "correctAnswer": "const obj = new MyClass()",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "What is the purpose of the `super` keyword in JavaScript classes?",
+    "options": [
+      "To call the constructor of the parent class",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To call the constructor of the parent class",
+    "tag": "JavaScript"
+  },
+  {
+    "question": "How do you define a method in a JavaScript class?",
+    "options": [
+      "class MyClass { myMethod() {} }",
+      "class MyClass { const myMethod = () => {} }",
+      "class MyClass { function myMethod() {} }",
+      "class MyClass { myMethod: function() {} }"
+    ],
+    "correctAnswer": "class MyClass { myMethod() {} }",
+    "tag": "JavaScript"
+  }
+]
