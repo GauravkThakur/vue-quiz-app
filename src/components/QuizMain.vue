@@ -8,9 +8,10 @@
       <div class="flex flex-wrap gap-2 sm:gap-5 justify-center mx-auto p-4 p-sm-10 h-full">
         <Button
           v-for="(option, index) in options"
+          ref="optionsRef"
           class="w-11 h-11"
           rounded
-          :raised="!!data[index].codeSnippet"
+          :raised="!!data[index]?.codeSnippet"
           :key="index"
           :label="`${option.value < 9 ? '0' : ''}${option.value + 1}`"
           :severity="
@@ -77,14 +78,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, watchEffect, onMounted } from 'vue';
+import { ref, watch, watchEffect, onMounted, useTemplateRef } from 'vue';
 import { storeToRefs } from 'pinia';
 
 import { useQuizStore } from '@/stores/quiz';
 import QuizIcon from './QuizIcon.vue';
 import Pagination from './QuizPagination.vue';
-import QuizSyntaxHighlighter from '@/components/QuizSyntaxHighlighter.vue';
+import QuizSyntaxHighlighter from './QuizSyntaxHighlighter.vue';
+
 const options = ref<{ name: string; value: number }[]>([]);
+const optionsRef = useTemplateRef('optionsRef');
 
 const props = defineProps<{
   data: {
@@ -97,6 +100,21 @@ const props = defineProps<{
 }>();
 
 const { currentPage, selectedOption, selectedOptions } = storeToRefs(useQuizStore());
+
+const isOptionSelected = (value: number) =>
+  selectedOptions.value.some((option) => option.index === value && option.selected);
+
+const onClickQuestionItem = (value: number) => {
+  currentPage.value = options.value.findIndex((option) => option.value === value);
+};
+
+const handleScroll = (index: number) => {
+  if (optionsRef.value) {
+    type CustomHTMLElement = (typeof optionsRef.value)[number] & { $el?: HTMLElement };
+    const elementRef = optionsRef.value[index] as CustomHTMLElement;
+    elementRef?.$el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+};
 
 onMounted(() => {
   options.value = props.data.reduce((prev: { name: string; value: number }[], curr, index) => {
@@ -121,6 +139,7 @@ watch(
         });
       }
       selectedOption.value = newIndex !== -1 ? selectedOptions.value[newIndex].selected : null;
+      handleScroll(newValue);
     }
   }
 );
@@ -140,12 +159,6 @@ watchEffect(() => {
       });
     }
   }
+  handleScroll(currentPage.value);
 });
-
-const isOptionSelected = (value: number) =>
-  selectedOptions.value.some((option) => option.index === value && option.selected);
-
-const onClickQuestionItem = (value: number) => {
-  currentPage.value = options.value.findIndex((option) => option.value === value);
-};
 </script>
