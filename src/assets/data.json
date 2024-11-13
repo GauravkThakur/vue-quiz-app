@@ -2284,5 +2284,80 @@
     "options": ["Pending", "Working", "Complete", "Throws error"],
     "correctAnswer": "Pending",
     "tag": "TypeScript"
+  },
+  {
+    "question": "What is the type of the invalid variable in the function below?",
+    "codeSnippet": "function outputMessage(message: string) {if (typeof message === \"string\") {console.log(message);} else {let invalid = message;console.error(invalid);}}",
+    "options": ["string", "any", "unknown", "never"],
+    "correctAnswer": "never",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the return type in the function below?",
+    "codeSnippet": "function logMessage(message: string) {return console.log(message);}",
+    "options": ["void", "string", "any", "never"],
+    "correctAnswer": "void",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "We have a function below that takes in a varying number of message parameters and outputs them to the console. How can we strongly-type the messages rest parameter so that only string types can be passed?",
+    "codeSnippet": "function outputMessages(...messages) {messages.forEach(message => console.log(message));}",
+    "options": ["...messages: string", "...messages: string[] | string", "...messages: string[]", "...messages: any"],
+    "correctAnswer": "...messages: string[]",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "We have a variable that will hold a two-dimensional point. What is most appropriate type annotation for this?",
+    "options": ["let point: { x: number, y: number }", "let point: [number, number]", "let point: number[]", "let point: { x: number }"],
+    "correctAnswer": "let point: [number, number]",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Is the type annotation necessary to type the amount variable to number in the declaration below?",
+    "codeSnippet": "let amount: number = 10;",
+    "options": ["Yes", "No"],
+    "correctAnswer": "No",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Is the type annotation necessary to type the message parameter to string in the declaration below?",
+    "codeSnippet": "function logMessage(message: string) {return console.log(message);}",
+    "options": ["Yes", "No"],
+    "correctAnswer": "Yes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the type of the message parameter in the following function?",
+    "codeSnippet": "function logMessage(message) {return console.log(message);}",
+    "options": ["string", "any", "unknown", "never"],
+    "correctAnswer": "any",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "We need to create a type to represent a numeric level that can hold values between 1 and 5. What type can we use to best represent this?",
+    "options": ["type Level = number", "type Level = 1 | 2 | 3 | 4 | 5", "type Level = 1..5", "interface Level = 1 | 2 | 3 | 4 | 5"],
+    "correctAnswer": "type Level = 1 | 2 | 3 | 4 | 5",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Will a type error occur on any of the level assignments below:",
+    "codeSnippet": "enum Status {Open,InProgress,Complete}let level: Status;level = 4;level = \"4\";",
+    "options": ["Yes, both assignments will generate type errors", "No, both assignments will not generate any type errors", "Only, the second assignment will generate a type error"],
+    "correctAnswer": "Yes, both assignments will generate type errors",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Will a type error occur in below class definition, if strict mode is on?",
+    "codeSnippet": "class Product { name: string; price: number; }",
+    "options": ["Yes", "No"],
+    "correctAnswer": "Yes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Will a type error occur in below class definition, if strict mode is on?",
+    "codeSnippet": "class Product { name?: string; price?: number; }",
+    "options": ["Yes", "No"],
+    "correctAnswer": "No",
+    "tag": "TypeScript"
   }
 ]
