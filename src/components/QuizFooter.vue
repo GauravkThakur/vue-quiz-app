@@ -70,7 +70,7 @@ const emitQuit = () => {
       outlined: true
     },
     acceptProps: {
-      label: 'Delete',
+      label: 'End',
       severity: 'danger'
     },
     accept: () => {

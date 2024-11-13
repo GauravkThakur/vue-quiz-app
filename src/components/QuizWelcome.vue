@@ -12,7 +12,7 @@
     </template>
   </Card>
   <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto">
-    <template #title>
+    <template #header>
       <div class="flex justify-center gap-2">
         <QuizIcon
           v-for="topic in allTopics"
@@ -21,13 +21,14 @@
           class="h-12 w-12"
         />
       </div>
-      <h1 class="flex justify-center">Front end Quiz</h1>
+    </template>
+    <template #title>
+      <h1 class="flex justify-center">Front-end Quiz</h1>
     </template>
     <template #subtitle>
       <h2 class="w-full md:w-3/4 m-auto">
-        This quiz is designed to test your knowledge of Vue.js and JavaScript. You will be presented
-        with a series of multiple-choice questions which focus on JavaScript and Vue composition API
-        concepts. Good luck :-)
+        This quiz consists of multiple-choice questions which focus on the concepts of JavaScript,
+        TypeScript and Vue JS composition API.
       </h2>
     </template>
     <template #content>

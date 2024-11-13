@@ -4,7 +4,7 @@ import { defineStore } from 'pinia';
 export const useQuizStore = defineStore(
   'quiz',
   () => {
-    const allTopics = ref(['Vue', 'JavaScript']);
+    const allTopics = ref(['Vue', 'JavaScript', 'TypeScript']);
     const username = ref('');
     const isDarkMode = ref(false);
     const status = ref('inactive');
@@ -30,7 +30,6 @@ export const useQuizStore = defineStore(
 
     function resetQuizProps() {
       clearInterval(timerInterval.value);
-      console.log(numberOfIndexes.value);
       timeLeft.value = updatedNumberOfIndexes.value * 60;
       timerInterval.value = undefined;
       currentPage.value = 0;

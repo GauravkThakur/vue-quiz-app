@@ -1,7 +1,8 @@
 <template>
   <Card class="w-full sm:w-9/12 m-auto mt-2" v-for="(item, index) in questions" :key="index">
     <template #header>
-      <div class="flex justify-center">
+      <div class="flex justify-center items-center gap-2">
+        <QuizIcon :name="item.tag" class="h-7 w-7" />
         <strong>Question {{ index + 1 }}/{{ questions.length }}</strong>
       </div>
     </template>
@@ -21,7 +22,7 @@
       <QuizSyntaxHighlighter
         :key="index"
         v-if="item.codeSnippet"
-        language="html"
+        :language="item.tag !== 'Vue' ? 'javascript' : 'html'"
         class="flex flex-col gap-4 my-3"
       >
         {{ item.codeSnippet }}
@@ -35,7 +36,6 @@
             :inputId="`${index1}`"
             name="dynamic"
             :value="option"
-            readonly
             disabled
           />
           <label :for="`${index1}`" class="ml-2">{{ option }}</label>

@@ -7,27 +7,20 @@
     >
       <div class="flex flex-wrap gap-2 sm:gap-5 justify-center mx-auto p-4 p-sm-10 h-full">
         <Button
-          v-for="(option, index) in options"
+          v-for="index in data.length"
           ref="optionsRef"
           class="w-11 h-11"
           rounded
-          :raised="!!data[index]?.codeSnippet"
           :key="index"
-          :label="`${option.value < 9 ? '0' : ''}${option.value + 1}`"
-          :severity="
-            currentPage === option.value
-              ? 'warn'
-              : isOptionSelected(option.value)
-                ? 'info'
-                : 'secondary'
-          "
-          @click.prevent.stop="onClickQuestionItem(option.value)"
+          v-bind="buttonProps(index)"
+          @click.prevent.stop="onClickQuestionButton(index)"
         />
       </div>
     </SplitterPanel>
     <SplitterPanel class="flex flex-col items-center justify-center overflow-auto" :size="75">
       <Splitter layout="vertical" class="w-full h-full">
-        <SplitterPanel class="flex items-center justify-center" :size="10">
+        <SplitterPanel class="flex items-center justify-center gap-2" :size="10">
+          <QuizIcon :name="data[currentPage].tag" class="h-7 w-7" />
           <strong>Question {{ currentPage + 1 }} of {{ data.length }}</strong>
         </SplitterPanel>
         <SplitterPanel :size="75" class="h-full overflow-auto">
@@ -36,7 +29,6 @@
           >
             <template #title>
               <div class="flex items-center gap-2">
-                <QuizIcon :name="data[currentPage].tag" class="h-7 w-7" />
                 <span class="grow">{{ data[currentPage].question }}</span>
               </div>
             </template>
@@ -44,7 +36,7 @@
               <QuizSyntaxHighlighter
                 :key="currentPage"
                 v-if="data[currentPage].codeSnippet"
-                language="html"
+                :language="data[currentPage].tag !== 'Vue' ? 'javascript' : 'html'"
                 class="flex flex-col gap-4 my-3"
               >
                 {{ data[currentPage].codeSnippet }}
@@ -59,7 +51,7 @@
                 >
                   <RadioButton
                     v-model="selectedOption"
-                    :inputId="`${index}`"
+                    :inputId="index.toString()"
                     name="dynamic"
                     :value="option"
                   />
@@ -78,50 +70,49 @@
 </template>
 
 <script setup lang="ts">
-import { ref, watch, watchEffect, onMounted, useTemplateRef } from 'vue';
+import { watch, watchEffect, useTemplateRef } from 'vue';
 import { storeToRefs } from 'pinia';
+import type Button from 'primevue/button';
 
+import type { Question } from '@/types';
 import { useQuizStore } from '@/stores/quiz';
 import QuizIcon from './QuizIcon.vue';
 import Pagination from './QuizPagination.vue';
 import QuizSyntaxHighlighter from './QuizSyntaxHighlighter.vue';
 
-const options = ref<{ name: string; value: number }[]>([]);
-const optionsRef = useTemplateRef('optionsRef');
+const optionsRef = useTemplateRef<InstanceType<typeof Button>[]>('optionsRef');
 
 const props = defineProps<{
-  data: {
-    question: string;
-    options: string[];
-    correctAnswer: string;
-    codeSnippet?: string;
-    tag: string;
-  }[];
+  data: Question[];
 }>();
 
 const { currentPage, selectedOption, selectedOptions } = storeToRefs(useQuizStore());
 
-const isOptionSelected = (value: number) =>
-  selectedOptions.value.some((option) => option.index === value && option.selected);
+const isOptionSelected = (index: number) =>
+  selectedOptions.value.some((option) => option.index === index && option.selected);
 
-const onClickQuestionItem = (value: number) => {
-  currentPage.value = options.value.findIndex((option) => option.value === value);
+const onClickQuestionButton = (index: number) => {
+  currentPage.value = index - 1;
 };
 
 const handleScroll = (index: number) => {
-  if (optionsRef.value) {
-    type CustomHTMLElement = (typeof optionsRef.value)[number] & { $el?: HTMLElement };
-    const elementRef = optionsRef.value[index] as CustomHTMLElement;
-    elementRef?.$el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+  optionsRef.value?.[index]?.$el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 };
 
-onMounted(() => {
-  options.value = props.data.reduce((prev: { name: string; value: number }[], curr, index) => {
-    prev.push({ name: `Q${index + 1}`, value: index });
-    return prev;
-  }, []);
-});
+const buttonProps = (index: number) => {
+  const updatedIndex = index - 1;
+  let severity =
+    currentPage.value === updatedIndex
+      ? 'warn'
+      : isOptionSelected(updatedIndex)
+        ? 'info'
+        : 'secondary';
+  return {
+    severity,
+    raised: !!props.data[updatedIndex]?.codeSnippet,
+    label: `${updatedIndex < 9 ? '0' : ''}${updatedIndex + 1}`
+  };
+};
 
 watch(
   () => currentPage.value,

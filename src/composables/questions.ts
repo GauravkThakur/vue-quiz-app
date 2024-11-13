@@ -1,16 +1,8 @@
 import { ref, onMounted } from 'vue';
 import { storeToRefs } from 'pinia';
 import data from '@/assets/data.json';
+import type { Question } from '@/types';
 import { useQuizStore } from '@/stores/quiz';
-
-type Question = {
-  question: string;
-  options: string[];
-  codeHint?: string;
-  codeSnippet?: string;
-  correctAnswer: string;
-  tag: string;
-};
 
 export function useQuestions() {
   const { isDarkMode, questionIndexes, allTopics, selectedTopics, numberOfIndexes } =
@@ -25,8 +17,6 @@ export function useQuestions() {
   }, [] as number[]);
 
   function getRandomIndexes(totalItems: number[], numberOfIndexes: number) {
-    //const indexes = Array.from({ length: totalItems }, (_, i) => i);
-    // console.log('indexes', indexes);
     const shuffledIndexes = shuffle(totalItems);
     return shuffledIndexes.slice(0, numberOfIndexes) as number[];
   }

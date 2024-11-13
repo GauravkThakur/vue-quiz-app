@@ -259,7 +259,7 @@
   },
   {
     "question": "How do you bind a JavaScript expression to the <div> using Vue.js interpolation?",
-    "codeSnippet": "<template>\n  <div><!-- Answer goes here --></div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst message = ref('Hello');\n</script>",
+    "codeSnippet": "<template>\n<div><!-- Answer goes here --></div>\n</template><script setup>\nimport { ref } from 'vue';\nconst message = ref('Hello');</script>",
     "options": [
       "{{ message + '!' }}",
       "[[ message + '!' ]]",
@@ -271,7 +271,7 @@
   },
   {
     "question": "Which of the following options will disable the button in code snippet?",
-    "codeSnippet": "<template>\n  <button>Click Me!</button>\n</template>\n\n",
+    "codeSnippet": "<template>\n<button>Click Me!</button>\n</template>",
     "options": [
       "Using `:disabled=\"false\"`",
       "Using `:disabled=\"undefined\"`",
@@ -502,7 +502,7 @@
   },
   {
     "question": "How do you dynamically bind CSS styles to an element in Vue 3, Select the incorrect statement?",
-    "codeSnippet": "<template>\n  <p>This is a styled div</p>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst divStyles = ref({\n  color: 'red'});\n</script>",
+    "codeSnippet": "<template>\n<p>This is a styled div</p>\n</template><script setup>\nimport { ref } from 'vue';\nconst divStyles = ref({  color: 'red'});</script>",
     "options": [
       "<p :style=\"divStyles\">This is a styled div</p>",
       "<style scoped> p { color: v-bind('divStyles.color'); } </style>",
@@ -590,7 +590,7 @@
   },
   {
     "question": "Which of the following is a correct usage of the `v-html` directive in Vue.js?",
-    "codeSnippet": "<template>\n  <!-- Answer goes here -->\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst rawHtml = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>",
+    "codeSnippet": "<template><!-- Answer goes here --></template><script setup>\nimport { ref } from 'vue';\nconst rawHtml = ref('<p>This is <strong>raw HTML</strong> content.</p>');</script>",
     "options": [
       "<div v-html=\"<p>This is <strong>raw HTML</strong> content.</p>\"></div>",
       "<div v-html:rawHtml></div>",
@@ -602,7 +602,7 @@
   },
   {
     "question": "When using `v-html`, select the correct statement for styling content",
-    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template>\n\n<script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>\n\n<style scoped>\n p {\ncolor: red;\n}\n</style>",
+    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template><script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');</script><style scoped> p {\ncolor: red;}</style>",
     "options": [
       "It will display the paragraph content in red color",
       "Styling will not be applied on paragraph <p> content",
@@ -613,7 +613,7 @@
   },
   {
     "question": "When using `v-html`, select the correct statement for styling content",
-    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template>\n\n<script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');\n</script>\n\n<style>\n p {\ncolor: red;\n}\n</style>",
+    "codeSnippet": "<template>\n<div v-html=\"rawHTML\"></div>\n</template><script setup>\nconst rawHTML = ref('<p>This is <strong>raw HTML</strong> content.</p>');</script><style> p {\ncolor: red;}</style>",
     "options": [
       "It will display the paragraph content in red color",
       "Styling will not be applied on paragraph <p> content",
@@ -647,7 +647,7 @@
   },
   {
     "question": "What will be the output of below code snippet when `someCondition` is true?",
-    "codeSnippet": "<template>\n <Transition>\n  <div v-show=\"someCondition\">\n   First condition\n  </div>\n  <div v-show=\"!someCondition\">\n   Other condition\n  </div>\n </Transition> \n</template>",
+    "codeSnippet": "<template>\n<Transition>\n<div v-show=\"someCondition\">First condition</div>\n<div v-show=\"!someCondition\">Other condition</div> </Transition>\n</template>",
     "options": [
       "Will display text `First condition` in view",
       "Will display text `Other condition` in view",
@@ -659,7 +659,7 @@
   },
   {
     "question": "What will be the output of below code snippet when `someCondition` is true?",
-    "codeSnippet": "<template>\n <Transition>\n  <div v-if=\"someCondition\">\n   First condition\n  </div>\n  <div v-else>\n   Other condition\n  </div>\n </Transition> \n</template>",
+    "codeSnippet": "<template> <Transition>  <div v-if=\"someCondition\">   First condition  </div>  <div v-else>   Other condition  </div> </Transition> </template>",
     "options": [
       "Will display text `First condition` in view",
       "Will display text `Other condition` in view",
@@ -671,7 +671,7 @@
   },
   {
     "question": "What will be the output of below code snippet?",
-    "codeSnippet": "<template>\n <div v-html=\"<ol><li>Tomatoes</li><li>Potatoes</li></ol>\"></div> \n</template>",
+    "codeSnippet": "<template> <div v-html=\"<ol><li>Tomatoes</li><li>Potatoes</li></ol>\"></div> </template>",
     "options": [
       "Will display `<ol><li>Tomatoes</li><li>Potatoes</li></ol>`",
       "Will display `1.Tomatoes\n2.Potatoes`",
@@ -722,7 +722,7 @@
   },
   {
     "question": "How do you define an async component in Vue.js using a dynamic import?",
-    "codeHint": "<template>\n  <component :is=\"AsyncComponent\" />\n</template>\n\n<script setup>\nimport { defineAsyncComponent } from 'vue';\n\nconst AsyncComponent = defineAsyncComponent(() => import('./MyComponent.vue'));\n</script>",
+    "codeHint": "<template>  <component :is=\"AsyncComponent\" /></template><script setup>\nimport { defineAsyncComponent } from 'vue';\nconst AsyncComponent = defineAsyncComponent(() => import('./MyComponent.vue'));</script>",
     "options": [
       "Using `defineAsyncComponent` with a dynamic import",
       "Using `defineComponent` with a dynamic import",
@@ -789,7 +789,7 @@
   },
   {
     "question": "How do you use the `v-for` directive to render a list of items in Vue.js?",
-    "codeSnippet": "<template>\n  <ul>\n    <!-- Answer goes here -->\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "codeSnippet": "<template>  <ul>    <!-- Answer goes here -->  </ul></template><script setup>\nimport { ref } from 'vue';\nconst items = ref([  { id: 1, name: 'Item 1' },  { id: 2, name: 'Item 2' },  { id: 3, name: 'Item 3' }]);</script>",
     "options": [
       "<li v-for=\"item in items\" :key=\"item.id\">{{ item.name }}</li>",
       "<li v-for=\"item from items\" :key=\"item.id\">{{ item.name }}</li>",
@@ -800,7 +800,7 @@
   },
   {
     "question": "How do you access both the item and its index when using the `v-for` directive in Vue.js?",
-    "codeSnippet": "<template>\n  <ul>\n    <!-- Answer goes here -->\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n</script>",
+    "codeSnippet": "<template>  <ul>    <!-- Answer goes here -->  </ul></template><script setup>\nimport { ref } from 'vue';\nconst items = ref([  { id: 1, name: 'Item 1' },  { id: 2, name: 'Item 2' },  { id: 3, name: 'Item 3' }]);</script>",
     "options": [
       "<li v-for=\"(item, index) of items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
       "<li v-for=\"(item, index) from items\" :key=\"item.id\">{{ index }} - {{ item.name }}</li>",
@@ -811,7 +811,7 @@
   },
   {
     "question": "How do you iterate over the properties of an object to get key and value for each property in Vue.js?",
-    "codeHint": "<template>\n  <ul>\n    <li v-for=\"(value, key) in user\" :key=\"key\">{{ key }}: {{ value }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst user = ref({\n  name: 'John Doe',\n  age: 30,\n  email: 'john.doe@example.com'\n});\n</script>",
+    "codeHint": "<template>  <ul>    <li v-for=\"(value, key) in user\" :key=\"key\">{{ key }}: {{ value }}</li>  </ul></template><script setup>\nimport { ref } from 'vue';\nconst user = ref({  name: 'John Doe',  age: 30,  email: 'john.doe@example.com'});</script>",
     "options": [
       "Using `v-for=\"(key, value) in user\"`",
       "Using `v-for=\"(value, key) in user\"`",
@@ -823,7 +823,7 @@
   },
   {
     "question": "What is the output of the following code snippet?",
-    "codeSnippet": "<template>\n  <span v-for=\"n in 5\">{{ n }}</span> \n</template>",
+    "codeSnippet": "<template>\n<span v-for=\"n in 5\">{{ n }}</span>\n</template>",
     "options": ["01234", "12345", "1234"],
     "correctAnswer": "12345",
     "tag": "Vue"
@@ -884,7 +884,7 @@
   },
   {
     "question": "Which lifecycle hook is called when a component is activated by `KeepAlive` in Vue.js?",
-    "codeHint": "<script setup>\nimport { onActivated } from 'vue';\n\nonActivated(() => {\n  console.log('Component activated');\n});\n</script>",
+    "codeHint": "<script setup>\nimport { onActivated } from 'vue';\nonActivated(() => {  console.log('Component activated');});</script>",
     "options": ["onMounted", "onUpdated", "onActivated", "onBeforeMount"],
     "correctAnswer": "onActivated",
     "tag": "Vue"
@@ -968,7 +968,7 @@
   },
   {
     "question": "How do you define scoped styles in a Vue.js Single File Component (SFC)?",
-    "codeHint": "<template>\n  <div class=\"example\">This is a scoped style example</div>\n</template>\n\n<script>\nexport default {\n  name: 'ExampleComponent'\n};\n</script>\n\n<style scoped>\n.example {\n  color: red;\n}\n</>",
+    "codeHint": "<template>  <div class=\"example\">This is a scoped style example</div></template><script>\nexport default {  name: 'ExampleComponent'};</script><style scoped>.example {  color: red;}</>",
     "options": [
       "By adding the `scoped` attribute to the `<style>` tag",
       "By adding the `scoped` attribute to the `<template>` tag",
@@ -1002,7 +1002,7 @@
   },
   {
     "question": "How do you create a Pinia store in Vue.js?",
-    "codeHint": "import { defineStore } from 'pinia';\n\nexport const useMainStore = defineStore('main', {\n  state: () => ({\n    count: 0\n  }),\n  actions: {\n    increment() {\n      this.count++;\n    }\n  }\n});",
+    "codeHint": "import { defineStore } from 'pinia';\nexport const useMainStore = defineStore('main', {  state: () => ({    count: 0  }),  actions: {    increment() {      this.count++;    }  }});",
     "options": [
       "Using `createStore`",
       "Using `definePinia`",
@@ -1014,7 +1014,7 @@
   },
   {
     "question": "How do you register Pinia in a Vue.js application?",
-    "codeHint": "import { createApp } from 'vue';\nimport { createPinia } from 'pinia';\nimport App from './App.vue';\n\nconst app = createApp(App);\nconst pinia = createPinia();\n\napp.use(pinia);\napp.mount('#app');",
+    "codeHint": "import { createApp } from 'vue';\nimport { createPinia } from 'pinia';\nimport App from './App.vue';\nconst app = createApp(App);\nconst pinia = createPinia();\napp.use(pinia);\napp.mount('#app');",
     "options": [
       "Using `app.use(store)`",
       "Using `app.use(piniaStore)`",
@@ -1048,7 +1048,7 @@
   },
   {
     "question": "How do you create a Vue Router instance using the Composition API?",
-    "codeHint": "import { createRouter, createWebHistory } from 'vue-router';\n\nconst routes = [\n  { path: '/', component: Home },\n  { path: '/about', component: About }\n];\n\nconst router = createRouter({\n  history: createWebHistory(),\n  routes\n});",
+    "codeHint": "import { createRouter, createWebHistory } from 'vue-router';\nconst routes = [  { path: '/', component: Home },  { path: '/about', component: About }];\nconst router = createRouter({  history: createWebHistory(),  routes});",
     "options": [
       "Using `createRouter` and `createWebHistory`",
       "Using `createRouter` and `createMemoryHistory`",
@@ -1060,7 +1060,7 @@
   },
   {
     "question": "How do you register the Vue Router instance in a Vue.js application?",
-    "codeHint": "import { createApp } from 'vue';\nimport App from './App.vue';\nimport router from './router';\n\nconst app = createApp(App);\napp.use(router);\napp.mount('#app');",
+    "codeHint": "import { createApp } from 'vue';\nimport App from './App.vue';\nimport router from './router';\nconst app = createApp(App);\napp.use(router);\napp.mount('#app');",
     "options": [
       "Using `app.use(router)`",
       "Using `app.use(createRouter)`",
@@ -1072,7 +1072,7 @@
   },
   {
     "question": "How do you navigate to a different route programmatically using the Composition API?",
-    "codeHint": "import { useRouter } from 'vue-router';\n\nconst router = useRouter();\n\nconst navigateToHome = () => {\n  router.push('/');\n};",
+    "codeHint": "import { useRouter } from 'vue-router';\nconst router = useRouter();\nconst navigateToHome = () => {  router.push('/');};",
     "options": [
       "Using `router.push('/');`",
       "Using `router.go('/');`",
@@ -1084,7 +1084,7 @@
   },
   {
     "question": "How do you access route parameters using the Composition API?",
-    "codeHint": "import { useRoute } from 'vue-router';\n\nconst route = useRoute();\nconst id = route.params.id;",
+    "codeHint": "import { useRoute } from 'vue-router';\nconst route = useRoute();\nconst id = route.params.id;",
     "options": [
       "Using `useRouter().params`",
       "Using `useRoute().params`",
@@ -1096,7 +1096,7 @@
   },
   {
     "question": "How do you define a dynamic route in Vue Router?",
-    "codeHint": "const routes = [\n  { path: '/user/:id', component: User }\n];",
+    "codeHint": "const routes = [  { path: '/user/:id', component: User }];",
     "options": [
       "Using `path: '/user/:id'`",
       "Using `path: '/user/{id}'`",
@@ -1108,7 +1108,7 @@
   },
   {
     "question": "How do you use named routes in Vue Router?",
-    "codeHint": "const routes = [\n  { path: '/user/:id', name: 'user', component: User }\n];\n\n// Navigation\nrouter.push({ name: 'user', params: { id: 123 } });",
+    "codeHint": "const routes = [  { path: '/user/:id', name: 'user', component: User }];// Navigation\nrouter.push({ name: 'user', params: { id: 123 } });",
     "options": [
       "Using `name` property in route definition and `router.push({ name: 'user', params: { id: 123 } })`",
       "Using `name` property in route definition and `router.go({ name: 'user', params: { id: 123 } })`",
@@ -1131,7 +1131,7 @@
   },
   {
     "question": "How do you use dynamic arguments to bind an attribute in Vue.js?",
-    "codeHint": "<template>\n  <div :[attributeName]=\"attributeValue\">Dynamic Attribute</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\n\nconst attributeName = ref('id');\nconst attributeValue = ref('dynamic-id');\n</script>",
+    "codeHint": "<template>  <div :[attributeName]=\"attributeValue\">Dynamic Attribute</div></template><script setup>\nimport { ref } from 'vue';\nconst attributeName = ref('id');\nconst attributeValue = ref('dynamic-id');</script>",
     "options": [
       "Using `v-on:[attributeName]`",
       "Using `v-if:[attributeName]`",
@@ -1198,7 +1198,7 @@
   },
   {
     "question": "How do you create a writable computed property in Vue 3 Composition API?",
-    "codeHint": "import { ref, computed } from 'vue';\n\nconst count = ref(0);\nconst doubleCount = computed({\n  get: () => count.value * 2,\n  set: (value) => {\n    count.value = value / 2;\n  }\n});",
+    "codeHint": "import { ref, computed } from 'vue';\nconst count = ref(0);\nconst doubleCount = computed({  get: () => count.value * 2,  set: (value) => {    count.value = value / 2;  }});",
     "options": [
       "Using `computed` with a getter and setter",
       "Using `ref` with a getter and setter",
@@ -1221,7 +1221,7 @@
   },
   {
     "question": "How do you pass attributes to a specific root element in a Vue 3 component?",
-    "codeSnippet": "<template>\n  <div <!--Answer goes here-->\n    <span>Content</span>\n  </div>\n</template>\n\n<script setup>\nimport { defineComponent } from 'vue';\n\nexport default defineComponent({\n  inheritAttrs: false\n});\n</script>",
+    "codeSnippet": "<template>\n<div <!--Answer goes here-->\n<span>Content</span>\n</div>\n</template><script setup>\nimport { defineComponent } from 'vue';\nexport default defineComponent({  inheritAttrs: false});</script>",
     "options": [
       "By using `v-bind=\"$attrs\"` on the desired root element",
       "By using `v-bind=\"$props\"` on the desired root element",
@@ -1244,7 +1244,7 @@
   },
   {
     "question": "Which directive is NOT compaitable with <template> element in Vue JS?",
-    "codeSnippet": "<template <!--Add directive name--> ><h1>Some value</h1></template>",
+    "codeSnippet": "<template>\n<h1>Some value</h1>\n</template>",
     "options": [
       "Using `v-if` directive",
       "Using `v-else` directive",
@@ -1256,7 +1256,7 @@
   },
   {
     "question": "How do you filter and sort an array of objects in Vue.js using the Composition API?",
-    "codeHint": "<template>\n  <ul>\n    <li v-for=\"item in filteredAndSortedItems\" :key=\"item.id\">{{ item.name }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 3', active: true },\n  { id: 2, name: 'Item 1', active: false },\n  { id: 3, name: 'Item 2', active: true }\n]);\n\nconst filteredAndSortedItems = computed(() => items.value\n  .filter(item => item.active)\n  .sort((a, b) => a.name.localeCompare(b.name)));\n</script>",
+    "codeHint": "<template>  <ul>    <li v-for=\"item in filteredAndSortedItems\" :key=\"item.id\">{{ item.name }}</li>  </ul></template><script setup>\nimport { ref, computed } from 'vue';\nconst items = ref([  { id: 1, name: 'Item 3', active: true },  { id: 2, name: 'Item 1', active: false },  { id: 3, name: 'Item 2', active: true }]);\nconst filteredAndSortedItems = computed(() => items.value  .filter(item => item.active)  .sort((a, b) => a.name.localeCompare(b.name)));</script>",
     "options": [
       "Using `watch` with `filter` and `sort` methods",
       "Using `ref` with `filter` and `sort` methods",
@@ -1268,7 +1268,7 @@
   },
   {
     "question": "When `ref` is used inside `v-for`, how should the corresponding `ref` be structured to contain an array value populated with the elements after mount in Vue.js?",
-    "codeHint": "<template>\n  <ul>\n    <li v-for=\"(item, index) in items\" :key=\"item.id\" :ref=\"el => itemRefs[index] = el\">\n      {{ item.name }}\n    </li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\n\nconst items = ref([\n  { id: 1, name: 'Item 1' },\n  { id: 2, name: 'Item 2' },\n  { id: 3, name: 'Item 3' }\n]);\n\nconst itemRefs = ref([]);\n\nonMounted(() => {\n  console.log(itemRefs.value); // Array of elements\n});\n</script>",
+    "codeHint": "<template>  <ul>    <li v-for=\"(item, index) in items\" :key=\"item.id\" :ref=\"el => itemRefs[index] = el\">      {{ item.name }}    </li>  </ul></template><script setup>\nimport { ref, onMounted } from 'vue';\nconst items = ref([  { id: 1, name: 'Item 1' },  { id: 2, name: 'Item 2' },  { id: 3, name: 'Item 3' }]);\nconst itemRefs = ref([]);\nonMounted(() => {  console.log(itemRefs.value); // Array of elements});</script>",
     "options": [
       "The `ref` should be initialized as an empty object and populated with elements using a function inside `v-for`",
       "The `ref` should be initialized as a single element and updated with elements using a function inside `v-for`",
@@ -1280,35 +1280,35 @@
   },
   {
     "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
-    "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value * 2;\n});\n</script>",
+    "codeSnippet": "<template>  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div></template><script setup>\nimport { ref, computed } from 'vue';\nconst count = ref(0);\nconst doubled = computed(() => {  console.log('test');  return count.value * 2;});</script>",
     "options": ["0", "1", "2", "3"],
     "correctAnswer": "1",
     "tag": "Vue"
   },
   {
     "question": "How many times the word `test` will be rendered in the console log when the below code snippet is executed?",
-    "codeSnippet": "<template>\n  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\n\nconst count = ref(0);\n\nconst doubled = computed(() => {\n  console.log('test');\n  return count.value++;\n});\n</script>",
+    "codeSnippet": "<template>  <div>{{ doubled }} {{ doubled }} {{ doubled }}</div></template><script setup>\nimport { ref, computed } from 'vue';\nconst count = ref(0);\nconst doubled = computed(() => {  console.log('test');  return count.value++;});</script>",
     "options": ["0", "1", "2", "3"],
     "correctAnswer": "3",
     "tag": "Vue"
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
-    "codeSnippet": "<template>\n  <MyButton>Click me</MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
+    "codeSnippet": "<template>  <MyButton>Click me</MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script> MyButton.vue<template>  <button><slot>Submit</slot></button></template>",
     "options": ["True", "False"],
     "correctAnswer": "False",
     "tag": "Vue"
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
-    "codeSnippet": "<template>\n  <MyButton></MyButton>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';\n</script>\n\n MyButton.vue\n<template>\n  <button><slot>Submit</slot></button>\n</template>",
+    "codeSnippet": "<template>  <MyButton></MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script> MyButton.vue<template>  <button><slot>Submit</slot></button></template>",
     "options": ["True", "False"],
     "correctAnswer": "True",
     "tag": "Vue"
   },
   {
     "question": "When using the dynamic attribute binding in Vue JS, How will be <div> element rendered in browser?",
-    "codeSnippet": "<template>\n  <div v-bind=\"attrObj\">This is a div</div>\n</template>\n\n<script setup>\nconst attrObj = { \n id: \"1\",\n name: \"div name\" \n};\n</script>",
+    "codeSnippet": "<template>  <div v-bind=\"attrObj\">This is a div</div></template><script setup>\nconst attrObj = {  id: \"1\", name: \"div name\" };</script>",
     "options": [
       "<div id=\"1\" name=\"div name\">This is a div</div>",
       "<div v-bind=\"attrObj\">This is a div</div>",
@@ -1320,7 +1320,7 @@
   },
   {
     "question": "Given the handlers object, which of the following is the correct way to bind all the event handlers to div element at once?",
-    "codeSnippet": "<template>\n  <div>Click me</div>\n</template>\n\n<script setup>\nconst handlers = {\n  click: () => console.log('click'),\n  mouseover: () => console.log('mouseover'),\n  mouseout: () => console.log('mouseout')\n};\n</script>",
+    "codeSnippet": "<template>  <div>Click me</div></template><script setup>\nconst handlers = {  click: () => console.log('click'),  mouseover: () => console.log('mouseover'),  mouseout: () => console.log('mouseout')};</script>",
     "options": [
       "<div v-on=\"handlers\">Click me</div>",
       "<div v-bind=\"handlers\">Click me</div>",
@@ -1331,7 +1331,7 @@
   },
   {
     "question": "Select the correct statement when the text property changes?",
-    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span>{{ text }}</span>\n</transition>\n</template>\n\n<script setup>\n import { ref } from 'vue';\nconst text = ref('');\n</script>",
+    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span>{{ text }}</span>\n</transition>\n</template><script setup> import { ref } from 'vue';\nconst text = ref('');</script>",
     "options": [
       "The transition will be triggered",
       "The transition will be trigerred on blur",
@@ -1342,7 +1342,7 @@
   },
   {
     "question": "Select the correct statement when the text property changes?",
-    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span :key=\"text\">{{ text }}</span>\n</transition>\n</template>\n\n<script setup>\n import { ref } from 'vue';\nconst text = ref('');\n</script>",
+    "codeSnippet": "<template>\n<input type=\"text\" v-model=\"text\" />\n<transition>\n<span :key=\"text\">{{ text }}</span>\n</transition>\n</template><script setup> import { ref } from 'vue';\nconst text = ref('');</script>",
     "options": [
       "The transition will be triggered",
       "The transition will be trigerred on blur",
@@ -1353,21 +1353,21 @@
   },
   {
     "question": "What value will be rendered in the view for computed prop `plusOne`?",
-    "codeSnippet": "<template>\n<span>{{ plusOne++ }}</span>\n</template>\n\n<script setup>\n import { ref, computed } from 'vue';\nconst count = ref(1);\nconst plusOne = computed(() => count.value + 1);\n</script>",
+    "codeSnippet": "<template>\n<span>{{ plusOne++ }}</span>\n</template><script setup> import { ref, computed } from 'vue';\nconst count = ref(1);\nconst plusOne = computed(() => count.value + 1);</script>",
     "options": ["0", "1", "2", "3"],
     "correctAnswer": "2",
     "tag": "Vue"
   },
   {
     "question": "What value be the output of `count.value`?",
-    "codeSnippet": "<script setup>\n import { ref, reactive } from 'vue';\n\nconst count = ref(1);\nconst obj = reactive({ count });\nobj.count++;</script>",
+    "codeSnippet": "<script setup> import { ref, reactive } from 'vue';\nconst count = ref(1);\nconst obj = reactive({ count });\nobj.count++;</script>",
     "options": ["0", "1", "2", "3"],
     "correctAnswer": "2",
     "tag": "Vue"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "const promise = new Promise((resolve, reject) => {\n  setTimeout(() => resolve('Success'), 1000);\n});\n\npromise.then(result => console.log(result));",
+    "codeSnippet": "const promise = new Promise((resolve, reject) => {  setTimeout(() => resolve('Success'), 1000);});\npromise.then(result => console.log(result));",
     "options": ["Success", "Error", "undefined", "null"],
     "correctAnswer": "Success",
     "tag": "JavaScript"
@@ -1395,7 +1395,7 @@
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "const promise1 = Promise.resolve('First');\nconst promise2 = Promise.resolve('Second');\n\nPromise.all([promise1, promise2]).then(values => console.log(values));",
+    "codeSnippet": "const promise1 = Promise.resolve('First');\nconst promise2 = Promise.resolve('Second');\nPromise.all([promise1, promise2]).then(values => console.log(values));",
     "options": ["['First', 'Second']", "First Second", "Second First", "Error"],
     "correctAnswer": "['First', 'Second']",
     "tag": "JavaScript"
@@ -1437,49 +1437,49 @@
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nfetchData().then(result => console.log(result));",
+    "codeSnippet": "async function fetchData() {  return 'Data fetched';}\nfetchData().then(result => console.log(result));",
     "options": ["Data fetched", "undefined", "Promise", "Error"],
     "correctAnswer": "Data fetched",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nconst result = fetchData();\nconsole.log(result);",
+    "codeSnippet": "async function fetchData() {  return 'Data fetched';}\nconst result = fetchData();\nconsole.log(result);",
     "options": ["Promise", "Data fetched", "undefined", "Error"],
     "correctAnswer": "Promise",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  const result = await fetchData();\n  console.log(result);\n}\n\ngetData();",
+    "codeSnippet": "async function fetchData() {  return 'Data fetched';}\nasync function getData() {  const result = await fetchData();  console.log(result);}\ngetData();",
     "options": ["Data fetched", "undefined", "Promise", "Error"],
     "correctAnswer": "Data fetched",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "async function fetchData() {\n  throw new Error('Fetch error');\n}\n\nfetchData().catch(error => console.log(error.message));",
+    "codeSnippet": "async function fetchData() {  throw new Error('Fetch error');}\nfetchData().catch(error => console.log(error.message));",
     "options": ["Fetch error", "undefined", "Promise", "Error"],
     "correctAnswer": "Fetch error",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "async function fetchData() {\n  return 'Data fetched';\n}\n\nasync function getData() {\n  try {\n    const result = await fetchData();\n    console.log(result);\n  } catch (error) {\n    console.log(error.message);\n  }\n}\n\ngetData();",
+    "codeSnippet": "async function fetchData() {  return 'Data fetched';}\nasync function getData() {  try {    const result = await fetchData();    console.log(result);  } catch (error) {    console.log(error.message);  }}\ngetData();",
     "options": ["Data fetched", "undefined", "Promise", "Error"],
     "correctAnswer": "Data fetched",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}",
+    "codeSnippet": "try {  throw new Error('Something went wrong');} catch (error) {  console.log(error.message);}",
     "options": ["Something went wrong", "undefined", "Error", "null"],
     "correctAnswer": "Something went wrong",
     "tag": "JavaScript"
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "codeSnippet": "try {  console.log('Try block');} catch (error) {  console.log('Catch block');} finally {  console.log('Finally block');}",
     "options": [
       "Try block\nFinally block",
       "Try block\nCatch block\nFinally block",
@@ -1491,7 +1491,7 @@
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log('Catch block');\n} finally {\n  console.log('Finally block');\n}",
+    "codeSnippet": "try {  throw new Error('Something went wrong');} catch (error) {  console.log('Catch block');} finally {  console.log('Finally block');}",
     "options": [
       "Catch block\nFinally block",
       "Something went wrong\nFinally block",
@@ -1503,7 +1503,7 @@
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "try {\n  throw new Error('Something went wrong');\n} catch (error) {\n  console.log(error.message);\n}\nconsole.log('After try-catch');",
+    "codeSnippet": "try {  throw new Error('Something went wrong');} catch (error) {  console.log(error.message);}\nconsole.log('After try-catch');",
     "options": [
       "Something went wrong\nAfter try-catch",
       "After try-catch\nSomething went wrong",
@@ -1515,7 +1515,7 @@
   },
   {
     "question": "What will be the output of the following code snippet?",
-    "codeSnippet": "try {\n  console.log('Try block');\n} catch (error) {\n  console.log('Catch block');\n}\nconsole.log('After try-catch');",
+    "codeSnippet": "try {  console.log('Try block');} catch (error) {  console.log('Catch block');}\nconsole.log('After try-catch');",
     "options": [
       "Try block\nAfter try-catch",
       "Catch block\nAfter try-catch",
@@ -1789,5 +1789,500 @@
     ],
     "correctAnswer": "class MyClass { myMethod() {} }",
     "tag": "JavaScript"
+  },
+  {
+    "question": "What is the primary purpose of TypeScript?",
+    "options": [
+      "To add static typing to JavaScript",
+      "To create server-side applications",
+      "To manage databases",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To add static typing to JavaScript",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an interface in TypeScript?",
+    "options": [
+      "interface MyInterface { name: string; age: number; }",
+      "class MyInterface { name: string; age: number; }",
+      "type MyInterface = { name: string; age: number; }",
+      "function MyInterface() { name: string; age: number; }"
+    ],
+    "correctAnswer": "interface MyInterface { name: string; age: number; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `readonly` modifier in TypeScript?",
+    "options": [
+      "To make a property immutable",
+      "To define a private property",
+      "To define a protected property",
+      "To define a static property"
+    ],
+    "correctAnswer": "To make a property immutable",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a tuple type in TypeScript?",
+    "options": [
+      "let tuple: [string, number];",
+      "let tuple: (string, number);",
+      "let tuple: {string, number};",
+      "let tuple: [string | number];"
+    ],
+    "correctAnswer": "let tuple: [string, number];",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `unknown` type in TypeScript?",
+    "options": [
+      "To represent a value that could be of any type",
+      "To represent a value that is always null",
+      "To represent a value that is always undefined",
+      "To represent a value that is always a string"
+    ],
+    "correctAnswer": "To represent a value that could be of any type",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a function with a return type in TypeScript?",
+    "options": [
+      "function myFunction(): string { return 'Hello'; }",
+      "function myFunction: string { return 'Hello'; }",
+      "function myFunction() { return 'Hello'; }: string",
+      "function myFunction() -> string { return 'Hello'; }"
+    ],
+    "correctAnswer": "function myFunction(): string { return 'Hello'; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `never` type in TypeScript?",
+    "options": [
+      "To represent a value that never occurs",
+      "To represent a value that is always null",
+      "To represent a value that is always undefined",
+      "To represent a value that is always a string"
+    ],
+    "correctAnswer": "To represent a value that never occurs",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an optional property in an interface in TypeScript?",
+    "options": [
+      "interface MyInterface { name?: string; }",
+      "interface MyInterface { name: string | undefined; }",
+      "interface MyInterface { name: string | null; }",
+      "interface MyInterface { name: string | void; }"
+    ],
+    "correctAnswer": "interface MyInterface { name?: string; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `as` keyword in TypeScript?",
+    "options": [
+      "To perform type assertions",
+      "To define a private property",
+      "To define a protected property",
+      "To define a static property"
+    ],
+    "correctAnswer": "To perform type assertions",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic function in TypeScript?",
+    "options": [
+      "function myFunction<T>(arg: T): T { return arg; }",
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `enum` keyword in TypeScript?",
+    "options": [
+      "To define a set of named constants",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a set of named constants",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a type alias in TypeScript?",
+    "options": [
+      "type MyType = string | number;",
+      "interface MyType { name: string; age: number; }",
+      "class MyType { name: string; age: number; }",
+      "function MyType() { name: string; age: number; }"
+    ],
+    "correctAnswer": "type MyType = string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `abstract` keyword in TypeScript?",
+    "options": [
+      "To define a class that cannot be instantiated directly",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a class that cannot be instantiated directly",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a union type in TypeScript?",
+    "options": [
+      "let value: string | number;",
+      "let value: (string, number);",
+      "let value: {string, number};",
+      "let value: [string, number];"
+    ],
+    "correctAnswer": "let value: string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `interface` keyword in TypeScript?",
+    "options": [
+      "To define a contract for objects",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a contract for objects",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic interface in TypeScript?",
+    "options": [
+      "interface MyInterface<T> { value: T; }",
+      "interface MyInterface { value: T; }",
+      "interface MyInterface<T> { value: string; }",
+      "interface MyInterface { value: string | number; }"
+    ],
+    "correctAnswer": "interface MyInterface<T> { value: T; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `extends` keyword in TypeScript?",
+    "options": [
+      "To create a subclass that inherits properties and methods from a parent class",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To create a subclass that inherits properties and methods from a parent class",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a function that accepts a generic parameter in TypeScript?",
+    "options": [
+      "function myFunction<T>(arg: T): T { return arg; }",
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `implements` keyword in TypeScript?",
+    "options": [
+      "To ensure that a class adheres to a specific interface",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To ensure that a class adheres to a specific interface",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a class that implements an interface in TypeScript?",
+    "options": [
+      "class MyClass implements MyInterface { value: string; }",
+      "class MyClass extends MyInterface { value: string; }",
+      "class MyClass implements { value: string; }",
+      "class MyClass extends { value: string; }"
+    ],
+    "correctAnswer": "class MyClass implements MyInterface { value: string; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "let value: string | number;\nvalue = 'Hello';\nconsole.log(value);",
+    "options": ["Hello", "undefined", "Error", "null"],
+    "correctAnswer": "Hello",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "interface Person {  name: string;  age?: number;}\nconst person: Person = { name: 'John' };\nconsole.log(person.age);",
+    "options": ["undefined", "0", "Error", "null"],
+    "correctAnswer": "undefined",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "class Animal {  constructor(public name: string) {}}\nconst dog = new Animal('Dog');\nconsole.log(dog.name);",
+    "options": ["undefined", "Error", "Dog", "null"],
+    "correctAnswer": "Dog",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "function add(a: number, b: number): number {  return a + b;}\nconsole.log(add(5, 10));",
+    "options": ["undefined", "15", "Error", "510"],
+    "correctAnswer": "15",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "type StringOrNumber = string | number;\nlet value: StringOrNumber = 42;\nconsole.log(value);",
+    "options": ["undefined", "42", "Error", "null"],
+    "correctAnswer": "42",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "enum Color {  Red = 'RED',  Green = 'GREEN',  Blue = 'BLUE'}\nconsole.log(Color.Green);",
+    "options": ["Red", "Error", "GREEN", "undefined"],
+    "correctAnswer": "GREEN",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "interface User {  id: number;  name: string;}\nconst user: User = { id: 1, name: 'Alice' };\nconsole.log(user.id);",
+    "options": ["1", "undefined", "Error", "null"],
+    "correctAnswer": "1",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "function greet(name: string): string {  return `Hello, ${name}!`;}\nconsole.log(greet('Bob'));",
+    "options": ["undefined", "Error", "Hello, Bob!", "Hello, !"],
+    "correctAnswer": "Hello, Bob!",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "let value: unknown = 'Hello';\nif (typeof value === 'string') {  console.log(value.toUpperCase());}",
+    "options": ["HELLO", "undefined", "Error", "hello"],
+    "correctAnswer": "HELLO",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "type Point = { x: number, y: number };\nconst point: Point = { x: 10, y: 20 };\nconsole.log(point.x);",
+    "options": ["10", "undefined", "Error", "20"],
+    "correctAnswer": "10",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the default type assigned to a variable if no type is explicitly specified and noImplicitAny is set to false?",
+    "options": ["string", "number", "any", "undefined"],
+    "correctAnswer": "any",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `strictNullChecks` compiler option in TypeScript?",
+    "options": [
+      "To enable type inference",
+      "To ensure that `null` and `undefined` are not assignable to other types unless explicitly allowed",
+      "To allow implicit `any` types",
+      "To allow the use of `this` in functions"
+    ],
+    "correctAnswer": "To ensure that `null` and `undefined` are not assignable to other types unless explicitly allowed",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an enum type in TypeScript?",
+    "options": [
+      "interface Color { Red: string; Green: string; Blue: string; }",
+      "enum Color { Red, Green, Blue }",
+      "type Color = { Red, Green, Blue }",
+      "class Color { Red: string; Green: string; Blue: string; }"
+    ],
+    "correctAnswer": "enum Color { Red, Green, Blue }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `private` access modifier in TypeScript?",
+    "options": [
+      "To allow access to a class member from any class",
+      "To allow access to a class member from derived classes",
+      "To restrict access to a class member to within the class itself",
+      "To allow access to a class member from within the same module"
+    ],
+    "correctAnswer": "To restrict access to a class member to within the class itself",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic function in TypeScript?",
+    "options": [
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }",
+      "function myFunction<T>(arg: T): T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `noImplicitAny` compiler option in TypeScript?",
+    "options": [
+      "To raise an error when a variable is implicitly assigned the `any` type",
+      "To allow implicit `any` types",
+      "To enable type inference",
+      "To allow the use of `this` in functions"
+    ],
+    "correctAnswer": "To raise an error when a variable is implicitly assigned the `any` type",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you explicitly assign a type to a variable in TypeScript?",
+    "options": [
+      "let value = 'Hello';",
+      "let value: string = 'Hello';",
+      "let value: any = 'Hello';",
+      "let value: unknown = 'Hello';"
+    ],
+    "correctAnswer": "let value: string = 'Hello';",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `protected` access modifier in TypeScript?",
+    "options": [
+      "To allow access to a class member from any class",
+      "To allow access to a class member from within the class and derived classes",
+      "To restrict access to a class member to within the class itself",
+      "To allow access to a class member from within the same module"
+    ],
+    "correctAnswer": "To allow access to a class member from within the class and derived classes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a simple type alias in TypeScript?",
+    "options": [
+      "type MyType = string | number;",
+      "interface MyType { name: string; age: number; }",
+      "class MyType { name: string; age: number; }",
+      "function MyType() { name: string; age: number; }"
+    ],
+    "correctAnswer": "type MyType = string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `readonly` modifier in TypeScript?",
+    "options": [
+      "To define a private property",
+      "To define a protected property",
+      "To make a property immutable",
+      "To define a static property"
+    ],
+    "correctAnswer": "To make a property immutable",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Select the correct statement, when setting the value for a tuple",
+    "codeSnippet": "let testTuple: [string, number]; testTuple = ['Hello', 10];",
+    "options": [
+      "Will throw runtime error",
+      "Will throw compile time error",
+      "will set the tuple",
+      "will not do anything"
+    ],
+    "correctAnswer": "will set the tuple",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Select the correct statement, when setting the value for a tuple",
+    "codeSnippet": "let testTuple: [string, number]; testTuple = ['Hello', '10'];",
+    "options": [
+      "Will throw runtime error",
+      "Will throw compile time error",
+      "will set the tuple",
+      "will not do anything"
+    ],
+    "correctAnswer": "Will throw compile time error",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Select the correct statement, when setting the value for a tuple",
+    "codeSnippet": "let testTuple: [string, number]; testTuple = ['Hello', !1];",
+    "options": [
+      "Will throw runtime error",
+      "Will throw compile time error",
+      "will set the tuple",
+      "will not do anything"
+    ],
+    "correctAnswer": "Will throw compile time error",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Select the INCORRECT statement, when setting the value for a tuple, which of the options is not acceptable?",
+    "codeSnippet": "let testTuple: [string, ...number[]]",
+    "options": [
+      "testTuple = [\"Ben\", 10]",
+      "testTuple = [\"Ben\", 10, 20]",
+      "testTuple = [\"Ben\", 10, true]",
+      "testTuple = [\"Ben\", 10, 20, 30]"
+    ],
+    "correctAnswer": "testTuple = [\"Ben\", 10, true]",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "Select the correct statement, when setting the value for a tuple",
+    "codeSnippet": "let testTuple: [string, ...number[]]; testTuple = ['Hello', 10, 20, 30];",
+    "options": [
+      "Will throw runtime error",
+      "Will throw compile time error",
+      "will set the tuple",
+      "will not do anything"
+    ],
+    "correctAnswer": "will set the tuple",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "As per the below code snippet, what will be the output?",
+    "codeSnippet": "let testTuple: [string, ...number[]]; testTuple = ['Hello', 10, 20, 30]; console.log(testTuple);",
+    "options": [
+      "['Hello', 10, 20, 30]",
+      "['Hello', 10]",
+      "['Hello', 10, 20]",
+      "['Hello', 10, 20, 30, 40]"
+    ],
+    "correctAnswer": "['Hello', 10, 20, 30]",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "As per the below code snippet, all the assingments to generic type will work?",
+    "codeSnippet": "function identity<T>(arg: T): T {   return arg;} const num = identity<number>(42);\nconst str = identity<string>('Hello');\nconst str = identity<boolean>(true);",
+    "options": ["Yes", "No"],
+    "correctAnswer": "Yes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "As per the below code snippet, all the assingments to generic type will work?",
+    "codeSnippet": "function identity<T>(arg: T): T {return arg;}const num = identity<number>(42);const str = identity<string>('Hello');const str = identity<string>(true);",
+    "options": ["Yes", "No"],
+    "correctAnswer": "Yes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of below code snippet?",
+    "codeSnippet": "type Status = \"Pending\" | \"Working\" | \"Complete\"; function doSomeAction(status: Status) { switch (status) {  case \"Pending\":   console.log(status);   break; case \"Working\":   console.log(status);   break;  default:   console.log(status); }} doSomeAction(\"Pending\");",
+    "options": ["Pending", "Working", "Complete"],
+    "correctAnswer": "Pending",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of below code snippet?",
+    "codeSnippet": "type Status = \"Pending\" | \"Working\" | \"Complete\"; function doSomeAction(status: Status) {   switch (status) {  case \"Pending\":   console.log(status);   break; case \"Working\":   console.log(status);   break;  default:   neverReached(status); }} function neverReached(never: never) {} doSomeAction(\"Pending\");",
+    "options": ["Pending", "Working", "Complete", "Throws error"],
+    "correctAnswer": "Pending",
+    "tag": "TypeScript"
   }
 ]

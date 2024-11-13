@@ -41,11 +41,12 @@ onMounted(async () => {
   if (quizSyntaxHighlighter.value) {
     const code = quizSyntaxHighlighter.value.innerText;
     let formattedCode = code;
+    const options = { indent_size: 2, space_in_empty_paren: true };
 
     if (props.language === 'html') {
       formattedCode = beautifyHtml(code);
     } else if (props.language === 'javascript') {
-      formattedCode = beautifyJs(code);
+      formattedCode = beautifyJs(code, options);
     } else if (props.language === 'css') {
       formattedCode = beautifyCss(code);
     }

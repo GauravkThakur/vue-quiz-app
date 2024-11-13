@@ -1,0 +1,397 @@
+[
+  {
+    "question": "What is the primary purpose of TypeScript?",
+    "options": [
+      "To add static typing to JavaScript",
+      "To create server-side applications",
+      "To manage databases",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To add static typing to JavaScript",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an interface in TypeScript?",
+    "options": [
+      "interface MyInterface { name: string; age: number; }",
+      "class MyInterface { name: string; age: number; }",
+      "type MyInterface = { name: string; age: number; }",
+      "function MyInterface() { name: string; age: number; }"
+    ],
+    "correctAnswer": "interface MyInterface { name: string; age: number; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `readonly` modifier in TypeScript?",
+    "options": [
+      "To make a property immutable",
+      "To define a private property",
+      "To define a protected property",
+      "To define a static property"
+    ],
+    "correctAnswer": "To make a property immutable",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a tuple type in TypeScript?",
+    "options": [
+      "let tuple: [string, number];",
+      "let tuple: (string, number);",
+      "let tuple: {string, number};",
+      "let tuple: [string | number];"
+    ],
+    "correctAnswer": "let tuple: [string, number];",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `unknown` type in TypeScript?",
+    "options": [
+      "To represent a value that could be of any type",
+      "To represent a value that is always null",
+      "To represent a value that is always undefined",
+      "To represent a value that is always a string"
+    ],
+    "correctAnswer": "To represent a value that could be of any type",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a function with a return type in TypeScript?",
+    "options": [
+      "function myFunction(): string { return 'Hello'; }",
+      "function myFunction: string { return 'Hello'; }",
+      "function myFunction() { return 'Hello'; }: string",
+      "function myFunction() -> string { return 'Hello'; }"
+    ],
+    "correctAnswer": "function myFunction(): string { return 'Hello'; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `never` type in TypeScript?",
+    "options": [
+      "To represent a value that never occurs",
+      "To represent a value that is always null",
+      "To represent a value that is always undefined",
+      "To represent a value that is always a string"
+    ],
+    "correctAnswer": "To represent a value that never occurs",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an optional property in an interface in TypeScript?",
+    "options": [
+      "interface MyInterface { name?: string; }",
+      "interface MyInterface { name: string | undefined; }",
+      "interface MyInterface { name: string | null; }",
+      "interface MyInterface { name: string | void; }"
+    ],
+    "correctAnswer": "interface MyInterface { name?: string; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `as` keyword in TypeScript?",
+    "options": [
+      "To perform type assertions",
+      "To define a private property",
+      "To define a protected property",
+      "To define a static property"
+    ],
+    "correctAnswer": "To perform type assertions",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic function in TypeScript?",
+    "options": [
+      "function myFunction<T>(arg: T): T { return arg; }",
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `enum` keyword in TypeScript?",
+    "options": [
+      "To define a set of named constants",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a set of named constants",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a type alias in TypeScript?",
+    "options": [
+      "type MyType = string | number;",
+      "interface MyType { name: string; age: number; }",
+      "class MyType { name: string; age: number; }",
+      "function MyType() { name: string; age: number; }"
+    ],
+    "correctAnswer": "type MyType = string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `abstract` keyword in TypeScript?",
+    "options": [
+      "To define a class that cannot be instantiated directly",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a class that cannot be instantiated directly",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a union type in TypeScript?",
+    "options": [
+      "let value: string | number;",
+      "let value: (string, number);",
+      "let value: {string, number};",
+      "let value: [string, number];"
+    ],
+    "correctAnswer": "let value: string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `interface` keyword in TypeScript?",
+    "options": [
+      "To define a contract for objects",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To define a contract for objects",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic interface in TypeScript?",
+    "options": [
+      "interface MyInterface<T> { value: T; }",
+      "interface MyInterface { value: T; }",
+      "interface MyInterface<T> { value: string; }",
+      "interface MyInterface { value: string | number; }"
+    ],
+    "correctAnswer": "interface MyInterface<T> { value: T; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `extends` keyword in TypeScript?",
+    "options": [
+      "To create a subclass that inherits properties and methods from a parent class",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To create a subclass that inherits properties and methods from a parent class",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a function that accepts a generic parameter in TypeScript?",
+    "options": [
+      "function myFunction<T>(arg: T): T { return arg; }",
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `implements` keyword in TypeScript?",
+    "options": [
+      "To ensure that a class adheres to a specific interface",
+      "To declare a block-scoped variable",
+      "To create a new array",
+      "To handle asynchronous operations"
+    ],
+    "correctAnswer": "To ensure that a class adheres to a specific interface",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a class that implements an interface in TypeScript?",
+    "options": [
+      "class MyClass implements MyInterface { value: string; }",
+      "class MyClass extends MyInterface { value: string; }",
+      "class MyClass implements { value: string; }",
+      "class MyClass extends { value: string; }"
+    ],
+    "correctAnswer": "class MyClass implements MyInterface { value: string; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "let value: string | number;\nvalue = 'Hello';\nconsole.log(value);",
+    "options": ["Hello", "undefined", "Error", "null"],
+    "correctAnswer": "Hello",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "interface Person {\n  name: string;\n  age?: number;\n}\nconst person: Person = { name: 'John' };\nconsole.log(person.age);",
+    "options": ["undefined", "0", "Error", "null"],
+    "correctAnswer": "undefined",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "class Animal {\n  constructor(public name: string) {}\n}\nconst dog = new Animal('Dog');\nconsole.log(dog.name);",
+    "options": ["Dog", "undefined", "Error", "null"],
+    "correctAnswer": "Dog",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "function add(a: number, b: number): number {\n  return a + b;\n}\nconsole.log(add(5, 10));",
+    "options": ["15", "undefined", "Error", "510"],
+    "correctAnswer": "15",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "type StringOrNumber = string | number;\nlet value: StringOrNumber = 42;\nconsole.log(value);",
+    "options": ["42", "undefined", "Error", "null"],
+    "correctAnswer": "42",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "enum Color {\n  Red = 'RED',\n  Green = 'GREEN',\n  Blue = 'BLUE'\n}\nconsole.log(Color.Green);",
+    "options": ["GREEN", "Red", "Error", "undefined"],
+    "correctAnswer": "GREEN",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "interface User {\n  id: number;\n  name: string;\n}\nconst user: User = { id: 1, name: 'Alice' };\nconsole.log(user.id);",
+    "options": ["1", "undefined", "Error", "null"],
+    "correctAnswer": "1",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "function greet(name: string): string {\n  return `Hello, ${name}!`;\n}\nconsole.log(greet('Bob'));",
+    "options": ["Hello, Bob!", "undefined", "Error", "Hello, !"],
+    "correctAnswer": "Hello, Bob!",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "let value: unknown = 'Hello';\nif (typeof value === 'string') {\n  console.log(value.toUpperCase());\n}",
+    "options": ["HELLO", "undefined", "Error", "hello"],
+    "correctAnswer": "HELLO",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "type Point = { x: number; y: number };\nconst point: Point = { x: 10, y: 20 };\nconsole.log(point.x);",
+    "options": ["10", "undefined", "Error", "20"],
+    "correctAnswer": "10",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the default type assigned to a variable if no type is explicitly specified and noImplicitAny is set to false?",
+    "options": ["string", "number", "any", "undefined"],
+    "correctAnswer": "any",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `strictNullChecks` compiler option in TypeScript?",
+    "options": [
+      "To enable type inference",
+      "To ensure that `null` and `undefined` are not assignable to other types unless explicitly allowed",
+      "To allow implicit `any` types",
+      "To allow the use of `this` in functions"
+    ],
+    "correctAnswer": "To ensure that `null` and `undefined` are not assignable to other types unless explicitly allowed",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define an enum type in TypeScript?",
+    "options": [
+      "interface Color { Red: string; Green: string; Blue: string; }",
+      "enum Color { Red, Green, Blue }",
+      "type Color = { Red, Green, Blue }",
+      "class Color { Red: string; Green: string; Blue: string; }"
+    ],
+    "correctAnswer": "enum Color { Red, Green, Blue }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `private` access modifier in TypeScript?",
+    "options": [
+      "To allow access to a class member from any class",
+      "To allow access to a class member from derived classes",
+      "To restrict access to a class member to within the class itself",
+      "To allow access to a class member from within the same module"
+    ],
+    "correctAnswer": "To restrict access to a class member to within the class itself",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a generic function in TypeScript?",
+    "options": [
+      "function myFunction(arg: T): T { return arg; }",
+      "function myFunction<T>(arg: T) -> T { return arg; }",
+      "function myFunction(arg: T) -> T { return arg; }",
+      "function myFunction<T>(arg: T): T { return arg; }"
+    ],
+    "correctAnswer": "function myFunction<T>(arg: T): T { return arg; }",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `noImplicitAny` compiler option in TypeScript?",
+    "options": [
+      "To raise an error when a variable is implicitly assigned the `any` type",
+      "To allow implicit `any` types",
+      "To enable type inference",
+      "To allow the use of `this` in functions"
+    ],
+    "correctAnswer": "To raise an error when a variable is implicitly assigned the `any` type",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you explicitly assign a type to a variable in TypeScript?",
+    "options": [
+      "let value = 'Hello';",
+      "let value: string = 'Hello';",
+      "let value: any = 'Hello';",
+      "let value: unknown = 'Hello';"
+    ],
+    "correctAnswer": "let value: string = 'Hello';",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `protected` access modifier in TypeScript?",
+    "options": [
+      "To allow access to a class member from any class",
+      "To allow access to a class member from within the class and derived classes",
+      "To restrict access to a class member to within the class itself",
+      "To allow access to a class member from within the same module"
+    ],
+    "correctAnswer": "To allow access to a class member from within the class and derived classes",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "How do you define a simple type alias in TypeScript?",
+    "options": [
+      "type MyType = string | number;",
+      "interface MyType { name: string; age: number; }",
+      "class MyType { name: string; age: number; }",
+      "function MyType() { name: string; age: number; }"
+    ],
+    "correctAnswer": "type MyType = string | number;",
+    "tag": "TypeScript"
+  },
+  {
+    "question": "What is the purpose of the `readonly` modifier in TypeScript?",
+    "options": [
+      "To define a private property",
+      "To define a protected property",
+      "To make a property immutable",
+      "To define a static property"
+    ],
+    "correctAnswer": "To make a property immutable",
+    "tag": "TypeScript"
+  }
+]
