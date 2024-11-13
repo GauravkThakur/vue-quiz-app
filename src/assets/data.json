@@ -59,6 +59,13 @@
     "tag": "Vue"
   },
   {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div>{{ reversedMessage }}</div>\n</template>\n\n<script setup>\nimport { ref, computed } from 'vue';\nconst message = ref('Hello');\nconst reversedMessage = computed(() => message.value.split('').reverse().join(''));\n</script>",
+    "options": ["Hello", "undefined", "olleH", "Error"],
+    "correctAnswer": "olleH",
+    "tag": "Vue"
+  },
+  {
     "question": "How do you bind multiple classes conditionally in Vue.js using the Composition API?",
     "options": [
       "Using `v-if`",
@@ -223,6 +230,13 @@
     "tag": "Vue"
   },
   {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div>{{ count }}</div>\n</template>\n\n<script setup>\nimport { ref, watch } from 'vue';\nconst count = ref(0);\nwatch(count, (newValue, oldValue) => {\n  console.log(`Count changed from ${oldValue} to ${newValue}`);\n});\ncount.value = 5;\n</script>",
+    "options": ["Count changed from 0 to 5", "5", "undefined", "Error"],
+    "correctAnswer": "Count changed from 0 to 5",
+    "tag": "Vue"
+  },
+  {
     "question": "Which lifecycle hook should be used to clear pending timers and intervals?",
     "options": ["onMounted", "onUpdated", "onBeforeMount", "onUnmounted"],
     "correctAnswer": "onUnmounted",
@@ -282,6 +296,49 @@
     "tag": "Vue"
   },
   {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <ul>\n    <li v-for=\"(item, index) in items\" :key=\"index\" ref=\"setItemRef\">{{ item }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\nconst items = ref(['Item 1', 'Item 2', 'Item 3']);\nconst itemRefs = ref([]);\nconst setItemRef = (el) => {\n  if (el) itemRefs.value.push(el);\n};\nonMounted(() => {\n  itemRefs.value.forEach((el, index) => {\n    el.style.color = 'red';\n  });\n});\n</script>",
+    "options": [
+      "All list items will have red text",
+      "No list items will have red text",
+      "Only the first list item will have red text",
+      "Error"
+    ],
+    "correctAnswer": "All list items will have red text",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <input ref=\"myInput\" type=\"text\" />\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\nconst myInput = ref(null);\nonMounted(() => {\n  myInput.value.focus();\n});\n</script>",
+    "options": [
+      "The input element will be focused",
+      "The input element will be focused on blur",
+      "The input element will not be focused",
+      "Error"
+    ],
+    "correctAnswer": "The input element will be focused",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <button ref=\"myButton\">Click me</button>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\nconst myButton = ref(null);\nonMounted(() => {\n  myButton.value.addEventListener('click', () => {\n    console.log('Button clicked');\n  });\n});\n</script>",
+    "options": [
+      "'Button clicked' will be logged when the button is clicked",
+      "undefined",
+      "null",
+      "Error"
+    ],
+    "correctAnswer": "'Button clicked' will be logged when the button is clicked",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <ul>\n    <li v-for=\"(item, index) in items\" :key=\"index\" ref=\"setItemRef\">{{ item }}</li>\n  </ul>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\nconst items = ref(['Item 1', 'Item 2', 'Item 3']);\nconst itemRefs = ref([]);\nconst setItemRef = (el) => {\n  if (el) itemRefs.value.push(el);\n};\nonMounted(() => {\n  console.log(itemRefs.value.length);\n});\n</script>",
+    "options": ["3", "0", "undefined", "Error"],
+    "correctAnswer": "3",
+    "tag": "Vue"
+  },
+  {
     "question": "Which of the following is NOT a valid use of Vue.js interpolation?",
     "options": [
       "Binding event handlers",
@@ -333,6 +390,13 @@
     "tag": "Vue"
   },
   {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div>{{ count }}</div>\n</template>\n\n<script setup>\nimport { ref, onMounted } from 'vue';\nconst count = ref(0);\nonMounted(() => {\n  setTimeout(() => {\n    count.value = 10;\n  }, 1000);\n});\n</script>",
+    "options": ["10", "0 initially, then 10 after 1 second", "0", "undefined"],
+    "correctAnswer": "0 initially, then 10 after 1 second",
+    "tag": "Vue"
+  },
+  {
     "question": "When should you use `watchEffect` instead of `watch` in Vue.js using the Composition API?",
     "options": [
       "When you need to watch multiple reactive properties",
@@ -341,6 +405,13 @@
       "When you need to run the watcher only when a specific property changes"
     ],
     "correctAnswer": "When you need to track dependencies automatically and run the effect immediately",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div>{{ count }}</div>\n</template>\n\n<script setup>\nimport { ref, watchEffect } from 'vue';\nconst count = ref(0);\nwatchEffect(() => {\n  console.log(`Count is now ${count.value}`);\n});\ncount.value = 5;\n</script>",
+    "options": ["Count is now 0\nCount is now 5", "Count is now 5", "undefined", "Error"],
+    "correctAnswer": "Count is now 0\nCount is now 5",
     "tag": "Vue"
   },
   {
@@ -509,6 +580,54 @@
       "<p :class=\"divStyles\">This is a styled div</p>"
     ],
     "correctAnswer": "<p :class=\"divStyles\">This is a styled div</p>",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div :class=\"{ active: isActive }\">Hello</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst isActive = ref(true);\n</script>",
+    "options": [
+      "<div class=\"active\">Hello</div>",
+      "<div>Hello</div>",
+      "<div class=\"\">Hello</div>",
+      "Error"
+    ],
+    "correctAnswer": "<div class=\"active\">Hello</div>",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div :style=\"{ color: textColor }\">Hello</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst textColor = ref('red');\n</script>",
+    "options": [
+      "<div style=\"color: red;\">Hello</div>",
+      "<div>Hello</div>",
+      "<div style=\"\">Hello</div>",
+      "Error"
+    ],
+    "correctAnswer": "<div style=\"color: red;\">Hello</div>",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div :class=\"[isActive ? 'active' : '', 'base']\">Hello</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst isActive = ref(false);\n</script>",
+    "options": [
+      "<div class=\"active base\">Hello</div>",
+      "<div class=\"base\">Hello</div>",
+      "<div>Hello</div>",
+      "Error"
+    ],
+    "correctAnswer": "<div class=\"base\">Hello</div>",
+    "tag": "Vue"
+  },
+  {
+    "question": "What will be the output of the following code snippet?",
+    "codeSnippet": "<template>\n  <div :style=\"{ backgroundColor: isActive ? 'green' : 'red' }\">Hello</div>\n</template>\n\n<script setup>\nimport { ref } from 'vue';\nconst isActive = ref(true);\n</script>",
+    "options": [
+      "<div>Hello</div>",
+      "Error",
+      "<div style=\"background-color: green;\">Hello</div>",
+      "<div style=\"background-color: red;\">Hello</div>"
+    ],
+    "correctAnswer": "<div style=\"background-color: green;\">Hello</div>",
     "tag": "Vue"
   },
   {
@@ -2302,13 +2421,23 @@
   {
     "question": "We have a function below that takes in a varying number of message parameters and outputs them to the console. How can we strongly-type the messages rest parameter so that only string types can be passed?",
     "codeSnippet": "function outputMessages(...messages) {messages.forEach(message => console.log(message));}",
-    "options": ["...messages: string", "...messages: string[] | string", "...messages: string[]", "...messages: any"],
+    "options": [
+      "...messages: string",
+      "...messages: string[] | string",
+      "...messages: string[]",
+      "...messages: any"
+    ],
     "correctAnswer": "...messages: string[]",
     "tag": "TypeScript"
   },
   {
     "question": "We have a variable that will hold a two-dimensional point. What is most appropriate type annotation for this?",
-    "options": ["let point: { x: number, y: number }", "let point: [number, number]", "let point: number[]", "let point: { x: number }"],
+    "options": [
+      "let point: { x: number, y: number }",
+      "let point: [number, number]",
+      "let point: number[]",
+      "let point: { x: number }"
+    ],
     "correctAnswer": "let point: [number, number]",
     "tag": "TypeScript"
   },
@@ -2335,14 +2464,23 @@
   },
   {
     "question": "We need to create a type to represent a numeric level that can hold values between 1 and 5. What type can we use to best represent this?",
-    "options": ["type Level = number", "type Level = 1 | 2 | 3 | 4 | 5", "type Level = 1..5", "interface Level = 1 | 2 | 3 | 4 | 5"],
+    "options": [
+      "type Level = number",
+      "type Level = 1 | 2 | 3 | 4 | 5",
+      "type Level = 1..5",
+      "interface Level = 1 | 2 | 3 | 4 | 5"
+    ],
     "correctAnswer": "type Level = 1 | 2 | 3 | 4 | 5",
     "tag": "TypeScript"
   },
   {
     "question": "Will a type error occur on any of the level assignments below:",
     "codeSnippet": "enum Status {Open,InProgress,Complete}let level: Status;level = 4;level = \"4\";",
-    "options": ["Yes, both assignments will generate type errors", "No, both assignments will not generate any type errors", "Only, the second assignment will generate a type error"],
+    "options": [
+      "Yes, both assignments will generate type errors",
+      "No, both assignments will not generate any type errors",
+      "Only, the second assignment will generate a type error"
+    ],
     "correctAnswer": "Yes, both assignments will generate type errors",
     "tag": "TypeScript"
   },
