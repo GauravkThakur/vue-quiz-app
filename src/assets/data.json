@@ -1413,14 +1413,14 @@
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
-    "codeSnippet": "<template>  <MyButton>Click me</MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script> MyButton.vue<template>  <button><slot>Submit</slot></button></template>",
+    "codeSnippet": "<template>  <MyButton>Click me</MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script>\n\n// MyButton.vue\n<template>\n<button>\n<slot>Submit</slot>\n</button>\n</template>",
     "options": ["True", "False"],
     "correctAnswer": "False",
     "tag": "Vue"
   },
   {
     "question": "When using the Vue JS slot, The button will be displayed with the text 'Submit'?",
-    "codeSnippet": "<template>  <MyButton></MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script> MyButton.vue<template>  <button><slot>Submit</slot></button></template>",
+    "codeSnippet": "<template>  <MyButton></MyButton></template><script setup>\nimport { ref, computed } from 'vue';\nimport MyButton from './MyButton.vue';</script>\n\n// MyButton.vue\n<template>\n<button>\n<slot>Submit</slot>\n</button>\n</template>",
     "options": ["True", "False"],
     "correctAnswer": "True",
     "tag": "Vue"
