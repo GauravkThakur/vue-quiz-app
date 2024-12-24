@@ -5,8 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import QuizWelcome from '@/components/QuizWelcome.vue';
-import QuizContent from '@/components/QuizContent.vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 

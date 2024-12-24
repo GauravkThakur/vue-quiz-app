@@ -5,7 +5,7 @@ export const useQuizStore = defineStore(
   'quiz',
   () => {
     const allTopics = ref(['Vue', 'JavaScript', 'TypeScript']);
-    const username = ref('');
+    const username = ref('Guest');
     const isDarkMode = ref(false);
     const status = ref('inactive');
     const isQuizFinished = ref(false);
@@ -39,7 +39,7 @@ export const useQuizStore = defineStore(
     }
 
     function resetQuiz() {
-      username.value = '';
+      username.value = 'Guest';
       status.value = 'inactive';
       questionIndexes.value = [];
       numberOfIndexes.value = '30';

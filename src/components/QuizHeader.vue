@@ -1,21 +1,20 @@
 <template>
   <Toolbar class="h-20">
     <template #start>
-      <span class="flex items-center text-sm">
+      <Button class="flex items-center text-sm h-12" variant="outlined" severity="contrast">
         <Avatar
-          icon="pi pi-user"
-          class="mr-2"
+          v-bind="userAvatar"
           size="normal"
           style="background-color: #dee9fc; color: #1a2551"
           shape="circle"
         />
-        <strong class="text-lg">Welcome {{ username }} !!!</strong>
-      </span>
+        <strong class="text-xl">{{ user?.name || username }}</strong>
+      </Button>
     </template>
     <template #end>
       <Tag
         icon="text-lg flex justify-center items-center mr-1 pi pi-clock"
-        class="w-28 h-10 text-xl"
+        class="w-28 h-12 text-xl"
         severity="contrast"
         :value="formattedTime"
       ></Tag>
@@ -26,6 +25,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, computed, watchEffect } from 'vue';
 import { useQuizStore } from '@/stores/quiz';
+import { useUserStore } from '@/stores/user';
 import { storeToRefs } from 'pinia';
 
 const emit = defineEmits(['onTimerOut']);
@@ -33,7 +33,12 @@ const props = withDefaults(defineProps<{ isRestart: boolean }>(), {
   isRestart: false
 });
 
+const { user } = storeToRefs(useUserStore());
 const { username, timeLeft, timerInterval } = storeToRefs(useQuizStore());
+
+const userAvatar = computed(() => ({
+  ...(user.value?.picture ? { image: user.value?.picture } : { icon: 'pi pi-user' })
+}));
 
 const formattedTime = computed(() => {
   const minutes = Math.floor(timeLeft.value / 60);
@@ -42,8 +47,9 @@ const formattedTime = computed(() => {
 });
 
 const resetInterval = () => {
+  clearInterval(timerInterval.value);
   timerInterval.value = setInterval(() => {
-    if (timeLeft.value) {
+    if (timeLeft.value > 0) {
       timeLeft.value--;
       if (timeLeft.value === 0) {
         emit('onTimerOut');

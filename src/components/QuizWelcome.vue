@@ -1,29 +1,33 @@
 <template>
-  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto my-6 items-center">
-    <template #content>
-      <Button
-        :icon="isDarkMode ? 'pi pi-sun' : 'pi pi-moon'"
-        :severity="!isDarkMode ? 'contrast' : 'secondary'"
-        aria-label="Toggle Dark Mode"
-        label="Toggle Dark Mode"
-        @click="toggleDarkMode()"
-        class="float-right"
-      />
+  <Toolbar class="w-11/12 sm:w-9/12 md:w-7/12 mx-auto my-6 items-center">
+    <template #start>
+      <Image src="favicon.svg" alt="logo" width="56" />
     </template>
-  </Card>
-  <Card class="w-11/12 sm:w-9/12 md:w-7/12 h-full mx-auto">
-    <template #header>
+    <template #end>
+      <div class="flex gap-2">
+        <Button
+          :icon="isDarkMode ? 'pi pi-moon' : 'pi pi-sun'"
+          severity="contrast"
+          aria-label="Toggle Dark Mode"
+          variant="outlined"
+          @click="toggleDarkMode()"
+          class="float-right"
+        />
+        <QuizLogin />
+      </div>
+    </template>
+  </Toolbar>
+  <Card class="w-11/12 sm:w-9/12 md:w-7/12 mx-auto">
+    <template #title>
+      <h1 class="flex justify-center">Front-end Quiz</h1>
       <div class="flex justify-center gap-2">
         <QuizIcon
           v-for="topic in allTopics"
           :key="topic"
           :name="topic.toLowerCase()"
-          class="h-12 w-12"
+          class="h-10 w-10"
         />
       </div>
-    </template>
-    <template #title>
-      <h1 class="flex justify-center">Front-end Quiz</h1>
     </template>
     <template #subtitle>
       <h2 class="w-full md:w-3/4 m-auto">
@@ -32,7 +36,7 @@
       </h2>
     </template>
     <template #content>
-      <div class="flex flex-col gap-4 text-center w-full md:w-3/4 m-auto">
+      <div class="flex flex-col text-center w-full md:w-3/4 m-auto">
         <Fieldset>
           <template #legend>
             <div class="flex items-center pl-2">
@@ -64,22 +68,43 @@
             <template #option="slotProps">{{ slotProps.option }}</template>
           </SelectButton>
         </Fieldset>
-        <FloatLabel variant="in">
-          <InputText
-            id="username"
-            v-model="username"
-            fluid
-            :invalid="isInvalid"
-            @input="validateInput"
-          />
-          <label for="username">Enter your name</label>
-        </FloatLabel>
       </div>
     </template>
     <template #footer>
       <div class="flex justify-center w-full md:w-3/4 m-auto">
         <Button label="Start Quiz" severity="primary" @click="startQuiz" fluid />
       </div>
+      <Dialog
+        v-model:visible="visible"
+        maximizable
+        modal
+        header="Header"
+        :style="{ width: '90vw' }"
+        :breakpoints="{ '1199px': '60vw', '575px': '90vw' }"
+      >
+        <template #header>
+          <strong class="flex items-center gap-2">
+            <i class="pi pi-sign-in" />
+            <span class="font-bold">Sign In</span>
+          </strong>
+        </template>
+        <span class="text-surface-500 dark:text-surface-400 block mb-2">
+          Please sign in with your google account or continue as guest to start the quiz.
+        </span>
+        <template #footer>
+          <div class="flex justify-center gap-2">
+            <QuizLogin />
+            <Button
+              size="small"
+              label="Continue as Guest"
+              severity="contrast"
+              variant="outlined"
+              @click="onReply"
+              class="text-xs"
+            ></Button>
+          </div>
+        </template>
+      </Dialog>
     </template>
   </Card>
 </template>
@@ -88,38 +113,43 @@
 import { onMounted, ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
+import { useUserStore } from '@/stores/user';
 
-const {
-  username,
-  allTopics,
-  selectedTopics,
-  numberOfIndexes,
-  timeLeft,
-  isDarkMode,
-  updatedNumberOfIndexes
-} = storeToRefs(useQuizStore());
+const visible = ref(false);
+const { isLoggedIn } = storeToRefs(useUserStore());
 
-const isInvalid = ref(false);
+const { allTopics, selectedTopics, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } =
+  storeToRefs(useQuizStore());
+
 const options = ref(['30', '40', '50', 'All']);
 const emit = defineEmits(['start']);
 
 const startQuiz = () => {
-  validateInput();
-  if (!isInvalid.value) {
+  if (isLoggedIn.value) {
     emit('start');
+  } else {
+    visible.value = true;
   }
 };
 
-const validateInput = () => {
-  if (username.value === '') {
-    isInvalid.value = true;
-    return;
-  }
-  isInvalid.value = false;
+const onClose = () => {
+  visible.value = false;
+};
+
+const onReply = () => {
+  onClose();
+  emit('start');
 };
 
 watch(numberOfIndexes, () => {
   timeLeft.value = updatedNumberOfIndexes.value * 60;
+});
+
+watch(isLoggedIn, (newValue) => {
+  if (newValue && visible.value) {
+    onClose();
+    emit('start');
+  }
 });
 
 function toggleDarkMode() {
@@ -127,11 +157,9 @@ function toggleDarkMode() {
   isDarkMode.value = !isDarkMode.value;
 }
 
-onMounted(() => {
+onMounted(async () => {
   if (isDarkMode.value) {
     document.documentElement.classList.add('my-app-dark');
   }
 });
 </script>
-
-<style scoped></style>

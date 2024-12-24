@@ -1,7 +1,7 @@
 <template>
   <Splitter class="h-full">
     <SplitterPanel
-      class="flex items-center justify-center overflow-auto h-full"
+      class="flex items-center justify-center overflow-y-auto h-full"
       :size="25"
       :minSize="10"
     >
@@ -101,7 +101,7 @@ const handleScroll = (index: number) => {
 
 const buttonProps = (index: number) => {
   const updatedIndex = index - 1;
-  let severity =
+  const severity =
     currentPage.value === updatedIndex
       ? 'warn'
       : isOptionSelected(updatedIndex)

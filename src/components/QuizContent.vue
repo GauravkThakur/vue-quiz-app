@@ -26,51 +26,35 @@ import QuizFooter from './QuizFooter.vue';
 const isRestarted = ref(false);
 
 const { questions } = useQuestions();
-
-const { timeLeft, status, selectedOptions, answers } = storeToRefs(useQuizStore());
-const { resetQuiz, resetQuizProps } = useQuizStore();
+const quizStore = useQuizStore();
+const { timeLeft, status, selectedOptions, answers } = storeToRefs(quizStore);
 
 const onFinish = () => {
   timeLeft.value = 0;
   status.value = 'completed';
 
-  if (!selectedOptions.value.length) {
-    answers.value = { correct: 0, incorrect: 0, unanswered: questions.value.length };
-    return;
-  }
+  const initialAnswers = { correct: 0, incorrect: 0, unanswered: 0 };
 
-  answers.value = questions.value
-    .map((option, index) => {
-      const { selected } = selectedOptions.value.find((opt) => opt.index === index) ?? {};
-      return {
-        question: option.question,
-        selected,
-        correctAnswer: option.correctAnswer,
-        correct: option.correctAnswer === selected
-      };
-    })
-    .reduce(
-      (prev, curr) => {
-        if (!curr.selected) {
-          prev.unanswered++;
-        } else if (curr.correct) {
-          prev.correct++;
-        } else {
-          prev.incorrect++;
-        }
-        return prev;
-      },
-      { correct: 0, incorrect: 0, unanswered: 0 }
-    );
+  answers.value = questions.value.reduce((acc, question, index) => {
+    const selectedOption = selectedOptions.value.find((opt) => opt.index === index)?.selected;
+    if (!selectedOption) {
+      acc.unanswered++;
+    } else if (question.correctAnswer === selectedOption) {
+      acc.correct++;
+    } else {
+      acc.incorrect++;
+    }
+    return acc;
+  }, initialAnswers);
 };
 
 const onQuit = () => {
-  resetQuiz();
+  quizStore.resetQuiz();
   questions.value = [];
 };
 
 const onRestart = () => {
-  resetQuizProps();
+  quizStore.resetQuizProps();
   status.value = 'started';
   isRestarted.value = true;
 };

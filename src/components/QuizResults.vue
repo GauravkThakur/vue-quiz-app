@@ -1,5 +1,5 @@
 <template>
-  <Card class="w-11/12 sm:w-9/12 h-1/2 mx-auto my-12">
+  <Card class="w-full sm:w-9/12 m-auto">
     <template #title>
       <h1 class="flex justify-center">Quiz Results</h1>
     </template>
@@ -7,10 +7,10 @@
       <div class="card flex justify-center mt-4">
         <div class="flex flex-col gap-4">
           <Message v-if="isPassing" icon="pi pi-thumbs-up-fill" severity="success">
-            Congratulations {{ username }}! your score is {{ percentage }} %
+            Congratulations {{ userName }}! your score is {{ percentage }} %
           </Message>
           <Message v-else icon="pi pi-thumbs-down-fill" severity="error">
-            Tough luck {{ username }} ! your score is {{ percentage }} %
+            Tough luck {{ userName }} ! your score is {{ percentage }} %
           </Message>
         </div>
       </div>
@@ -35,8 +35,8 @@
     </template>
     <template #footer>
       <div class="flex justify-center mt-4 gap-4">
-        <Button label="Go to Home" severity="primary" @click="goHome" fluid />
-        <Button label="Review Answers" severity="secondary" @click="reviewAnswers" fluid />
+        <Button label="Home" icon="pi pi-home" severity="primary" @click="goHome" fluid />
+        <Button label="Review" icon="pi pi-eye" severity="secondary" @click="reviewAnswers" fluid />
       </div>
     </template>
   </Card>
@@ -67,12 +67,16 @@ import { ref, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 import { useQuestions } from '@/composables/questions';
+import { useUserStore } from '@/stores/user';
 
 const visible = ref(false);
 const quizStore = useQuizStore();
 const { questions } = useQuestions();
 const { resetQuiz } = quizStore;
+const { user } = storeToRefs(useUserStore());
 const { answers, username } = storeToRefs(quizStore);
+
+const userName = computed(() => user.value?.name || username.value);
 
 const totalQuestions = computed(
   () => answers.value.correct + answers.value.incorrect + answers.value.unanswered
