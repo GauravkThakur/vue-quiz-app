@@ -79,7 +79,7 @@
         maximizable
         modal
         header="Header"
-        :style="{ width: '90vw' }"
+        :style="{ width: '40vw' }"
         :breakpoints="{ '1199px': '60vw', '575px': '90vw' }"
       >
         <template #header>

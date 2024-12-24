@@ -162,7 +162,7 @@
   {
     "question": "What will be the output of the following code snippet?",
     "codeSnippet": "const name = 'John';\nconst greeting = `Hello, ${name}!`;\nconsole.log(greeting);",
-    "options": ["Hello, John!", "Hello, ${name}!", "Hello, John", "Hello, ${name}!"],
+    "options": ["Hello, John!", "Hello, ${name}", "Hello, John", "Hello, ${name}!"],
     "correctAnswer": "Hello, John!",
     "tag": "JavaScript"
   },
