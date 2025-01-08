@@ -1,5 +1,6 @@
 import { computed, ref } from 'vue';
 import { defineStore } from 'pinia';
+import { type Question } from '@/types';
 
 export const useQuizStore = defineStore(
   'quiz',
@@ -12,9 +13,10 @@ export const useQuizStore = defineStore(
     const timerInterval = ref<number | undefined>(undefined);
     const currentPage = ref(0);
     const selectedTopics = ref<string[]>(allTopics.value);
-    const numberOfIndexes = ref('30');
+    const noOfQuestions = ref('30');
     const selectedOption = ref<string | null>(null);
-    const questionIndexes = ref<number[]>([]);
+    const questions = ref<Question[]>([]);
+    const decryptedQuestions = ref<Question[]>([]);
     const selectedOptions = ref<{ index: number; selected: string | null }[]>([]);
     const answers = ref<{ correct: number; incorrect: number; unanswered: number }>({
       correct: 0,
@@ -23,7 +25,7 @@ export const useQuizStore = defineStore(
     });
 
     const updatedNumberOfIndexes = computed(() =>
-      numberOfIndexes.value === 'All' ? 100 : parseInt(numberOfIndexes.value, 10)
+      noOfQuestions.value === 'All' ? 100 : parseInt(noOfQuestions.value, 10)
     );
 
     const timeLeft = ref(updatedNumberOfIndexes.value * 60);
@@ -41,8 +43,7 @@ export const useQuizStore = defineStore(
     function resetQuiz() {
       username.value = 'Guest';
       status.value = 'inactive';
-      questionIndexes.value = [];
-      numberOfIndexes.value = '30';
+      noOfQuestions.value = '30';
       selectedTopics.value = allTopics.value;
       resetQuizProps();
     }
@@ -56,10 +57,11 @@ export const useQuizStore = defineStore(
       timerInterval,
       currentPage,
       selectedTopics,
-      numberOfIndexes,
+      noOfQuestions,
       selectedOption,
       selectedOptions,
-      questionIndexes,
+      questions,
+      decryptedQuestions,
       updatedNumberOfIndexes,
       answers,
       isDarkMode,
@@ -68,22 +70,26 @@ export const useQuizStore = defineStore(
     };
   },
   {
-    persist: {
-      storage: sessionStorage,
-      pick: [
-        'username',
-        'status',
-        'timeLeft',
-        'timerInterval',
-        'currentPage',
-        'selectedTopics',
-        'numberOfIndexes',
-        'selectedOption',
-        'selectedOptions',
-        'answers',
-        'isDarkMode',
-        'questionIndexes'
-      ]
-    }
+    persist: [
+      {
+        storage: sessionStorage,
+        pick: [
+          'status',
+          'timeLeft',
+          'timerInterval',
+          'currentPage',
+          'selectedTopics',
+          'noOfQuestions',
+          'selectedOption',
+          'selectedOptions',
+          'answers',
+          'isDarkMode'
+        ]
+      },
+      {
+        storage: localStorage,
+        pick: ['questions']
+      }
+    ]
   }
 );

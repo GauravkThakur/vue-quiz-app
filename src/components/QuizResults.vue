@@ -1,16 +1,16 @@
 <template>
-  <Card class="w-full sm:w-9/12 m-auto">
+  <Card class="w-11/12 sm:w-9/12 mx-auto my-6">
     <template #title>
       <h1 class="flex justify-center">Quiz Results</h1>
     </template>
     <template #subtitle>
       <div class="card flex justify-center mt-4">
         <div class="flex flex-col gap-4">
-          <Message v-if="isPassing" icon="pi pi-thumbs-up-fill" severity="success">
-            Congratulations {{ userName }}! your score is {{ percentage }} %
+          <Message v-if="isPassing" icon="pi pi-thumbs-up-fill" size="large" severity="success">
+            Congratulations {{ userName }}! you scored {{ percentage }} %
           </Message>
-          <Message v-else icon="pi pi-thumbs-down-fill" severity="error">
-            Tough luck {{ userName }} ! your score is {{ percentage }} %
+          <Message v-else icon="pi pi-thumbs-down-fill" size="large" severity="error">
+            Tough luck {{ userName }} ! you scored {{ percentage }} %
           </Message>
         </div>
       </div>
@@ -44,21 +44,16 @@
     v-model:visible="visible"
     maximizable
     modal
-    header="Header"
+    header="Review Answers"
     :style="{ width: '50vw' }"
-    :breakpoints="{ '1199px': '75vw', '575px': '90vw' }"
+    :breakpoints="{ '1199px': '75vw', '575px': '100vw' }"
   >
-    <template #header>
-      <div class="flex justify-center">
-        <strong>Review Answers</strong>
-      </div>
-    </template>
-    <template #footer>
-      <div class="flex justify-end gap-4">
-        <Button label="Close" @click="visible = false" />
-      </div>
-    </template>
     <QuizReview />
+    <template #footer>
+      <div class="flex justify-end mt-4">
+        <Button label="Close" @click="visible = false" size="small" />
+      </div>
+    </template>
   </Dialog>
 </template>
 
@@ -66,15 +61,13 @@
 import { ref, computed } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
-import { useQuestions } from '@/composables/questions';
 import { useUserStore } from '@/stores/user';
 
 const visible = ref(false);
 const quizStore = useQuizStore();
-const { questions } = useQuestions();
 const { resetQuiz } = quizStore;
 const { user } = storeToRefs(useUserStore());
-const { answers, username } = storeToRefs(quizStore);
+const { answers, username, questions, decryptedQuestions } = storeToRefs(quizStore);
 
 const userName = computed(() => user.value?.name || username.value);
 
@@ -91,7 +84,9 @@ const isPassing = computed(() => parseFloat(percentage.value) > 70);
 const goHome = () => {
   resetQuiz();
   questions.value = [];
+  decryptedQuestions.value = [];
 };
+
 const reviewAnswers = () => {
   visible.value = true;
 };

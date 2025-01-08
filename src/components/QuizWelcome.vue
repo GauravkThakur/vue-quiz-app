@@ -60,7 +60,7 @@
             </div>
           </template>
           <SelectButton
-            v-model="numberOfIndexes"
+            v-model="noOfQuestions"
             :options="options"
             aria-labelledby="basic"
             class="flex-wrap gap-2 justify-center"
@@ -110,7 +110,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch } from 'vue';
+import { ref, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { useQuizStore } from '@/stores/quiz';
 import { useUserStore } from '@/stores/user';
@@ -118,7 +118,7 @@ import { useUserStore } from '@/stores/user';
 const visible = ref(false);
 const { isLoggedIn } = storeToRefs(useUserStore());
 
-const { allTopics, selectedTopics, numberOfIndexes, timeLeft, isDarkMode, updatedNumberOfIndexes } =
+const { allTopics, selectedTopics, noOfQuestions, timeLeft, isDarkMode, updatedNumberOfIndexes } =
   storeToRefs(useQuizStore());
 
 const options = ref(['30', '40', '50', 'All']);
@@ -141,7 +141,7 @@ const onReply = () => {
   emit('start');
 };
 
-watch(numberOfIndexes, () => {
+watch(noOfQuestions, () => {
   timeLeft.value = updatedNumberOfIndexes.value * 60;
 });
 
@@ -156,10 +156,4 @@ function toggleDarkMode() {
   document.documentElement.classList.toggle('my-app-dark');
   isDarkMode.value = !isDarkMode.value;
 }
-
-onMounted(async () => {
-  if (isDarkMode.value) {
-    document.documentElement.classList.add('my-app-dark');
-  }
-});
 </script>

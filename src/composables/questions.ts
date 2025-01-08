@@ -1,46 +1,77 @@
-import { ref, onMounted } from 'vue';
+import { onMounted, watch, ref } from 'vue';
 import { storeToRefs } from 'pinia';
-import data from '@/assets/data.json';
-import type { Question } from '@/types';
+import { decryptAnswer } from '@/utils';
 import { useQuizStore } from '@/stores/quiz';
 
 export function useQuestions() {
-  const { isDarkMode, questionIndexes, allTopics, selectedTopics, numberOfIndexes } =
+  const isConfigChanged = ref(false);
+  const { isDarkMode, questions, decryptedQuestions, selectedTopics, noOfQuestions } =
     storeToRefs(useQuizStore());
-  const questions = ref<Question[]>([]);
-  const totalItems = data.reduce((a, c, i) => {
-    const topics = selectedTopics.value.length ? selectedTopics.value : allTopics.value;
-    if (topics.includes(c.tag)) {
-      a.push(i);
-    }
-    return a;
-  }, [] as number[]);
 
-  function getRandomIndexes(totalItems: number[], numberOfIndexes: number) {
-    const shuffledIndexes = shuffle(totalItems);
-    return shuffledIndexes.slice(0, numberOfIndexes) as number[];
-  }
-
-  function shuffle(array: unknown[]) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-  }
-
-  onMounted(() => {
+  function setDarkMode() {
     if (isDarkMode.value) {
       document.documentElement.classList.add('my-app-dark');
     }
+  }
 
-    questionIndexes.value = questionIndexes.value.length
-      ? questionIndexes.value
-      : getRandomIndexes(totalItems, parseInt(numberOfIndexes.value, 10) || totalItems.length);
-    questions.value = questionIndexes.value.map((index) => data[index]);
-  });
+  async function setQuestions() {
+    setDarkMode();
+    if (!questions.value.length || isConfigChanged.value) {
+      questions.value = await getData();
+      isConfigChanged.value = false;
+    }
+    decryptedQuestions.value = await Promise.all(
+      questions.value.map(async (question) => {
+        const correctAnswer = await decryptAnswer(question.correctAnswer);
+        return {
+          ...question,
+          correctAnswer
+        };
+      })
+    );
+  }
+
+  async function getData() {
+    const maxRetries = 3;
+    const url = 'https://vue-quiz-backend.onrender.com/front-end-quiz/data/';
+    const params = new URLSearchParams(
+      selectedTopics.value.map((topic) => ['tags[]', topic])
+    ).toString();
+    const urlSubstring = `filter?${params}&count=${noOfQuestions.value}`;
+
+    for (let attempts = 0; attempts < maxRetries; attempts++) {
+      try {
+        const response = await fetch(`${url}${urlSubstring}`);
+
+        if (!response.ok) {
+          if (response.status === 404) {
+            console.error('Data not found (404)');
+            return [];
+          }
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        return await response.json();
+      } catch (error) {
+        console.error(`Attempt ${attempts + 1} failed:`, error);
+        if (attempts + 1 >= maxRetries) {
+          console.error('Max retries reached. Failed to fetch data');
+        }
+      }
+    }
+    return [];
+  }
+
+  const fetchQuestions = async () => {
+    isConfigChanged.value = true;
+  };
+
+  watch(selectedTopics, fetchQuestions);
+  watch(noOfQuestions, fetchQuestions);
+
+  onMounted(setQuestions);
 
   return {
-    questions
+    setQuestions
   };
 }

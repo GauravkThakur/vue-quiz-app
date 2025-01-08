@@ -1,7 +1,12 @@
 <template>
   <Toolbar class="h-20">
     <template #start>
-      <Button class="flex items-center text-sm h-12" variant="outlined" severity="contrast">
+      <Button
+        class="flex items-center text-sm h-12"
+        variant="outlined"
+        severity="contrast"
+        disabled
+      >
         <Avatar
           v-bind="userAvatar"
           size="normal"
@@ -13,6 +18,7 @@
     </template>
     <template #end>
       <Tag
+        v-if="questions.length"
         icon="text-lg flex justify-center items-center mr-1 pi pi-clock"
         class="w-28 h-12 text-xl"
         severity="contrast"
@@ -34,7 +40,7 @@ const props = withDefaults(defineProps<{ isRestart: boolean }>(), {
 });
 
 const { user } = storeToRefs(useUserStore());
-const { username, timeLeft, timerInterval } = storeToRefs(useQuizStore());
+const { username, timeLeft, timerInterval, questions } = storeToRefs(useQuizStore());
 
 const userAvatar = computed(() => ({
   ...(user.value?.picture ? { image: user.value?.picture } : { icon: 'pi pi-user' })

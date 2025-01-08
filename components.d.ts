@@ -17,6 +17,7 @@ declare module 'vue' {
     Image: typeof import('primevue/image')['default']
     Message: typeof import('primevue/message')['default']
     Popover: typeof import('primevue/popover')['default']
+    ProgressSpinner: typeof import('primevue/progressspinner')['default']
     QuizContent: typeof import('./src/components/QuizContent.vue')['default']
     QuizFooter: typeof import('./src/components/QuizFooter.vue')['default']
     QuizHeader: typeof import('./src/components/QuizHeader.vue')['default']
@@ -33,7 +34,6 @@ declare module 'vue' {
     Splitter: typeof import('primevue/splitter')['default']
     SplitterPanel: typeof import('primevue/splitterpanel')['default']
     Tag: typeof import('primevue/tag')['default']
-    Toast: typeof import('primevue/toast')['default']
     Toolbar: typeof import('primevue/toolbar')['default']
   }
 }

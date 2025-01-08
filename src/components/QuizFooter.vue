@@ -20,7 +20,7 @@
     </template>
     <template #end>
       <Button
-        label="Finish"
+        label="Submit"
         severity="success"
         icon="pi pi-check"
         outlined
@@ -37,66 +37,48 @@ import { useConfirm } from 'primevue/useconfirm';
 const confirm = useConfirm();
 const emit = defineEmits(['onQuizFinish', 'onQuizQuit', 'onQuizRestart']);
 
-const emitFinish = () => {
+const showConfirmDialog = (message, header, acceptLabel, acceptSeverity, emitEvent) => {
   confirm.require({
-    message: 'Please review your answers before finishing the quiz.',
-    header: 'Finish Quiz',
+    message,
+    header,
     icon: 'pi pi-info-circle',
-    rejectLabel: 'Review Answers',
+    rejectLabel: 'Cancel',
     rejectProps: {
-      label: 'Review Answers',
+      label: 'Cancel',
       severity: 'secondary',
       outlined: true
     },
     acceptProps: {
-      label: 'Finish',
-      severity: 'success'
+      label: acceptLabel,
+      severity: acceptSeverity
     },
     accept: () => {
-      emit('onQuizFinish');
+      emit(emitEvent);
     }
   });
+};
+
+const emitFinish = () => {
+  showConfirmDialog(
+    'Please review your answers before finishing the quiz.',
+    'Finish Quiz',
+    'Submit',
+    'success',
+    'onQuizFinish'
+  );
 };
 
 const emitQuit = () => {
-  confirm.require({
-    message: 'Do you want to end this session?',
-    header: 'End Quiz',
-    icon: 'pi pi-info-circle',
-    rejectLabel: 'Cancel',
-    rejectProps: {
-      label: 'Cancel',
-      severity: 'secondary',
-      outlined: true
-    },
-    acceptProps: {
-      label: 'End',
-      severity: 'danger'
-    },
-    accept: () => {
-      emit('onQuizQuit');
-    }
-  });
+  showConfirmDialog('Do you want to end this session?', 'End Quiz', 'End', 'danger', 'onQuizQuit');
 };
 
 const emitRestart = () => {
-  confirm.require({
-    message: 'Do you want to reset this session? All your previous changes will be lost.',
-    header: 'Restart Quiz',
-    icon: 'pi pi-info-circle',
-    rejectLabel: 'Cancel',
-    rejectProps: {
-      label: 'Cancel',
-      severity: 'secondary',
-      outlined: true
-    },
-    acceptProps: {
-      label: 'Reset',
-      severity: 'info'
-    },
-    accept: () => {
-      emit('onQuizRestart');
-    }
-  });
+  showConfirmDialog(
+    'Do you want to reset this session? All your previous changes will be lost.',
+    'Restart Quiz',
+    'Reset',
+    'info',
+    'onQuizRestart'
+  );
 };
 </script>
